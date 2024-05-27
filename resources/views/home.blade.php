@@ -80,8 +80,12 @@
                                     </li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="btn btn-secondary">{{ __('Cerrar Sesión') }}</button>
+                                        <button type="submit" class="btn btn-secondary">{{ __('Login') }}</button>
                                     </form>
+                                    <form id="logout-form" action="{{ route('register') }}" method="GET">
+                                        <button type="submit" class="btn btn-secondary">{{ __('Register') }}</button>
+                                    </form>
+
                                 </ul>
                           </div>
                         </div>
