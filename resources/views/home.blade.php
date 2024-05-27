@@ -134,7 +134,7 @@
 
                     <section id="ofertas">
                         <!-- Aquí puedes mostrar tus ofertas -->
-                        <h2>Aprovecha estas Ofertas</h2>
+                        <h2>Ya vas a jalar o que hija de tu puta madre jajja</h2>
                         <div class="oferta">
                             <img src="oferta1.jpg" alt="Oferta 1">
                             <h3>Nombre de la oferta 1</h3>
