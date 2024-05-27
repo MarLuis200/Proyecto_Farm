@@ -109,7 +109,7 @@
                                 <img src="/img/Graneodin.jpg" class="img-fluid" width="200" height="200" alt="Producto 2">
                                 <a class="nav-link" href="#"><h3>Graneodin B 10mg</h3></a>
                                 <p>24 Pastillas sabor Frambuesa</p>
-                                <p>Precio: $XX.XX</p>
+                                <p>Precio: $139.00 MXN</p>
                             </div>
                             <div class="producto">
                                 <img src="/img/xl.jpg" class="img-fluid" width="200" height="200" alt="Producto 3">
@@ -134,7 +134,7 @@
 
                     <section id="ofertas">
                         <!-- Aquí puedes mostrar tus ofertas -->
-                        <h2>Ya vas a jalar o que hija de tu puta madre jajja</h2>
+                        <h2>Aprovecha estas ofertas</h2>
                         <div class="oferta">
                             <img src="oferta1.jpg" alt="Oferta 1">
                             <h3>Nombre de la oferta 1</h3>
