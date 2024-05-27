@@ -100,32 +100,32 @@
                         <h2>Productos Destacados</h2>
                         <div class="productos-container">
                             <div class="producto">
-                                <img src="/img/vitacilina.jpg" class="img-fluid" width="200" height="200" alt="Producto 1">
+                                <a class="nav-link" href="#"><img src="/img/vitacilina.jpg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
                                 <a class="nav-link" href="#"><h3>Vitacilina (Retinol - Neomicina)</h3></a>
                                 <p>Unguento 16G</p>
                                 <p>Precio: $32.00 MXN</p>
                             </div>
                             <div class="producto">
-                                <img src="/img/Graneodin.jpg" class="img-fluid" width="200" height="200" alt="Producto 2">
+                                <a class="nav-link" href="#"><img src="/img/Graneodin.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
                                 <a class="nav-link" href="#"><h3>Graneodin B 10mg</h3></a>
                                 <p>24 Pastillas sabor Frambuesa</p>
                                 <p>Precio: $139.00 MXN</p>
                             </div>
                             <div class="producto">
-                                <img src="/img/xl.jpg" class="img-fluid" width="200" height="200" alt="Producto 3">
-                                <a class="nav-link" href="#"><h3>Xl-3 Xtra</h3>
+                                <a class="nav-link" href="#"><img src="/img/xl.jpg" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
+                                <a class="nav-link" href="#"><h3>Xl-3 Xtra</h3></a>
                                 <p>Antigripal Gripa/Tos CAP C/12</p>
                                 <p>Precio: $64.00 MXN</p>
                             </div>
                             <div class="producto">
-                                <img src="/img/tukol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4">
-                                <a class="nav-link" href="#"><h3>Tukol-D</h3>
+                                <a class="nav-link" href="#"><img src="/img/tukol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h3>Tukol-D</h3></a>
                                 <p>Miel 2.0 g/0.2 g Guaifenesina, Dextrometorfano Adulto 120 ml Frasco</p>
                                 <p>Precio: $175.00 MXN</p>
                             </div>
                             <div class="producto">
-                                <img src="/img/fisopred.jpg" class="img-fluid" width="200" height="200" alt="Producto 5">
-                                <a class="nav-link" href="#"><h3>Fisopred 100 mg</h3>
+                                <a class="nav-link" href="#"><img src="/img/fisopred.jpg" class="img-fluid" width="200" height="200" alt="Producto 5"></a>
+                                <a class="nav-link" href="#"><h3>Fisopred 100 mg</h3></a>
                                 <p>Oral Pediatrico 100 ml</p>
                                 <p>Precio: $380.00 MXN</p>
                             </div>
