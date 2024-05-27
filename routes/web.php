@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisteredUserController;
 
 Route::get('/', function () {
     return view('/home');
@@ -12,8 +13,6 @@ Route::get('/', function () {
 Route::get('admin/home', 'App\Http\Controllers\HomeController@index')->name('admin/home');
 
 Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-
-Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
 
 /* Crear */
