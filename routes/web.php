@@ -12,8 +12,6 @@ Route::get('/', function () {
 /* Home */
 Route::get('admin/home', 'App\Http\Controllers\HomeController@index')->name('admin/home');
 
-Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
-
 
 /* Crear */
 Route::get('admin/productos/crear', 'App\Http\Controllers\ProductosController@crear')->name('admin/productos/crear');
