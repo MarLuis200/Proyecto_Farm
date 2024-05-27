@@ -9,9 +9,10 @@
         <div class="col-md-12">
             <div class="card">
                 <header>
+                    <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                         <div class="container">
-                            <img src="/img/logo_farmacia2.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
+                            <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -101,8 +102,8 @@
                         <div class="productos-container">
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/vitacilina.jpg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                                <a class="nav-link" href="#"><h3>Vitacilina (Retinol - Neomicina)</h3></a>
-                                <p>Unguento 16G</p>
+                                <a class="nav-link" href="#"><h3>Vitacilina</h3></a>
+                                <p>(Retinol - Neomicina) Unguento 16G</p>
                                 <p>Precio: $32.00 MXN</p>
                             </div>
                             <div class="producto">

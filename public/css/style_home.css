@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Futura, unset;
     margin: 0;
     padding: 0;
 }
@@ -7,10 +7,14 @@ body {
 header {
     background-color: #007bff; /* Azul primario */
     color: white;
-    padding: 20px;
+    padding: 5x;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center;    /* Centra verticalmente el contenido */    
+    text-align: center;  
 }
 
 .logo img {
