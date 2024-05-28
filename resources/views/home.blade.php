@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 <body>
 <div class="container">
-    <div class="row justify-content-center" class="page">
+    <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
                     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
@@ -76,45 +76,46 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/admin/productos">Productos</a>
                                     </li>
-                                            @guest
-                                                @if (Route::has('login'))
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                                    </li>
-                                                @endif
+                                        @guest
+                                            @if (Route::has('login'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                                </li>
+                                            @endif
 
-                                                @if (Route::has('register'))
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                                    </li>
-                                                @endif
-                                            @else
-                                                <li class="nav-item dropdown">
-                                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                                        {{ Auth::user()->name }}
+                                            @if (Route::has('register'))
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                                </li>
+                                            @endif
+                                        @else
+                                            <li class="nav-item dropdown">
+                                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                    {{ Auth::user()->name }}
+                                                </a>
+
+                                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                                     document.getElementById('logout-form').submit();">
+                                                        {{ __('Logout') }}
                                                     </a>
 
-                                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                                           onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
-                                                            {{ __('Logout') }}
-                                                        </a>
-
-                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                            @csrf
-                                                        </form>
-                                                    </div>
-                                                </li>
-                                            @endguest
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                        @csrf
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        @endguest
+                                    </li>
                                 </ul>
-                          </div>
+                            </div>
                         </div>
-                      </nav>
+                    </nav>
                 
                 <main class="main-content">
-                     <header>
-                    <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
+                    <header>
+                        <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     </header>
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
@@ -177,7 +178,6 @@
                 </main>
 
                 <footer>
-                    <!-- Pie de página con la descripción de MultiFarma -->
                     <p>&copy; 2024 MultiFarma - Tu farmacia de confianza. Todos los derechos reservados.</p>
                 </footer>
             </body>
