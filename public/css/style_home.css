@@ -16,6 +16,12 @@ header {
     align-items: center;    /* Centra verticalmente el contenido */    
     text-align: center;  
 }
+/* Agrega un margen superior al contenido principal */
+.card {
+    margin-top: 70px; /* Ajusta este valor según sea necesario */
+}
+
+
 
 .logo img {
     max-height: 50px;

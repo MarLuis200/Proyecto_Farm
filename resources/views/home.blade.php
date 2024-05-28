@@ -1,15 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.home')
 
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 <body>
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" class="page">
         <div class="col-md-12">
             <div class="card">
-                <header>
-                    <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                         <div class="container">
                             <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
@@ -78,17 +76,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="/admin/productos">Productos</a>
                                     </li>
-
-
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <!-- Left Side Of Navbar -->
-                                        <ul class="navbar-nav me-auto">
-
-                                        </ul>
-
-                                        <!-- Right Side Of Navbar -->
-                                        <ul class="navbar-nav ms-auto">
-                                            <!-- Authentication Links -->
                                             @guest
                                                 @if (Route::has('login'))
                                                     <li class="nav-item">
@@ -120,15 +107,15 @@
                                                     </div>
                                                 </li>
                                             @endguest
-                                        </ul>
-                                    </div>
                                 </ul>
                           </div>
                         </div>
                       </nav>
-                </header>
-
-                <main>
+                
+                <main class="main-content">
+                     <header>
+                    <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
+                    </header>
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
                         <div class="anuncio">
