@@ -28,13 +28,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarsExample07">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="/home">Regresar<span class="sr-only"></span></a>
-              </li>
-            </ul>
-          </div>
+          
         </div>
       </nav>
     </header>
@@ -91,14 +85,9 @@
 
               <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="{{ route('admin/proveedores') }} " class="btn btn-secondary"> Proveedores</a>
+                    <a href="{{ route('dashboard') }} " class="btn btn-secondary"> Proveedores</a>
                   </li>
-                  <li class="list-group-item">
-                    <a href="{{ route('admin/clientes') }}" class="btn btn-primary"> Clientes</a>
-                  </li>
-                  <li class="list-group-item" >
-                      <a href="{{ route('admin/productos') }}" class="btn btn-primary">Productos</a>
-                  </li>
+                  
                   <li class="list-group-item">
                     Opción 1
                   </li>
@@ -114,33 +103,14 @@
                   <li class="list-group-item">
                     Opción 5
                   </li>
-                  <li class="list-group-item">
-                    Opción 6
-                  </li>
-                  <li class="list-group-item">
-                    Opción 7
-                  </li>
-                  <li class="list-group-item">
-                    Opción 8
-                  </li>
-                  <li class="list-group-item">
-                    Opción 9
-                  </li>
-                  <li class="list-group-item">
-                    Opción 10
-                  </li>
+                  
               </ul>
             </div>
           </div>
         
             <div class="col-md-10">
 
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/proveedores') }}">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Proveedores</li>
-          </ol>
-        </nav>
+        
         
         <div class="row">
 
@@ -149,7 +119,7 @@
               <div class="content-box-large">
 
                 <div class="panel-heading">
-                <div class="panel-title"><h2>Proveedores</h2></div>             
+                          
                     
               </div>
                 

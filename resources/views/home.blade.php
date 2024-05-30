@@ -67,15 +67,7 @@
                                             <!-- Agrega más elementos según sea necesario -->
                                         </ul>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/admin/clientes">Clientes</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/admin/proveedores">Proveedores</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="/admin/productos">Productos</a>
-                                    </li>
+                                    
                                         @guest
                                             @if (Route::has('login'))
                                                 <li class="nav-item">
