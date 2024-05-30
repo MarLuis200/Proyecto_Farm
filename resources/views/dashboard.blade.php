@@ -12,9 +12,9 @@
             </header>
             <nav>
                 <ul>
-                    <li><a href="/admin/clientes" onclick="showSection('clientes')">Clientes</a></li>
-                    <li><a href="/admin/proveedores" onclick="showSection('proveedores')">Proveedores</a></li>
-                    <li><a href="/admin/productos" onclick="showSection('inventario')">Productos</a></li>
+                    <li><a href="#" onclick="showSection('clientes')">Clientes</a></li>
+                    <li><a href="#" onclick="showSection('proveedores')">Proveedores</a></li>
+                    <li><a href="#" onclick="showSection('inventario')">Productos</a></li>
                 </ul>
             </nav>
         </aside>
