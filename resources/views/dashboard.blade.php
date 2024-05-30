@@ -1,8 +1,6 @@
 @extends('layouts.dash')
 
 @section('content')
-
-
     <title>Dashboard de Gestión de Farmacia</title>
     <link rel="stylesheet" href="{{ asset('css/style_dashboard.css') }}">
 </head>
@@ -14,10 +12,9 @@
             </header>
             <nav>
                 <ul>
-                    <li><a href="#" onclick="showSection('clientes')">Clientes</a></li>
-                    <li><a href="#" onclick="showSection('proveedores')">Proveedores</a></li>
-                    <li><a href="#" onclick="showSection('inventario')">Inventario</a></li>
-                    <li><a href="#" onclick="showSection('ventas')">Ventas</a></li>
+                    <li><a href="/admin/clientes" onclick="showSection('clientes')">Clientes</a></li>
+                    <li><a href="/admin/proveedores" onclick="showSection('proveedores')">Proveedores</a></li>
+                    <li><a href="/admin/productos" onclick="showSection('inventario')">Productos</a></li>
                 </ul>
             </nav>
         </aside>
