@@ -77,7 +77,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/clientes') }}">Clientes</a></li>
+                          <li><a href="{{ route('dashboard') }}">Clientes</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -94,7 +94,7 @@
 
               <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="{{ route('admin/clientes') }}">Clientes</a>
+                    <a href="{{ route('dashboard') }}">Clientes</a>
                   </li>
                   <li class="list-group-item">
                     Opción 1
@@ -111,21 +111,7 @@
                   <li class="list-group-item">
                     Opción 5
                   </li>
-                  <li class="list-group-item">
-                    Opción 6
-                  </li>
-                  <li class="list-group-item">
-                    Opción 7
-                  </li>
-                  <li class="list-group-item">
-                    Opción 8
-                  </li>
-                  <li class="list-group-item">
-                    Opción 9
-                  </li>
-                  <li class="list-group-item">
-                    Opción 10
-                  </li>
+                  
               </ul>
             </div>
           </div>
@@ -172,7 +158,7 @@
 
                 </div>
 
-                <a href="{{ route('admin/clientes') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('dashboard') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 
