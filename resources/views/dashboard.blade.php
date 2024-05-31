@@ -1,112 +1,75 @@
 @extends('layouts.dash')
 
 @section('content')
-    <title>Dashboard de Gestión de Farmacia</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/style_dashboard.css') }}">
+    <title>Menu Dashboard</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM JS -->
+    <script src="./js/app.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
 </head>
 <body>
-    <div class="container">
-        <aside>
-            <header>
-                <h1>Dashboard</h1>
-            </header>
-            <nav>
-                <ul>
-                    <li><a href="#" onclick="showSection('clientes')">Clientes</a></li>
-                    <li><a href="#" onclick="showSection('proveedores')">Proveedores</a></li>
-                    <li><a href="#" onclick="showSection('inventario')">Productos</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main id="main-content">
-            <section id="clientes" class="content-section">
-                <h2>Clientes</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Dirección</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                            <th>Fecha de Registro</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí puedes agregar filas de clientes -->
-                    </tbody>
-                </table>
-            </section>
-            <section id="proveedores" class="content-section" style="display: none;">
-                <h2>Proveedores</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Contacto</th>
-                            <th>Teléfono</th>
-                            <th>Email</th>
-                            <th>Productos Suministrados</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí puedes agregar filas de proveedores -->
-                    </tbody>
-                </table>
-            </section>
-            <section id="inventario" class="content-section" style="display: none;">
-                <h2>Inventario</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID Producto</th>
-                            <th>Nombre Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio Unitario</th>
-                            <th>Fecha de Caducidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí puedes agregar filas de inventario -->
-                    </tbody>
-                </table>
-            </section>
-            <section id="ventas" class="content-section" style="display: none;">
-                <h2>Ventas</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID Venta</th>
-                            <th>ID Cliente</th>
-                            <th>ID Producto</th>
-                            <th>Cantidad</th>
-                            <th>Precio Total</th>
-                            <th>Fecha de Venta</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Aquí puedes agregar filas de ventas -->
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </div>
-    <script>
-        function showSection(sectionId) {
-            // Ocultar todas las secciones
-            var sections = document.querySelectorAll('.content-section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
 
-            // Mostrar la sección seleccionada
-            var selectedSection = document.getElementById(sectionId);
-            selectedSection.style.display = 'block';
-        }
-    </script>
+    <div class="container">
+        <div class="menu-dashboard">
+            <!-- TOP MENU -->
+            <div class="top-menu">
+                <div class="logo">
+                    <img src="./img/logo1.jpg" alt="">
+                    <span>Dashboard</span>
+                </div>
+                <div class="toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </div>
+            <!-- INPUT SEARCH -->
+            <div class="input-search">
+                <i class='bx bx-search'></i>
+                <input type="text" class="input" placeholder="Buscar">
+            </div>
+            <!-- MENU -->
+            <div class="menu">
+                <div class="enlace" data-url="/admin/clientes">
+                    <i class="bx bx-user"></i>
+                    <span>Clientes</span>
+                </div>
+                <div class="enlace" data-url="/admin/proveedores">
+                    <i class="bx bx-grid-alt"></i>
+                    <span>Proveedores</span>
+                </div>
+                <div class="enlace" data-url="/admin/productos">
+                    <i class="bx bx-cart"></i>
+                    <span>Productos</span>
+                </div>
+                <div class="home" data-url="/home">
+                    <i class="bx bx-log-out"></i>
+                    <span>Home</span>
+                </div>
+                <script>
+                    $(document).ready(function() {
+                        $('.home').click(function() {
+                            var url = $(this).data('url');
+                            window.location.href = url;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+        <!-- Contenedor donde se cargará el contenido -->
+        <div id="content-container"  class="content-container"></div>
+    </div>
 </body>
 </html>
+
 
 @endsection
     

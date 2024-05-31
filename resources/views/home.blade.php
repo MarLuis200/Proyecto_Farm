@@ -15,7 +15,7 @@
                             <span class="navbar-toggler-icon"></span>
                             </button>
 
-                           <div class="collapse navbar-collapse" id="navbarsExample07">
+                            <div class="collapse navbar-collapse id="navbarsExample07">
                                 <ul class="navbar-nav mr-auto">
                                     <li class="nav-item active">
                                         <a class="nav-link" href="/admin/salud">Salud<span class="sr-only"></span></a>
@@ -87,15 +87,23 @@
                                                 </a>
 
                                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                                    <!-- Enlace existente para Logout -->
+
+                                                    <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                                        {{ __('Dashboard') }}
+                                                    </a>
                                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                                        onclick="event.preventDefault();
-                                                                     document.getElementById('logout-form').submit();">
+                                                                 document.getElementById('logout-form').submit();">
                                                         {{ __('Logout') }}
                                                     </a>
 
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                         @csrf
                                                     </form>
+
+                                                    <!-- Nuevo enlace para Dashboard -->
+                                                    
                                                 </div>
                                             </li>
                                         @endguest

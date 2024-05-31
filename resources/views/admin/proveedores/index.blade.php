@@ -16,30 +16,24 @@
 
   </head>
 
-  <body> 
+  <body>
 
-    <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
         <div class="container">
-          <a class="navbar-brand" href="https://nubecolectiva.com">
-            <img src="/img/logo_farmacia.png" class="img-fluid" width="110" height="110" alt="Nombre de la Marca">
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/img/logo_MultiFarma.png" class="img-fluid" width="180" height="180" alt="Nombre de la Marca"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           
         </div>
       </nav>
-    </header>
 
       <div class="container mt-5 mb-5">
 
           <div class="row">
 
             <div class="col-md-12">
-
-              <h1 style="font-size: 28px;" class=" text-center">.</h1>
 
               <div class="header">
          <div class="container">
@@ -77,52 +71,22 @@
          </div>
       </div>
 
-      <div class="page-content">
+     <div class="page-content">
         <div class="row">
+
           
-          <div class="col-md-2">
-            <div class="sidebar content-box" style="display: block;">
-
-              <ul class="list-group">
-                  <li class="list-group-item">
-                    <a href="{{ route('dashboard') }} " class="btn btn-secondary"> Proveedores</a>
-                  </li>
-                  
-                  <li class="list-group-item">
-                    Opción 1
-                  </li>
-                  <li class="list-group-item">
-                    Opción 2
-                  </li>
-                  <li class="list-group-item">
-                    Opción 3
-                  </li>
-                  <li class="list-group-item">
-                    Opción 4
-                  </li>
-                  <li class="list-group-item">
-                    Opción 5
-                  </li>
-                  
-              </ul>
-            </div>
           </div>
-        
-            <div class="col-md-10">
 
-        
-        
+            <div class="col-md-12">
+
+      
+
         <div class="row">
 
           <div class="col-md-12">
 
-              <div class="content-box-large">
+            
 
-                <div class="panel-heading">
-                          
-                    
-              </div>
-                
                 <div class="panel-body">
 
                   @if(Session::has('message'))
@@ -132,8 +96,7 @@
                   @endif
 
                 
-                  <a href="{{ route('admin/proveedores/crear') }}" class="btn btn-success mt-4 ml-3">  Crear
-                  </a>
+                  <a href="{{ route('admin/proveedores/crear') }}" class="btn btn-success mt-4 ml-3">Crear</a>
                                   
                                   <section class="example mt-4">
                                       
@@ -157,7 +120,6 @@
                                             <td class="v-align-middle">{{$prov->direccion}}</td>
                                             <td class="v-align-middle">{{$prov->telefono}}</td>
                                             <td class="v-align-middle">{{$prov->correo}}</td>
-                                            <td class="v-align-middle">{{$prov->stock}}</td>
                                             <td class="v-align-middle">
                                               <img src="{!! asset("uploads/$prov->img") !!}" width="30" class="img-responsive">
                                             </td>
