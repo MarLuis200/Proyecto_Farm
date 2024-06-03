@@ -7,6 +7,8 @@
     <meta name="author" content="Nube Colectiva">
       <link rel="icon" href="/img/logo_farmacia.png" />
       <link rel="stylesheet" href="/css/estilos.css">
+      <script src="./js/app.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <meta name="theme-color" content="#000000" />
 

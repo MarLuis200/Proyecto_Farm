@@ -33,9 +33,6 @@
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-
-                      <!doctype html>
-
                       <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                         <div class="container">
                             <img src="/img/logo_MultiFarma.png" class="img-fluid" width="180" height="180" alt="Nombre de la Marca"></a>
