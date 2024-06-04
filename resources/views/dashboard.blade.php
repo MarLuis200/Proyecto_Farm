@@ -9,9 +9,18 @@
     <title>Menu Dashboard</title>
     <!-- BOX ICONS -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+<<<<<<< HEAD
     <!-- Incluye jQuery y la librería de Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+=======
+    <!-- CUSTOM JS -->
+    <script src="./js/app.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+>>>>>>> dc9d01da8572f144b50d72e62c3f770d516de923
 
     <div class="container">
         <div class="menu-dashboard">
@@ -43,6 +52,11 @@
                 <div class="enlace" data-url="/admin/productos">
                     <i class="bx bx-cart"></i>
                     <span>Productos</span>
+                </div>
+
+                <div class="enlace" data-url="/admin/inventario">
+                    <i class="bx bx-box"></i>
+                    <span>Inventario</span>
                 </div>
                 <div class="home" data-url="/home">
                     <i class="bx bx-log-out"></i>
