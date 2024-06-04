@@ -19,27 +19,12 @@
   <body>
 
     <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
         <div class="container">
-            <img src="/img/logo1.jpg" class="img-fluid" width="50" height="50" alt="Nombre de la Marca"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="/img/logo_MultiFarma.png" class="img-fluid" width="180" height="180" alt="Nombre de la Marca"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample07">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-              <a class="nav-link" href="https://nubecolectiva.com">Home <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://blog.nubecolectiva.com" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-            </ul>
-
-          </div>
+            </button>
         </div>
       </nav>
     </header>

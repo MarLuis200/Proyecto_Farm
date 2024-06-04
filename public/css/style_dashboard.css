@@ -144,7 +144,6 @@ body {
     opacity: 1;
 }
 
-
 .container {
     display: flex;
     width: 100%;
@@ -262,3 +261,4 @@ th {
 .menu-dashboard.open .menu .home span {
     opacity: 1;
 }
+
