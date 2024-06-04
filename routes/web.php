@@ -66,6 +66,24 @@ Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresC
 /* Vista Clientes */
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
+// Rutas Inventario
+/* Crear */
+Route::get('admin/inventario/crear', 'App\Http\Controllers\InventarioController@crear')->name('admin/inventario/crear');
+Route::put('admin/inventario/store', 'App\Http\Controllers\InventarioController@store')->name('admin/inventario/store');
+
+/* Leer */
+Route::get('admin/inventario/show/{id}', 'App\Http\Controllers\InventarioController@show')->name('admin/inventario/detalles');
+
+/* Actualizar */
+Route::get('admin/inventario/actualizar/{id}', 'App\Http\Controllers\InventarioController@actualizar')->name('admin/inventario/actualizar');
+Route::put('admin/inventario/update/{id}', 'App\Http\Controllers\InventarioController@update')->name('admin/inventario/update');
+
+/* Eliminar */
+Route::put('admin/inventario/eliminar/{id}', 'App\Http\Controllers\InventarioController@eliminar')->name('admin/inventario/eliminar');
+
+/* Vista Clientes */
+Route::get('admin/inventario', 'App\Http\Controllers\InventarioController@index')->name('admin/inventario');
+
 
 
 

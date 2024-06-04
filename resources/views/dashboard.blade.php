@@ -15,7 +15,7 @@
     <!-- CUSTOM JS -->
     <script src="./js/app.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
 </head>
 <body>
 
@@ -50,6 +50,11 @@
                     <i class="bx bx-cart"></i>
                     <span>Productos</span>
                 </div>
+
+                <div class="enlace" data-url="/admin/inventario">
+                    <i class="bx bx-box"></i>
+                    <span>Inventario</span>
+                </div>
                 <div class="home" data-url="/home">
                     <i class="bx bx-log-out"></i>
                     <span>Home</span>
@@ -72,4 +77,3 @@
 
 
 @endsection
-    
