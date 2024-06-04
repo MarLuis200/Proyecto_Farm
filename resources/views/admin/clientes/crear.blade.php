@@ -98,6 +98,9 @@
           Desarrollado Por <a target="_blank">Equipo Net Team</a>
         </div>
       </footer>
+      <main class="py-4">
+            @yield('content')
+        </main>
     </div>
   </body>
 </html>
