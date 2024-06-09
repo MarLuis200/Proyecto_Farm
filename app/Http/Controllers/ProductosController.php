@@ -75,8 +75,7 @@ class ProductosController extends Controller
         $productos = Productos::find($id);
         return view('admin/productos.actualizar',['productos'=>$productos]);
     }
-
-
+    
     // Proceso de Actualización de un Registro (Update)
     public function update(UpdateProductos $request, $id)
     {
