@@ -124,7 +124,7 @@
 				@endif
 
 				<button type="submit" class="btn btn-info">Guardar</button>
-				<a href="{{ route('dashboard') }}" class="btn btn-warning">Cancelar</a>
+				<a href="{{ route('admin/clientes') }}" class="btn btn-warning">Cancelar</a> 
 
 				<br>
 				<br>

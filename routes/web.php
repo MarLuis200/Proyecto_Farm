@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dash2Controller;
 use App\Http\Controllers\InventarioController;
 
 Route::get('/', function () {
@@ -10,8 +11,6 @@ Route::get('/', function () {
 
 // Rutas CRUD
 
-/* Home */
-Route::get('admin/home', 'App\Http\Controllers\HomeController@index')->name('admin/home');
 
 
 /* Crear */
@@ -85,6 +84,7 @@ Route::put('admin/inventario/eliminar/{id}', 'App\Http\Controllers\InventarioCon
 /* Vista Clientes */
 Route::get('admin/inventario', 'App\Http\Controllers\InventarioController@index')->name('admin/inventario');
 
+Route::get('/dash2', 'App\Http\Controllers\Dash2Controller@index')->name('/dash2');
 
 
 
@@ -92,5 +92,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+
+Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
+
 

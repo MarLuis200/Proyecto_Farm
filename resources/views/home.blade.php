@@ -88,7 +88,7 @@
                                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                                 <!-- Enlace existente para Dashboard -->
 
-                                                <a class="dropdown-item" href="{{ route('dashboard') }}">
+                                                <a class="dropdown-item" href="{{ route('dash2') }}">
                                                     {{ __('Dashboard') }}
                                                 </a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"

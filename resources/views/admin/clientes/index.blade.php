@@ -1,3 +1,6 @@
+@extends('layouts.dash2')
+
+@section('content')
 <!doctype html>
 <html lang="es">
 <head>
@@ -14,15 +17,6 @@
 </head>
 
 <body>
-
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
-        <div class="container">
-            <img src="/img/logo_MultiFarma.png" class="img-fluid" width="180" height="180" alt="Nombre de la Marca">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-    </nav>
 
     <div class="container mt-5 mb-5">
         <div class="row">
@@ -93,9 +87,9 @@
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                                     @include('admin.clientes.frm.prt')
-                                                  
                                               </div>
                                           </form>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
@@ -163,5 +157,16 @@
             Desarrollado Por <a target="_blank">Equipo Net Team</a>
         </div>
     </footer>
+
+    <script type="text/javascript">
+    function confirmarEliminar() {
+        var x = confirm("¿Estás seguro de Eliminar?");
+        if (x)
+            return true;
+        else
+            return false;
+    }
+</script>
 </body>
 </html>
+@endsection

@@ -99,18 +99,23 @@ class InventarioController extends Controller
     // Eliminar un Registro
     public function eliminar($id)
     {
-        $inventario = Inventario::findOrFail($id);
+        // Indicamos el 'id' del registro que se va Eliminar
+        $inventario = Inventario::find($id);
 
-        // Elimino la imagen de la carpeta 'uploads'
-        if ($inventario->img) {
-            Storage::delete($inventario->img);
-        }
+        // Elimino la imagen de la carpeta 'uploads', esto lo veremos más adelante
+        $imagen = explode(",", $inventario->img);
+        Storage::delete($imagen);
 
-        // Elimino el registro de la tabla 'inventario'
-        $inventario->delete();
+        // Elimino el registro de la tabla 'productos'
+        Inventario::destroy($id);
+
+        // Opcional: Si deseas guardar la fecha de eliminación de un registro, debes mantenerlo en
+        // una tabla llamada por ejemplo 'productos_eliminados' y alli guardas su fecha de eliminación
+        // $productos->deleted_at = (new DateTime)->getTimestamp();
 
         // Muestro un mensaje y redirecciono a la vista principal
-        Session::flash('message', 'Eliminado Satisfactoriamente!');
+        Session::flash('message', 'Eliminado Satisfactoriamente !');
         return Redirect::to('admin/inventario');
     }
+
 }

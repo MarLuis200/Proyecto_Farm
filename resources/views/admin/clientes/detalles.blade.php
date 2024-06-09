@@ -1,3 +1,6 @@
+@extends('layouts.dash2')
+
+@section('content')
 <!doctype html>
 <html lang="es">
   <head>
@@ -5,8 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Nube Colectiva">
-      <link rel="icon" href="/img/hola.ico" />
-
+    <link rel="icon" href="/img/logo_farmacia.png" />
     <meta name="theme-color" content="#000000" />
 
     <title>Detalles</title>
@@ -18,30 +20,15 @@
 
   <body>
 
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
-        <div class="container">
-            <img src="/img/logo_MultiFarma.png" class="img-fluid" width="180" height="180" alt="Nombre de la Marca"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-      </nav>
-    </header>
-
       <div class="container mt-5 mb-5">
-
-          <div class="row">
-
             <div class="col-md-12">
-
               <div class="header">
          <div class="container">
             <div class="row">
                <div class="col-md-5">
                   <!-- Logo -->
                   <div class="logo">
-                     <br><br><h1>Clientes</h1>
+                     <h1>Detalles del Cliente</h1>
                   </div>
                </div>
                <div class="col-md-5">
@@ -62,7 +49,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('dashboard') }}">Clientes</a></li>
+                          <li><a href="{{ route('admin/clientes') }}">Detalles</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -73,34 +60,6 @@
 
       <div class="page-content">
         <div class="row">
-
-          <div class="col-md-2">
-            <div class="sidebar content-box" style="display: block;">
-
-              <ul class="list-group">
-                  <li class="list-group-item">
-                    <a href="{{ route('dashboard') }}">Clientes</a>
-                  </li>
-                  <li class="list-group-item">
-                    Opción 1
-                  </li>
-                  <li class="list-group-item">
-                    Opción 2
-                  </li>
-                  <li class="list-group-item">
-                    Opción 3
-                  </li>
-                  <li class="list-group-item">
-                    Opción 4
-                  </li>
-                  <li class="list-group-item">
-                    Opción 5
-                  </li>
-                  
-              </ul>
-            </div>
-          </div>
-
             <div class="col-md-10">
 
         <nav aria-label="breadcrumb">
@@ -143,7 +102,7 @@
 
                 </div>
 
-                <a href="{{ route('dashboard') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('admin/clientes') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 
@@ -184,5 +143,8 @@
 
     </script>
 
+
   </body>
 </html>
+
+@endsection

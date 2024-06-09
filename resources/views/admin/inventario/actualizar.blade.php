@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Nube Colectiva">
-    <link rel="shortcut icon" href="http://nubecolectiva.com/favicon.ico" />
+    <link rel="icon" href="/img/logo_farmacia.png" />
 
     <meta name="theme-color" content="#000000" />
 
