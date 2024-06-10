@@ -121,6 +121,23 @@ Route::put('admin/puestos/eliminar/{id}', 'App\Http\Controllers\PuestosControlle
 /* Vista*/
 Route::get('admin/puestos', 'App\Http\Controllers\PuestosController@index')->name('admin/puestos');
 
+// Rutas Empleados
+/* Crear */
+Route::get('admin/empleados/crear', 'App\Http\Controllers\EmpleadosController@crear')->name('admin/empleados/crear');
+Route::put('admin/empleados/store', 'App\Http\Controllers\EmpleadosController@store')->name('admin/empleados/store');
+
+/* Leer */
+Route::get('admin/empleados/show/{id}', 'App\Http\Controllers\EmpleadosController@show')->name('admin/empleados/detalles');
+
+/* Actualizar */
+Route::get('admin/empleados/actualizar/{id}', 'App\Http\Controllers\EmpleadosController@actualizar')->name('admin/empleados/actualizar');
+Route::put('admin/empleados/update/{id}', 'App\Http\Controllers\EmpleadosController@update')->name('admin/empleados/update');
+/* Eliminar */
+Route::put('admin/empleados/eliminar/{id}', 'App\Http\Controllers\EmpleadosController@eliminar')->name('admin/empleados/eliminar');
+
+/* Vista*/
+Route::get('admin/empleados', 'App\Http\Controllers\EmpleadosController@index')->name('admin/empleados');
+
 
 Route::get('/dash2', 'App\Http\Controllers\Dash2Controller@index')->name('/dash2');
 
