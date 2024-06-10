@@ -99,30 +99,7 @@
                   <li class="list-group-item">
                     <a href="{{ route('admin/inventario') }}"> Inventario</a>
                   </li>
-                  <li class="list-group-item">
-                    Opción 1
-                  </li>
-                  <li class="list-group-item">
-                    Opción 2
-                  </li>
-                  <li class="list-group-item">
-                    Opción 3
-                  </li>
-                  <li class="list-group-item">
-                    Opción 4
-                  </li>
-                  <li class="list-group-item">
-                    Opción 5
-                  </li>
-                  <li class="list-group-item">
-                    Opción 6
-                  </li>
-                  <li class="list-group-item">
-                    Opción 7
-                  </li>
-                  <li class="list-group-item">
-                    Opción 8
-                  </li>
+               
               </ul>
             </div>
           </div>

@@ -65,12 +65,7 @@
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="input-group form">
-                           <!--
-                           <input type="text" class="form-control" placeholder="Buscar...">
-                           <span class="input-group-btn">
-                             <button class="btn btn-primary" type="button">Buscar</button>
-                           </span>
-                           -->
+                          
                       </div>
                     </div>
                   </div>
@@ -165,9 +160,6 @@
           </div>
 
           <hr>
-
-
-
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
