@@ -109,9 +109,7 @@ class InventarioController extends Controller
         // Elimino el registro de la tabla 'productos'
         Inventario::destroy($id);
 
-        // Opcional: Si deseas guardar la fecha de eliminación de un registro, debes mantenerlo en
-        // una tabla llamada por ejemplo 'productos_eliminados' y alli guardas su fecha de eliminación
-        // $productos->deleted_at = (new DateTime)->getTimestamp();
+        
 
         // Muestro un mensaje y redirecciono a la vista principal
         Session::flash('message', 'Eliminado Satisfactoriamente !');
