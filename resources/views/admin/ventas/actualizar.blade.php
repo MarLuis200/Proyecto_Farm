@@ -9,13 +9,17 @@
 
     <meta name="theme-color" content="#000000" />
 
+<<<<<<< HEAD
     <title>Puestos</title>
 
+=======
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
     <!-- Bootstrap -->
     @vite(['resources/js/app.js'])
 
   </head>
 
+<<<<<<< HEAD
   <body>
 
   <header>
@@ -61,6 +65,9 @@
     </div>
 
 
+=======
+  <body> 
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
       <div class="container mt-5 mb-5">
 
           <div class="row">
@@ -96,7 +103,11 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
+<<<<<<< HEAD
                           <li><a href="{{ route('admin/ventas') }}">Ventas</a></li>
+=======
+                          <li><a href="{{ route('admin/ventas') }}">Administrador</a></li>
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
                         </ul>
                       </nav>
                   </div>
@@ -144,7 +155,11 @@
                     <section class="example mt-4">
 
                     <form method="POST" action="{{ route('admin/ventas/update',$venta->id) }}" role="form" enctype="multipart/form-data">
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -168,8 +183,13 @@
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
+<<<<<<< HEAD
           Desarrollado por <a href="http://www.nubecolectiva.com" target="_blank">Nube Colectiva</a>
       </div>
+=======
+          Desarrollado por Net Team</a>
+      </div> 
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
     </footer>
 
 
