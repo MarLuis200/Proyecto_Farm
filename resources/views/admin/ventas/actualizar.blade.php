@@ -12,17 +12,21 @@
 
     <meta name="theme-color" content="#000000" />
 
+    <title>Puestos</title>
+
     <!-- Bootstrap -->
-    @vite(['resources/js/app.js'])       
+    @vite(['resources/js/app.js'])
 
   </head>
 
-  <body> 
+  <body>
+
       <div class="container mt-5 mb-5">
 
           <div class="row">
 
             <div class="col-md-12">
+
 
               <div class="header">
          <div class="container">
@@ -47,19 +51,13 @@
                     </div>
                   </div>
                </div>
-               <div class="col-md-2">
-                  <div class="navbar navbar-inverse" role="banner">
-                      <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                        <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/ventas') }}">Administrador</a></li>
-                        </ul>
-                      </nav>
-                  </div>
                </div>
             </div>
          </div>
       </div>
-        
+
+      <div class="page-content">
+        <div class="row">
             <div class="col-md-10">
 
         <nav aria-label="breadcrumb">
@@ -68,7 +66,7 @@
             <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
           </ol>
         </nav>
-        
+
         <div class="row">
 
           <div class="col-md-12">
@@ -76,23 +74,23 @@
               <div class="content-box-large">
 
                 <div class="panel-heading">
-                <div class="panel-title"><h2>Actualizar</h2></div>             
-                    
+                <div class="panel-title"><h2>Actualizar</h2></div>
+
               </div>
-                
+
                 <div class="panel-body">
-                                  
+
                     <section class="example mt-4">
 
                     <form method="POST" action="{{ route('admin/ventas/update',$venta->id) }}" role="form" enctype="multipart/form-data">
- 
+
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         @include('admin.ventas.frm.prt')
-                                                                            
-                    </form>                                     
-                                    
+
+                    </form>
+
                     </section>
 
                 </div>
@@ -110,10 +108,10 @@
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
           Desarrollado por Net Team</a>
-      </div> 
+      </div>
     </footer>
 
-    
+
   </body>
 </html>
-@endsection
+@endsection 

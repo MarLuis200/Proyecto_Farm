@@ -71,7 +71,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">ventas</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $venta->fecha_venta }}</li>
           </ol>
         </nav>

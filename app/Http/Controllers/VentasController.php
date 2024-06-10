@@ -9,7 +9,13 @@ use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\ItemCreateRequestVentas;
+use App\Http\Requests\ItemUpdateRequestVentas;
+use DB;
+use Input;
+use Storage;
 use DateTime;
+
 
 class VentasController extends Controller
 {
