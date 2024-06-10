@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-<div class="container">
+<div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -19,7 +19,7 @@
                         <div class="collapse navbar-collapse id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/admin/salud">Salud<span class="sr-only"></span></a>
+                                    <a class="nav-link" href="/admin/salud">Salud</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/admin/salud/antibioticos">Antibióticos</a></li>
                                         <li><a href="/admin/salud/dolor">Dolor</a></li>

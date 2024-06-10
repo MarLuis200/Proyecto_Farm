@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dash2Controller;
 use App\Http\Controllers\InventarioController;
+use App\Http\Controllers\VentasController;
 
 Route::get('/', function () {
     return view('/home');
@@ -83,6 +84,7 @@ Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@
 
 /* Vista Ventas */
 Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin/ventas');
+
 
 // Rutas Inventario
 /* Crear */

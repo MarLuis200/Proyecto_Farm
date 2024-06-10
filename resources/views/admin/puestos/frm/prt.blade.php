@@ -10,7 +10,6 @@
                         </div>
                     </div>
 
-                    
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="negrita">Descripcion:</label>
@@ -36,7 +35,7 @@
                 @endif
 
                 <button type="submit" class="btn btn-info">Guardar</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">Cancelar</button>
+                <a href="{{ route('admin/puestos') }}" class="btn btn-warning">Cancelar</a> 
                 <br><br>
             </div>
         </section>
