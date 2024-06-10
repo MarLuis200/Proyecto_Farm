@@ -23,7 +23,7 @@
             <div class="collapse navbar-collapse" id="navbarsExample07">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/admin/proveedores">Regresar<span class="sr-only"></span></a>
+                        <a class="nav-link" href="/admin/ventas">Regresar<span class="sr-only"></span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://blog.nubecolectiva.com" target="_blank">Blog</a>
@@ -68,7 +68,7 @@
                                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right"
                                      role="navigation">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="{{ route('admin/proveedores') }}">Proveedores</a></li>
+                                        <li><a href="{{ route('admin/ventas') }}">Proveedores</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -82,7 +82,7 @@
                         <div class="sidebar content-box" style="display: block;">
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    <a href="{{ route('admin/proveedores') }}"> Proveedores</a>
+                                    <a href="{{ route('admin/ventas') }}"> Proveedores</a>
                                 </li>
                                 <li class="list-group-item">
                                     Opción 1
@@ -114,7 +114,7 @@
                     <div class="col-md-10">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="{{ route('admin/proveedores') }}">Proveedores</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Proveedores</a></li>
                                 <li class="breadcrumb-item active" aria-current="page">Crear</li>
                             </ol>
                         </nav>
@@ -126,10 +126,10 @@
                                     </div>
                                     <div class="panel-body">
                                         <section class="example mt-4">
-                                            <form method="POST" action="{{ route('admin/proveedores/store') }}" role="form" enctype="multipart/form-data">
+                                            <form method="POST" action="{{ route('admin/ventas/store') }}" role="form" enctype="multipart/form-data">
                                                 <input type="hidden" name="_method" value="PUT">
                                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                @include('admin.proveedores.frm.prt')
+                                                @include('admin.ventas.frm.prt')
                                             </form>
                                         </section>
                                     </div>

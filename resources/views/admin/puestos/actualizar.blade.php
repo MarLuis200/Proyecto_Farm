@@ -113,7 +113,7 @@
 
               <ul class="list-group">
                   <li class="list-group-item">
-                    <a href="{{ route('admin/inventario') }}">Puestos</a>
+                    <a href="{{ route('admin/puestos') }}">Puestos</a>
                   </li>
               </ul>
             </div>

@@ -71,8 +71,8 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">ventas</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $ventas->fecha_venta}}</li>
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$venta->fecha_venta}}</li>
           </ol>
         </nav>
         
@@ -91,22 +91,22 @@
                   @endif 
                   
                   <p class="h5">Fecha de venta:</p>
-                        <p class="h6 mb-3">{{ $ventas->fecha_venta }}</p>
+                        <p class="h6 mb-3">{{ $venta->fecha_venta }}</p>
 
                         <p class="h5">ID Proveedor:</p>
-                        <p class="h6 mb-3">{{ $ventas->id_proveedor}}</p>
+                        <p class="h6 mb-3">{{ $venta->id_proveedor}}</p>
 
                         <p class="h5">Descripcion:</p>
-                        <p class="h6 mb-3">{{ $ventas->descripcion }}</p> 
+                        <p class="h6 mb-3">{{ $venta->descripcion }}</p> 
 
                         <p class="h5">Cantidad:</p>
-                        <p class="h6 mb-3">{{ $ventas->cantidad }}</p> 
+                        <p class="h6 mb-3">{{ $venta->cantidad }}</p> 
 
                         <p class="h5">Precio:</p>
-                        <p class="h6 mb-3">{{ $ventas->precio }}</p> 
+                        <p class="h6 mb-3">{{ $venta->precio }}</p> 
 
                         <p class="h5">ID Producto:</p>
-                        <p class="h6 mb-3">{{ $ventas->id_producto }}</p> 
+                        <p class="h6 mb-3">{{ $venta->id_producto }}</p> 
 
                 </div>
 

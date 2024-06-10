@@ -10,6 +10,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use DateTime;
+use App\Http\Requests\ItemCreateRequestVentas;
+use App\Http\Requests\ItemUpdateRequestVentas;
 
 class VentasController extends Controller
 {
