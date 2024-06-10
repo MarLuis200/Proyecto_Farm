@@ -53,7 +53,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="/admin/clientes">
-                    <i class="bx bx-user"></i>
+                    <i class="bx bxs-user-accoun"></i>
                     <span>Clientes</span>
                 </a>
             </li>
@@ -91,7 +91,7 @@
             
             <li class="nav-item">
                 <a class="nav-link" href="/admin/puestos">
-                    <i class='bx bxs-user'></i>
+                    <i class='bx bxs-pin'></i>
                     <span>Puestos</span>
                 </a>
             </li>

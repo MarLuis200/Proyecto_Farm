@@ -28,7 +28,7 @@
                <div class="col-md-5">
                   <!-- Logo -->
                   <div class="logo">
-                     <h1>Detalles del Producto</h1>
+                     <h1>Detalles del Empleado</h1>
                   </div>
                </div>
                <div class="col-md-5">
