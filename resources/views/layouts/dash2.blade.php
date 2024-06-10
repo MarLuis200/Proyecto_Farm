@@ -97,6 +97,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="/admin/empleados">
+                    <i class="bx bx-user"></i>
+                    <span>Empleados</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/home">
                     <i class="bx bx-log-out"></i>
                     <span>Home</span>

@@ -29,7 +29,7 @@
                <div class="col-md-5">
                   <!-- Logo -->
                   <div class="logo">
-                     <h1>Actualizar Producto</h1>
+                     <h1>Actualizar Empleado</h1>
                   </div>
                </div>
                <div class="col-md-5">
@@ -45,7 +45,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/empleados') }}">Actualizar Puesto</a></li>
+                          <li><a href="{{ route('admin/empleados') }}">Actualizar Empleado</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -61,7 +61,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/empleados') }}">Productos</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin/empleados') }}">Empleados</a></li>
             <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
           </ol>
         </nav>
@@ -116,8 +116,8 @@
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
-          Desarrollado Por <a href="http://www.nubecolectiva.com" target="_blank">Equipo Net Team</a>
-      </div>
+        Desarrollado Por Equipo Net Team
+    </div>
     </footer>
 
 

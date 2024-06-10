@@ -118,8 +118,8 @@
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
-          Desarrollado Por <a href="http://www.nubecolectiva.com" target="_blank">Equipo Net Team</a>
-      </div>
+        Desarrollado Por Equipo Net Team
+    </div>
     </footer>
 
     <script type="text/javascript">
