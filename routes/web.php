@@ -67,19 +67,18 @@ Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresC
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
 //VENTAS
-/* Crear */
-Route::get('admin/ventas/crear', 'App\Http\Controllers\VentasController@crear')->name('admin.ventas.crear');
-Route::post('admin/ventas/store', 'App\Http\Controllers\VentasController@store')->name('admin.ventas.store');
+Route::get('admin/ventas/crear', 'App\Http\Controllers\VentasController@crear')->name('admin/ventas/crear');
+Route::put('admin/ventas/store', 'App\Http\Controllers\VentasController@store')->name('admin/ventas/store');
 
 /* Leer */
-Route::get('admin/ventas/show/{id}', 'App\Http\Controllers\VentasController@show')->name('admin.ventas.show');
+Route::get('admin/ventas/show/{id}', 'App\Http\Controllers\VentasController@show')->name('admin/ventas/detalles');
 
 /* Actualizar */
-Route::get('admin/ventas/actualizar/{id}', 'App\Http\Controllers\VentasController@actualizar')->name('admin.ventas.actualizar');
-Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentasController@update')->name('admin.ventas.update');
+Route::get('admin/ventas/actualizar/{id}', 'App\Http\Controllers\VentasController@actualizar')->name('admin/ventas/actualizar');
+Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentasController@update')->name('admin/ventas/update');
 
 /* Eliminar */
-Route::delete('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@eliminar')->name('admin.ventas.eliminar');
+Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@eliminar')->name('admin/ventas/eliminar');
 
 /* Vista Ventas */
 Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin.ventas.index');

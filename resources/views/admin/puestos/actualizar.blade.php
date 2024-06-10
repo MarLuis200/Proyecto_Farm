@@ -1,3 +1,6 @@
+@extends('layouts.dash2')
+
+@section('content')
 <!doctype html>
 <html lang="es">
   <head>
@@ -18,56 +21,12 @@
 
   <body>
 
-  <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="https://nubecolectiva.com"><img src="https://nubecolectiva.com/img/logo.png" class="img-fluid"></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExample07">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-              <a class="nav-link" href="https://nubecolectiva.com">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://blog.nubecolectiva.com" target="_blank">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
-            </li>
-            </ul>
-
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <div class="pccp mt-5 mb-3" align="center">
-              <!-- P -->
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-2390065838671224"
-                   data-ad-slot="1441100372"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-              <!-- End P -->
-    </div>
-
-
       <div class="container mt-5 mb-5">
 
           <div class="row">
 
             <div class="col-md-12">
 
-              <h1 style="font-size: 28px;" class=" text-center">.... </h1>
 
               <div class="header">
          <div class="container">
@@ -92,14 +51,6 @@
                     </div>
                   </div>
                </div>
-               <div class="col-md-2">
-                  <div class="navbar navbar-inverse" role="banner">
-                      <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
-                        <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/puestos') }}">Puestos</a></li>
-                        </ul>
-                      </nav>
-                  </div>
                </div>
             </div>
          </div>
@@ -107,18 +58,6 @@
 
       <div class="page-content">
         <div class="row">
-
-          <div class="col-md-2">
-            <div class="sidebar content-box" style="display: block;">
-
-              <ul class="list-group">
-                  <li class="list-group-item">
-                    <a href="{{ route('admin/inventario') }}">Puestos</a>
-                  </li>
-              </ul>
-            </div>
-          </div>
-
             <div class="col-md-10">
 
         <nav aria-label="breadcrumb">
@@ -168,10 +107,11 @@
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
-          Desarrollado por <a href="http://www.nubecolectiva.com" target="_blank">Nube Colectiva</a>
+          Desarrollado por Net Team</a>
       </div>
     </footer>
 
 
   </body>
 </html>
+@endsection 

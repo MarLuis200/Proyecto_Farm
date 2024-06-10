@@ -69,7 +69,7 @@
                                     <button type="button" class="btn btn-success mt-4 ml-3" data-toggle="modal" data-target="#exampleModal">Crear
                                     </button>
 
-                                    <form method="POST" action="{{ route('admin/clientes/store') }}" role="form" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ route('admin/ventas/store') }}" role="form" enctype="multipart/form-data">
                                     
                                                                 <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
