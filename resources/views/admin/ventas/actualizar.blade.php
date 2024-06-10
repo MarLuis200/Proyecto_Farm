@@ -12,32 +12,12 @@
 
     <meta name="theme-color" content="#000000" />
 
-    <title>Como crear un CRUD con Laravel 10 y Bootstrap 5 </title>
-
     <!-- Bootstrap -->
     @vite(['resources/js/app.js'])       
 
   </head>
 
   <body> 
-
-    <div class="pccp mt-5 mb-3" align="center">
-              <!-- P -->
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-              
-              <ins class="adsbygoogle"
-                   style="display:block"
-                   data-ad-client="ca-pub-2390065838671224"
-                   data-ad-slot="1441100372"
-                   data-ad-format="auto"
-                   data-full-width-responsive="true"></ins>
-              <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-              </script>
-              <!-- End P -->
-    </div>
-
-
       <div class="container mt-5 mb-5">
 
           <div class="row">
@@ -71,7 +51,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin.ventas.index') }}">Administrador</a></li>
+                          <li><a href="{{ route('admin/ventas') }}">Administrador</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -84,7 +64,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin.ventas.index') }}">Ventas</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
           </ol>
         </nav>
@@ -104,7 +84,7 @@
                                   
                     <section class="example mt-4">
 
-                    <form method="POST" action="{{ route('admin.ventas.update',$ventas->id) }}" role="form" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin/ventas/update',$venta->id) }}" role="form" enctype="multipart/form-data">
  
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -129,7 +109,7 @@
 
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
-          Desarrollado por <a href="http://www.nubecolectiva.com" target="_blank">Nube Colectiva</a>
+          Desarrollado por Net Team</a>
       </div> 
     </footer>
 

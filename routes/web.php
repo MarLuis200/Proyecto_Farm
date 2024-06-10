@@ -81,7 +81,7 @@ Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentasController@up
 Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@eliminar')->name('admin/ventas/eliminar');
 
 /* Vista Ventas */
-Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin.ventas.index');
+Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin/ventas');
 
 
 // Rutas Inventario
