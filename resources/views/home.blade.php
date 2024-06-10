@@ -175,15 +175,91 @@
                     </div>
                 </section>
             </main>
-
-                <footer>
-                    <p>&copy; 2024 MultiFarma - Tu farmacia de confianza. Todos los derechos reservados.</p>
-                </footer>
             </body>
             </div>
         </div>
     </div>
 </div>
+
+
+<footer id="content">
+        <div class="col-xs-12 footerwrapper bg-primary text-white text-center " style="margin-top: 0px;">
+        <div class="row">
+            <!-- Footer Logo and Address -->
+            <div class="col-lg-3 col-sm-4 col-xs-12 fg-ft-details">
+                <div class="footer-logo">
+                    <img src="/img/Logo_Multifarma.png" alt="Logo Farmacias Guadalajara" width="380" height="150" alt="Nombre de la Marca">
+                </div>
+                <div class="fg-address">
+                    <p>Av. de las Américas #1254 - Int. UP6, P2<br>
+                        Col. Country Club<br>
+                        Guadalajara, Jalisco <br>
+                        C.P. 44610</p>
+                    <p><strong>Teléfonos Contact Center:</strong><br>
+                        <a href="tel:+523338181818" style="color: white; text-decoration: underline">(33) 3818 1818</a><br>
+                        <a href="tel:+528332762242" style="color: white; text-decoration: underline">(83) FARMACIA (32762242)</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Online Store Links -->
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <br>
+                <h3>TIENDA EN LÍNEA</h3>
+                <ul class="fg-link-box">
+                    <li><a href="/salud-es" style="color: white;">Salud</a></li>
+                    <li><a href="/departamento/alimentos" style="color: white;">Alimentos</a></li>
+                    <li><a href="/bebes" style="color: white;">Bebés</a></li>
+                    <li><a href="/departamento/bebidas-es" style="color: white;">Bebidas</a></li>
+                    <li><a href="/departamento/higiene-y-belleza" style="color: white;">Higiene y Belleza</a></li>
+                    <li><a href="/departamento/electronicos" style="color: white;">Electrónico</a></li>
+                    <li><a href="/departamento/hogar" style="color: white;">Hogar</a></li>
+                    <li><a href="/departamento/jugueteria-es" style="color: white;">Juguetería</a></li>
+                    <li style="display: none"><a href="/recarga-tiempo-aire" style="color: white;">Recarga de Tiempo Aire</a></li>
+                </ul>
+            </div>
+
+            <!-- Help Links -->
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <br>
+                <h3>AYUDA</h3>
+                <ul class="fg-link-box">
+                    <li><a href="/ayuda/contáctanos" class="fg-contact-us" style="color: white;">Contacto</a></li>
+                    <li><a href="/ayuda/preguntas-frecuentes--24" style="color: white;">Preguntas Frecuentes</a></li>
+                    <li><a href="/ayuda/localizador-de-superfarmacias" style="color: white;">Encuentra Tu SuperFarmacia</a></li>
+                    <li><a href="/facturación-electrónica" style="color: white;">Factura Electrónica</a></li>
+                    <li><a href="/locker-inteligente" style="color: white;">Smart & Collect</a></li>
+                    <li><a href="/blog-es" style="color: white;">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Company Links -->
+            <div class="col-lg-3 col-sm-6 col-xs-12">
+                <br>
+                <h3>EMPRESA</h3>
+                <ul class="fg-link-box">
+                    <li><a href="/sobre-nosotros/sobre-nosotros" style="color: white;">Conócenos</a></li>
+                    <li><a href="/sobre-nosotros/informacion-corporativa" style="color: white;">Corporativo</a></li>
+                    <li><a href="/sobre-nosotros/relacion-con-inversionistas" style="color: white;">Relación con Inversionistas</a></li>
+                    <li><a target="_blank" href="https://fragua.csod.com/ux/ats/careersite/1/home?c=fragua" style="color: white;">Bolsa de Trabajo</a></li>
+                    <li><a href="/sobre-nosotros/politicas-de-privacidad" style="color: white;">Políticas de Privacidad</a></li>
+                    <li><a href="/sobre-nosotros/terminos-y-condiciones" style="color: white;">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Text -->
+        <div class="row fg-copyrt">
+            <div class="col-xs-12">
+                <p>Los precios y promociones mostrados en esta página online son exclusivos y estos pueden diferir de los precios y promociones de sucursal.</p>
+                <p style="margin-bottom: 10px">Las imágenes mostradas son exclusivamente para uso ilustrativo.</p>
+                <p>© MultiFarma es una empresa de Corporativo Fragua, S.A.B. de C.V. Todos los derechos reservados</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
 @endsection
 
 
