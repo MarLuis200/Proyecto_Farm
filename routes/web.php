@@ -85,6 +85,7 @@ Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@
 /* Vista Ventas */
 Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin/ventas');
 
+
 // Rutas Inventario
 /* Crear */
 Route::get('admin/inventario/crear', 'App\Http\Controllers\InventarioController@crear')->name('admin/inventario/crear');
