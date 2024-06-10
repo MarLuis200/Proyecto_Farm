@@ -9,33 +9,44 @@
     <meta name="description" content="">
     <meta name="author" content="Nube Colectiva">
     <link rel="icon" href="/img/logo_farmacia.png" />
+
     <meta name="theme-color" content="#000000" />
 
-    <title>Detalles</title>
+    <title>Detalles Ventas</title>
 
     <!-- Bootstrap -->
-    @vite(['resources/js/app.js'])
+    @vite(['resources/js/app.js'])   
 
   </head>
 
-  <body>
+  <body> 
 
       <div class="container mt-5 mb-5">
+
+          <div class="row">
+
             <div class="col-md-12">
+
+
               <div class="header">
          <div class="container">
             <div class="row">
                <div class="col-md-5">
                   <!-- Logo -->
                   <div class="logo">
-                     <h1>Detalles del Cliente</h1>
+                     <h1>Ventas</h1>
                   </div>
                </div>
                <div class="col-md-5">
                   <div class="row">
                     <div class="col-lg-12">
                       <div class="input-group form">
-                           
+                           <!--
+                           <input type="text" class="form-control" placeholder="Buscar...">
+                           <span class="input-group-btn">
+                             <button class="btn btn-primary" type="button">Buscar</button>
+                           </span>
+                           -->
                       </div>
                     </div>
                   </div>
@@ -44,7 +55,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/clientes') }}">Detalles</a></li>
+                          <li><a href="{{ route('admin/ventas') }}">Administrador</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -55,49 +66,51 @@
 
       <div class="page-content">
         <div class="row">
+        
             <div class="col-md-10">
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/clientes') }}">Clientes</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $clientes->nombre }}</li>
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">ventas</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $ventas->fecha_venta}}</li>
           </ol>
         </nav>
-
+        
         <div class="row">
 
           <div class="col-md-12">
 
               <div class="content-box-large">
-
+                
                 <div class="panel-body">
 
                   @if(Session::has('message'))
                     <div class="alert alert-primary" role="alert">
                       {{ Session::get('message') }}
                     </div>
-                  @endif
+                  @endif 
+                  
+                  <p class="h5">Fecha de venta:</p>
+                        <p class="h6 mb-3">{{ $ventas->fecha_venta }}</p>
 
-                    <p class="h5">Nombre:</p>
-                    <p class="h6 mb-3">{{ $clientes->nombre }}</p>
+                        <p class="h5">ID Proveedor:</p>
+                        <p class="h6 mb-3">{{ $ventas->id_proveedor}}</p>
 
-                    <p class="h5">Apellido Paterno:</p>
-                    <p class="h6 mb-3">{{ $clientes->apellido_paterno }}</p>
-                      <p class="h5">Apellido Materno:</p>
-                      <p class="h6 mb-3">{{ $clientes->apellido_materno }}</p>
-                      <p class="h5">Dirección</p>
-                      <p class="h6 mb-3">{{ $clientes->direccion}}</p>
-                      <p class="h5">Telefono:</p>
-                      <p class="h6 mb-3">{{ $clientes->telefono}}</p>
-                    <p class="h5">Correo:</p>
-                    <p class="h6 mb-3">{{ $clientes->correo }}</p>
+                        <p class="h5">Descripcion:</p>
+                        <p class="h6 mb-3">{{ $ventas->descripcion }}</p> 
 
-                    <p class="h5">Imagen:</p>
-                    <img src="../../../uploads/{{ $clientes->img }}" class="img-fluid" width="20%">
+                        <p class="h5">Cantidad:</p>
+                        <p class="h6 mb-3">{{ $ventas->cantidad }}</p> 
+
+                        <p class="h5">Precio:</p>
+                        <p class="h6 mb-3">{{ $ventas->precio }}</p> 
+
+                        <p class="h5">ID Producto:</p>
+                        <p class="h6 mb-3">{{ $ventas->id_producto }}</p> 
 
                 </div>
 
-                <a href="{{ route('admin/clientes') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('admin/ventas') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 
@@ -110,19 +123,20 @@
       </div>
 
         </div>
-
+              
             </div>
 
-          </div>
+          </div>          
 
           <hr>
 
 
 
+
     <footer class="text-muted mt-3 mb-3">
         <div align="center">
-          Desarrollado Por <a  target="_blank">Equipo Net Team</a>
-      </div>
+          Desarrollado por <a href="http://www.nubecolectiva.com" target="_blank">Nube Colectiva</a>
+      </div> 
     </footer>
 
     <script type="text/javascript">
@@ -137,9 +151,7 @@
         }
 
     </script>
-
-
+    
   </body>
 </html>
-
 @endsection

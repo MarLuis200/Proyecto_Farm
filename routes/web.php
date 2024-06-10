@@ -66,6 +66,25 @@ Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresC
 /* Vista Clientes */
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
+//VENTAS
+/* Crear */
+Route::get('admin/ventas/crear', 'App\Http\Controllers\VentasController@crear')->name('admin.ventas.crear');
+Route::post('admin/ventas/store', 'App\Http\Controllers\VentasController@store')->name('admin.ventas.store');
+
+/* Leer */
+Route::get('admin/ventas/show/{id}', 'App\Http\Controllers\VentasController@show')->name('admin.ventas.show');
+
+/* Actualizar */
+Route::get('admin/ventas/actualizar/{id}', 'App\Http\Controllers\VentasController@actualizar')->name('admin.ventas.actualizar');
+Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentasController@update')->name('admin.ventas.update');
+
+/* Eliminar */
+Route::delete('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@eliminar')->name('admin.ventas.eliminar');
+
+/* Vista Ventas */
+Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin.ventas.index');
+
+
 // Rutas Inventario
 /* Crear */
 Route::get('admin/inventario/crear', 'App\Http\Controllers\InventarioController@crear')->name('admin/inventario/crear');
@@ -81,12 +100,29 @@ Route::put('admin/inventario/update/{id}', 'App\Http\Controllers\InventarioContr
 /* Eliminar */
 Route::put('admin/inventario/eliminar/{id}', 'App\Http\Controllers\InventarioController@eliminar')->name('admin/inventario/eliminar');
 
-/* Vista Clientes */
+/* Vista*/
 Route::get('admin/inventario', 'App\Http\Controllers\InventarioController@index')->name('admin/inventario');
 
+
+// Rutas Puestos
+/* Crear */
+Route::get('admin/puestos/crear', 'App\Http\Controllers\PuestosController@crear')->name('admin/puestos/crear');
+Route::put('admin/puestos/store', 'App\Http\Controllers\PuestosController@store')->name('admin/puestos/store');
+
+/* Leer */
+Route::get('admin/puestos/show/{id}', 'App\Http\Controllers\PuestosController@show')->name('admin/puestos/detalles');
+
+/* Actualizar */
+Route::get('admin/puestos/actualizar/{id}', 'App\Http\Controllers\PuestosController@actualizar')->name('admin/puestos/actualizar');
+Route::put('admin/puestos/update/{id}', 'App\Http\Controllers\PuestosController@update')->name('admin/puestos/update');
+/* Eliminar */
+Route::put('admin/puestos/eliminar/{id}', 'App\Http\Controllers\PuestosController@eliminar')->name('admin/puestos/eliminar');
+
+/* Vista*/
+Route::get('admin/puestos', 'App\Http\Controllers\PuestosController@index')->name('admin/puestos');
+
+
 Route::get('/dash2', 'App\Http\Controllers\Dash2Controller@index')->name('/dash2');
-
-
 
 Auth::routes();
 
@@ -94,5 +130,3 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
-
-
