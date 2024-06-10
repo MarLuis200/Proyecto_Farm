@@ -81,6 +81,12 @@
                     <span>Inventario</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/puestos">
+                    <i class='bx bxs-user'></i>
+                    <span>Puestos</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/home">

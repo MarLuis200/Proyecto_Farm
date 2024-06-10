@@ -62,7 +62,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/productos">
-                    <i class="bx bx-cart"></i>
+                    <i class='bx bxs-user'></i>
                     <span>Productos</span>
                 </a>
             </li>
@@ -79,6 +79,13 @@
                 <a class="nav-link" href="/admin/inventario">
                     <i class="bx bx-box"></i>
                     <span>Inventario</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/puestos">
+                    <i class="bx bxs-hard-hat"></i>
+                    <span>Puestos</span>
                 </a>
             </li>
 
