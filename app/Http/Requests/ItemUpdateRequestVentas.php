@@ -24,12 +24,7 @@ class ItemCreateRequestVentas extends FormRequest
     public function rules()
     {
         return [
-            'fecha_venta' => 'required|date',
-            'id_proveedor' => 'required|integer',
-            'descripcion' => 'required|string',
-            'cantidad' => 'required|integer|min:1',
-            'precio' => 'required|numeric|min:0',
-            'id_producto' => 'required|integer',
+            
         ];
     }
 }

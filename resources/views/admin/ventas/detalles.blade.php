@@ -71,8 +71,17 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
+<<<<<<< HEAD
             <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
+=======
+<<<<<<< HEAD
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{$venta->fecha_venta}}</li>
+=======
+            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">ventas</a></li>
+>>>>>>> 80c863b8023e8aa58e5015033694afa22118f295
             <li class="breadcrumb-item active" aria-current="page">{{ $venta->fecha_venta }}</li>
+>>>>>>> 30a0bd98a6c3272d6fb296b7ea25d5d8235c5ef7
           </ol>
         </nav>
         

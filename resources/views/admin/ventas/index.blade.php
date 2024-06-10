@@ -86,7 +86,7 @@
                                                   
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    @include('admin.ventas.frm.prt')
+                                                    @include('admin/ventas/frm.prt')
                                               </div>
                                           </form>
                                           </div>

@@ -58,6 +58,18 @@
 
       <div class="page-content">
         <div class="row">
+
+          <div class="col-md-2">
+            <div class="sidebar content-box" style="display: block;">
+
+              <ul class="list-group">
+                  <li class="list-group-item">
+                    <a href="{{ route('admin/puestos') }}">Puestos</a>
+                  </li>
+              </ul>
+            </div>
+          </div>
+
             <div class="col-md-10">
 
         <nav aria-label="breadcrumb">
