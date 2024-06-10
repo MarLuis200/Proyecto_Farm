@@ -10,7 +10,6 @@
                         </div>
                     </div>
 
-                    
                     </div>
                     <div class="mb-3">
                         <label for="descripcion" class="negrita">Descripcion:</label>

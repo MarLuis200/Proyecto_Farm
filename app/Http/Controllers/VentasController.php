@@ -70,8 +70,8 @@ class VentasController extends Controller
     // Leer Registro por 'id' (Read) 
     public function show($id)
     {
-        $venta = Ventas::find($id); // Buscar la venta por su ID
-        return view('admin.ventas.detalles', compact('venta')); // Mostrar los detalles de la venta
+        $venta = Ventas::find($id);
+        return view('admin.ventas.detalles', compact('venta'));
     }
 
     // Actualizar un registro (Update)
@@ -82,39 +82,28 @@ class VentasController extends Controller
     }
 
     // Proceso de Actualización de un Registro (Update)
-    public function update(Request $request, $id)
+    public function update(ItemUpdateRequestVentas $request, $id)
     {
         // Validar los datos de la solicitud
-        $validator = Validator::make($request->all(), [
-            'fecha_venta' => 'required|unique:ventas|max:255',
-            'id_proveedor' => 'required',
-            'descripcion' => 'required',
-            'cantidad' => 'required',
-            'precio' => 'required',
-            'id_producto' => 'required',
-        ]);
-
-        // Si la validación falla, redireccionar de nuevo al formulario de actualización con errores
-        if ($validator->fails()) {
-            return Redirect::back()
-                ->withErrors($validator)
-                ->withInput();
-        }
-
-        // Actualizar la venta con los datos proporcionados
-        $venta = Ventas::find($id);
+        $venta= Ventas::find($id);
         $venta->fecha_venta = $request->fecha_venta;
         $venta->id_proveedor = $request->id_proveedor;
         $venta->descripcion = $request->descripcion;
         $venta->cantidad = $request->cantidad;
-        $venta->precio = $request->precio;
+        $venta->precio =$request->precio;
         $venta->id_producto = $request->id_producto;
+
+        // Guardamos la fecha de actualización del registro
+        $venta->updated_at = (new DateTime)->getTimestamp();
+
+        // Actualizo los datos en la tabla 'productos'
         $venta->save();
 
-        // Mostrar un mensaje de éxito y redireccionar a la vista principal de ventas
-        Session::flash('message', 'Venta actualizada satisfactoriamente.');
+        // Muestro un mensaje y redirecciono a la vista principal
+        Session::flash('message', 'Editado Satisfactoriamente !');
         return Redirect::to('admin/ventas');
     }
+
 
     // Eliminar un Registro 
     public function eliminar($id)

@@ -12,7 +12,7 @@
 
     <meta name="theme-color" content="#000000" />
 
-    <title>Puestos</title>
+    <title>Ventas</title>
 
     <!-- Bootstrap -->
     @vite(['resources/js/app.js'])
@@ -29,7 +29,7 @@
                <div class="col-md-5">
                   <!-- Logo -->
                   <div class="logo">
-                     <h1>Puestos</h1>
+                     <h1>Ventas</h1>
                   </div>
                </div>
                <div class="col-md-5">
