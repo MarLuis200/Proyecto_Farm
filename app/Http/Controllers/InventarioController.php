@@ -102,7 +102,7 @@ class InventarioController extends Controller
         // Indicamos el 'id' del registro que se va Eliminar
         $inventario = Inventario::find($id);
 
-        // Elimino la imagen de la carpeta 'uploads', esto lo veremos más adelante
+        // Elimino la imagen de la carpeta 'uploads', esto lo veremos más adelante.
         $imagen = explode(",", $inventario->img);
         Storage::delete($imagen);
 
