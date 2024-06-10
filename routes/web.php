@@ -66,8 +66,7 @@ Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresC
 /* Vista Clientes */
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
-//VENTAS
-/* Crear */
+
 Route::get('admin/ventas/crear', 'App\Http\Controllers\VentasController@crear')->name('admin/ventas/crear');
 Route::put('admin/ventas/store', 'App\Http\Controllers\VentasController@store')->name('admin/ventas/store');
 

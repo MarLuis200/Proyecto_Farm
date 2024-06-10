@@ -87,11 +87,13 @@
                 <a class="nav-link" href="/admin/ventas">
                     <i class="bx bx-shopping-bag"></i>
                     <span>Ventas</span>
+                </a>
+            </li>
 
+            <li class="nav-item">
                 <a class="nav-link" href="/admin/puestos">
-                    <i class="bx bxs-hard-hat"></i>
+                    <i class='bx bxs-user'></i>
                     <span>Puestos</span>
-
                 </a>
             </li>
 

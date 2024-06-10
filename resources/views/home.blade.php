@@ -3,6 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="container">
     <div class="row justify-content-center">
@@ -112,70 +113,93 @@
                     </div>
                 </nav>
             
-            <main class="main-content">
-                <header>
-                    <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
-                </header>
-                <section id="anuncios">
-                    <!-- Aquí puedes incluir tus anuncios publicitarios -->
-                    <div class="anuncio">
-                        <a class="nav-link" href="#"><img src="/img/anuncio1.png" alt="Anuncio 1"></a>
-                    </div>
-                </section>
+                <main class="main-content">
+                    <header>
+                        <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
+                    </header>
 
-                <section id="productos">
-                    <!-- Aquí puedes mostrar tus productos -->
-                    <h2>Productos Destacados</h2>
-                    <div class="productos-container">
-                        <div class="producto">
-                            <a class="nav-link" href="#"><img src="/img/vitacilina.jpg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                            <a class="nav-link" href="#"><h3>Vitacilina</h3></a>
-                            <p>(Retinol - Neomicina) Unguento 16G</p>
-                            <p>Precio: $32.00 MXN</p>
-                        </div>
-                        <div class="producto">
-                            <a class="nav-link" href="#"><img src="/img/Graneodin.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
-                            <a class="nav-link" href="#"><h3>Graneodin B 10mg</h3></a>
-                            <p>24 Pastillas sabor Frambuesa</p>
-                            <p>Precio: $139.00 MXN</p>
-                        </div>
-                        <div class="producto">
-                            <a class="nav-link" href="#"><img src="/img/xl.jpg" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
-                            <a class="nav-link" href="#"><h3>Xl-3 Xtra</h3></a>
-                            <p>Antigripal Gripa/Tos CAP C/12</p>
-                            <p>Precio: $64.00 MXN</p>
-                        </div>
-                        <div class="producto">
-                            <a class="nav-link" href="#"><img src="/img/tukol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                            <a class="nav-link" href="#"><h3>Tukol-D</h3></a>
-                            <p>Miel 2.0 g/0.2 g Guaifenesina, Dextrometorfano Adulto 120 ml Frasco</p>
-                            <p>Precio: $175.00 MXN</p>
-                        </div>
-                        <div class="producto">
-                            <a class="nav-link" href="#"><img src="/img/fisopred.jpg" class="img-fluid" width="200" height="200" alt="Producto 5"></a>
-                            <a class="nav-link" href="#"><h3>Fisopred 100 mg</h3></a>
-                            <p>Oral Pediatrico 100 ml</p>
-                            <p>Precio: $380.00 MXN</p>
-                        </div>
-                    </div>
-                </section>
+                    <section id="ofertas">
+                        <!-- Aquí puedes mostrar tus ofertas -->
+                        <br><h2>Aprovecha estas ofertas</h2>
+                        <div class="oferta">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
 
-                <section id="ofertas">
-                    <!-- Aquí puedes mostrar tus ofertas -->
-                    <h2>Aprovecha estas ofertas</h2>
-                    <div class="oferta">
-                        <img src="oferta1.jpg" alt="Oferta 1">
-                        <h3>Nombre de la oferta 1</h3>
-                        <p>Descripción de la oferta 1</p>
-                    </div>
-                    <div class="oferta">
-                        <img src="oferta2.jpg" alt="Oferta 2">
-                        <h3>Nombre de la oferta 2</h3>
-                        <p>Descripción de la oferta 2</p>
-                    </div>
-                </section>
-            </main>
-            </body>
+                            <!-- Enlace a jQuery y Bootstrap JS -->
+                            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                    </section>
+
+                    <section id="productos">
+                        <!-- Aquí puedes mostrar tus productos -->
+                        <h2>Productos Destacados</h2>
+                        <div class="productos-container">
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/vitacilina.jpg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
+                                <a class="nav-link" href="#"><h3>Vitacilina</h3></a>
+                                <p>(Retinol - Neomicina) Unguento 16G</p>
+                                <p>Precio: $32.00 MXN</p>
+                            </div>
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/Graneodin.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
+                                <a class="nav-link" href="#"><h3>Graneodin B 10mg</h3></a>
+                                <p>24 Pastillas sabor Frambuesa</p>
+                                <p>Precio: $139.00 MXN</p>
+                            </div>
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/xl.jpg" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
+                                <a class="nav-link" href="#"><h3>Xl-3 Xtra</h3></a>
+                                <p>Antigripal Gripa/Tos CAP C/12</p>
+                                <p>Precio: $64.00 MXN</p>
+                            </div>
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/tukol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h3>Tukol-D</h3></a>
+                                <p>Miel 2.0 g/0.2 g Guaifenesina, Dextrometorfano Adulto 120 ml Frasco</p>
+                                <p>Precio: $175.00 MXN</p>
+                            </div>
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/fisopred.jpg" class="img-fluid" width="200" height="200" alt="Producto 5"></a>
+                                <a class="nav-link" href="#"><h3>Fisopred 100 mg</h3></a>
+                                <p>Oral Pediatrico 100 ml</p>
+                                <p>Precio: $380.00 MXN</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="anuncios">
+                        <!-- Aquí puedes incluir tus anuncios publicitarios -->
+                        <div class="anuncio">
+                            <a class="nav-link" href="#"><img src="/img/anuncio1.png" alt="Anuncio 1"></a>
+                        </div>
+                    </section>
+
+                </main>
             </div>
         </div>
     </div>
