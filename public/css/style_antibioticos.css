@@ -52,3 +52,10 @@ body {
 .producto button:hover {
     background-color: #45a049;
 }
+.carousel-item img {
+    border-radius: 50%; /* Hace que las imágenes sean redondas */
+    width: 180px; /* Ajusta el tamaño de las imágenes */
+    height: 180px;
+    object-fit: cover; /* Para que las imágenes se ajusten al tamaño del contenedor */
+    margin: 0 auto; /* Centra las imágenes horizontalmente */
+}
