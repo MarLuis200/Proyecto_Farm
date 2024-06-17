@@ -11,9 +11,6 @@ Route::get('/', function () {
 });
 
 // Rutas CRUD
-
-
-
 /* Crear */
 Route::get('admin/productos/crear', 'App\Http\Controllers\ProductosController@crear')->name('admin/productos/crear');
 Route::put('admin/productos/store', 'App\Http\Controllers\ProductosController@store')->name('admin/productos/store');
@@ -145,7 +142,13 @@ Route::get('/dash2', 'App\Http\Controllers\Dash2Controller@index')->name('/dash2
 
 Auth::routes();
 
+/*Vistas Home */
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('/salud');
+
+Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('/salud/antibioticos');
+
 
 
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');

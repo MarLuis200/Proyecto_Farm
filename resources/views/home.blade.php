@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
+<title>Compra Antibioticos y Medicamentos</title>
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -19,51 +19,51 @@
                         <div class="collapse navbar-collapse id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="/admin/salud">Salud</a>
+                                    <a class="nav-link" href="/salud">Salud</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/admin/salud/antibioticos">Antibióticos</a></li>
-                                        <li><a href="/admin/salud/dolor">Dolor</a></li>
-                                        <li><a href="/admin/salud/dermatologia">Dermatologia</a></li>
-                                        <li><a href="/admin/salud/saludsexual">Salud Sexual</li>
+                                        <li><a href="/salud/antibioticos">Antibióticos</a></li>
+                                        <li><a href="/salud/dolor">Dolor</a></li>
+                                        <li><a href="/salud/dermatologia">Dermatologia</a></li>
+                                        <li><a href="/salud/saludsexual">Salud Sexual</li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/bebes">Bebes</a>
+                                    <a class="nav-link" href="/home/bebes">Bebes</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/admin/bebes/antibioticos">Pañales</a></li>
-                                        <li><a href="/admin/bebes/dolor">Formulas Infantiles</a></li>
-                                        <li><a href="/admin/bebes/dermatologia">Alimentos Infantiles</a></li>
+                                        <li><a href="/home/bebes/antibioticos">Pañales</a></li>
+                                        <li><a href="/home/bebes/dolor">Formulas Infantiles</a></li>
+                                        <li><a href="/home/bebes/dermatologia">Alimentos Infantiles</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/vitaminas">Vitaminas y Suplementos</a>
+                                    <a class="nav-link" href="/home/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/admin/vitaminas/complementos">Complementos Alimenticios</a></li>
-                                        <li><a href="/admin/vitaminas/multivitaminas">Multivitaminas</a></li>
-                                        <li><a href="/admin/vitaminas/suplementos">Suplementos Alimenticios</a></li>
+                                        <li><a href="/home/vitaminas/complementos">Complementos Alimenticios</a></li>
+                                        <li><a href="/home/vitaminas/multivitaminas">Multivitaminas</a></li>
+                                        <li><a href="/home/vitaminas/suplementos">Suplementos Alimenticios</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/departamentos">Departamentos</a>
+                                    <a class="nav-link" href="/home/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/admin/departamentos/alimentos">Alimentos</a></li>
-                                        <li><a href="/admin/departamentos/bebidas">Bebidas</a></li>
-                                        <li><a href="/admin/departamentos/higiene">Higiene y Belleza</a></li>
+                                        <li><a href="/home/departamentos/alimentos">Alimentos</a></li>
+                                        <li><a href="/home/departamentos/bebidas">Bebidas</a></li>
+                                        <li><a href="/home/departamentos/higiene">Higiene y Belleza</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/carrito">Carrito de Compras
+                                    <a class="nav-link" href="/home/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/admin/ayuda">Ayuda</a>
+                                    <a class="nav-link" href="/home/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/admin/ayuda/contacto">Contactanos</a></li>
-                                        <li><a href="/admin/ayuda/preguntas">Preguntas Frecuentes</a></li>
+                                        <li><a href="/home/ayuda/contacto">Contactanos</a></li>
+                                        <li><a href="/home/ayuda/preguntas">Preguntas Frecuentes</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
@@ -101,8 +101,6 @@
                                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                                     @csrf
                                                 </form>
-
-                                                <!-- Nuevo enlace para Dashboard -->
                                                 
                                             </div>
                                         </li>
