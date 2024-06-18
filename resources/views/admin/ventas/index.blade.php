@@ -76,7 +76,7 @@
                                       <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                           <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Crear Venta</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Registrar Venta</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                               <span aria-hidden="true">&times;</span>
                                             </button>
@@ -104,24 +104,21 @@
                                             <table class="table table-striped table-bordered table-hover">
                                                 <thead>
                                                     <tr>
-                                                      <th>fecha_venta</th>
-                                                      <th>id_proveedor</th>
-                                                      <th>descripcion</th>
-                                                      <th>cantidad</th>
-                                                      <th>precio</th>
-                                                      <th>id_producto</th>
+                                                      <th>Id_Producto</th>
+                                                      <th>Cantidad</th>
+                                                      <th>Precio</th>
+                                                      <th>Total</th>
                                                       <th>Acciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                           @foreach($ventas as $venta)
                                           <tr>
-                                            <td class="v-align-middle">{{$venta->fecha_venta}}</td>
-                                            <td class="v-align-middle">{{$venta->id_proveedor}}</td>
-                                            <td class="v-align-middle">{{$venta->descripcion}}</td>
+                                            <td class="v-align-middle">{{$venta->id_venta}}</td>
+                                            <td class="v-align-middle">{{$venta->id_producto}}</td>
                                             <td class="v-align-middle">{{$venta->cantidad}}</td>
                                             <td class="v-align-middle">{{$venta->precio}}</td>
-                                            <td class="v-align-middle">{{$venta->id_producto}}</td>
+                                            <td class="v-align-middle">{{$venta->total}}</td>
                                             <td class="v-align-middle">
 
                                               <form action="{{ route('admin/ventas/eliminar',$venta->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">

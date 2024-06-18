@@ -37,12 +37,10 @@ class VentasController extends Controller
     {
         // Validar los datos de la solicitud
         $validator = Validator::make($request->all(), [
-            'fecha_venta' => 'required|unique:ventas|max:255',
-            'id_proveedor' => 'required',
-            'descripcion' => 'required',
-            'cantidad' => 'required',
-            'precio' => 'required',
+            'id_venta' => 'required|unique:ventas|max:255',
             'id_producto' => 'required',
+            'cantidad' => 'required',
+            'total' => 'required',
         ]);
 
         // Si la validación falla, redireccionar de nuevo al formulario de creación con errores
@@ -54,12 +52,10 @@ class VentasController extends Controller
 
         // Crear una nueva venta con los datos proporcionados
         $venta = new Ventas;
-        $venta->fecha_venta = $request->fecha_venta;
-        $venta->id_proveedor = $request->id_proveedor;
-        $venta->descripcion = $request->descripcion;
-        $venta->cantidad = $request->cantidad;
-        $venta->precio = $request->precio;
+        $venta->id_venta = $request->id_venta;
         $venta->id_producto = $request->id_producto;
+        $venta->cantidad = $request->cantidad;
+        $venta->total = $request->total;
         $venta->save();
 
         // Mostrar un mensaje de éxito y redireccionar a la vista principal de ventas
@@ -86,12 +82,11 @@ class VentasController extends Controller
     {
         // Validar los datos de la solicitud
         $venta= Ventas::find($id);
-        $venta->fecha_venta = $request->fecha_venta;
-        $venta->id_proveedor = $request->id_proveedor;
-        $venta->descripcion = $request->descripcion;
-        $venta->cantidad = $request->cantidad;
-        $venta->precio =$request->precio;
+        $venta = new Ventas;
+        $venta->id_venta = $request->id_venta;
         $venta->id_producto = $request->id_producto;
+        $venta->cantidad = $request->cantidad;
+        $venta->total = $request->total;
 
         // Guardamos la fecha de actualización del registro
         $venta->updated_at = (new DateTime)->getTimestamp();

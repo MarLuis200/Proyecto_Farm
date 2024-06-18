@@ -104,8 +104,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>Id_empleado</th>
-                                                    <th>Id_persona</th>
-                                                    <th>Id_puesto</th>
+                                                    <th>Persona</th>
+                                                    <th>Puesto</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>

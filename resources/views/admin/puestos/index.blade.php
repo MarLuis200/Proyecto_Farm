@@ -94,7 +94,7 @@
                                         <table class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Id</th>
+                                                    <th>Id_Puesto</th>
                                                     <th>Descripcion</th>
                                                     <th>Acciones</th>
                                                 </tr>

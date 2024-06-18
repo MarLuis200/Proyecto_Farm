@@ -14,11 +14,9 @@ class Ventas extends Model
 
     // Defino los campos que utilizaré de la tabla 'ventas'
     protected $fillable = [
-        'fecha_venta', 
-        'id_proveedor', 
-        'descripcion', 
+        'id_venta', 
+        'id_producto', 
         'cantidad', 
-        'precio', 
-        'id_producto'
+        'total', 
     ];
 }
