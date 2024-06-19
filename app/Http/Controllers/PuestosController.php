@@ -64,7 +64,6 @@ class PuestosController extends Controller
     public function update(UpdatePuestos $request, $id)
     {
         $puestos = Puestos::findOrFail($id);
-        $puestos->id = $request->id;
         $puestos->descripcion = $request->descripcion;
        
 

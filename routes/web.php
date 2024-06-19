@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dash2Controller;
 use App\Http\Controllers\InventarioController;
-use App\Http\Controllers\VentasController;
+use App\Http\Controllers\VentaController;
 
 Route::get('/', function () {
     return view('/home');
@@ -152,3 +152,5 @@ Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@i
 
 
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
+
+Route::resource('ventas', VentaController::class);

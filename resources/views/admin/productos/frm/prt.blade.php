@@ -7,6 +7,13 @@
 				@if ( !empty ( $productos->id) )
 
 					<div class="mb-3">
+						<label for="id" class="negrita">Id:</label>
+						<div>
+							<input class="form-control" placeholder="id" required="required" name="nombre" type="text" id="id" value="{{ $productos->id}}">
+						</div>
+					</div>
+
+					<div class="mb-3">
 						<label for="nombre" class="negrita">Nombre:</label>
 						<div>
 							<input class="form-control" placeholder="nombre_producto" required="required" name="nombre" type="text" id="nombre" value="{{ $productos->nombre }}">
@@ -14,9 +21,9 @@
 					</div>
 
 					<div class="mb-3">
-						<label for="marca" class="negrita">Marca:</label>
+						<label for="descripcion" class="negrita">Descripcion:</label>
 						<div>
-							<input class="form-control" placeholder="marca" required="required" name="marca" type="text" id="marca" value="{{ $productos->marca }}">
+							<input class="form-control" placeholder="descripcion" required="required" name="descripcion" type="text" id="marca" value="{{ $productos->descripcion }}">
 						</div>
 					</div>
 
@@ -28,9 +35,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="contenido_neto" class="negrita">Contenido Neto:</label>
+                        <label for="precio" class="negrita">Precio:</label>
                         <div>
-                            <input class="form-control" placeholder="150" required="required" name="contenido_neto" type="text" id="contenido_neto" value="{{ $productos->contenido_neto }}">
+                            <input class="form-control" placeholder="40" required="required" name="precio" type="text" id="precio" value="{{ $productos->precio }}">
                         </div>
                     </div>
 
@@ -41,12 +48,6 @@
 						</div>
 					</div>
 
-                    <div class="mb-3">
-                        <label for="precio" class="negrita">Precio:</label>
-                        <div>
-                            <input class="form-control" placeholder="40" required="required" name="precio" type="text" id="precio" value="{{ $productos->precio }}">
-                        </div>
-                    </div>
 
 					<div class="mb-3">
 						<label for="img" class="negrita">Selecciona una imagen:</label>
@@ -81,9 +82,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="marca" class="negrita">Marca:</label>
+                        <label for="descripcion" class="negrita">Descripcion:</label>
                         <div>
-                            <input class="form-control" placeholder="Marca" required="required" name="marca" type="text" id="marca" >
+                            <input class="form-control" placeholder="Descripcion" required="required" name="descripcion" type="text" id="descripcion" >
                         </div>
                     </div>
 
@@ -95,9 +96,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="contenido_neto" class="negrita">Contenido Neto:</label>
+                        <label for="precio" class="negrita">Precio:</label>
                         <div>
-                            <input class="form-control" placeholder="150" required="required" name="contenido_neto" type="text" id="contenido_neto">
+                            <input class="form-control" placeholder="40" required="required" name="precio" type="text" id="precio">
                         </div>
                     </div>
 
@@ -108,13 +109,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="precio" class="negrita">Precio:</label>
-                        <div>
-                            <input class="form-control" placeholder="40" required="required" name="precio" type="text" id="precio">
-                        </div>
-                    </div>
-
+                    
 					<div class="mb-3">
 						<label for="img" required="required" class="negrita">Selecciona una imagen:</label>
 						<div>

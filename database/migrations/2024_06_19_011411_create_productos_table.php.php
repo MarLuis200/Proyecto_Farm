@@ -8,17 +8,19 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('ventas', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->date('fecha_venta');
-            $table->integer('id_proveedor');
+            $table->string('nombre');
             $table->string('descripcion');
-            $table->integer('cantidad');
-            $table->decimal('precio', 10, 2);
-            $table->integer('id_producto');
+            $table->string('fecha_caducidad');
+            $table->string('precio');
+            $table->string('stock');
+            $table->string('img');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,9 +28,11 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('ventas');
+        Schema::dropIfExists('productos');
     }
 };

@@ -26,11 +26,10 @@ class CreateProductos extends FormRequest
 
         return [
             'nombre' => 'required|unique:productos|max:255',
-            'marca' => 'required',
+            'descripcion' => 'required',
             'fecha_caducidad' => 'required',
-            'contenido_neto' => 'required',
-            'stock' => 'required',
             'precio' => 'required',
+            'stock' => 'required',
             'img' => 'required',
         ];
 

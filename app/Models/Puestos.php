@@ -12,5 +12,5 @@ class Puestos extends Model
     protected $table = 'puestos';
 
     // Declaro los campos que usaré de la tabla 'puestos'.
-    protected $fillable = ['id', 'descripcion'];
+    protected $fillable = ['descripcion'];
 }

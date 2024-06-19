@@ -108,6 +108,7 @@
                                         <table class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
+                                                    <th>Id_Proveedor</th>
                                                     <th>Nombre</th>
                                                     <th>Dirección</th>
                                                     <th>Teléfono</th>
@@ -119,6 +120,7 @@
                                             <tbody>
                                                 @foreach($proveedores as $prov)
                                                     <tr>
+                                                        <td class="v-align-middle">{{$prov->id}}</td>
                                                         <td class="v-align-middle">{{$prov->nombre}}</td>
                                                         <td class="v-align-middle">{{$prov->direccion}}</td>
                                                         <td class="v-align-middle">{{$prov->telefono}}</td>

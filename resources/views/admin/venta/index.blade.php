@@ -18,7 +18,7 @@
 
 <body>
 
-    <div class="container mt-5 mb-5">
+<div class="container mt-5 mb-5">
         <div class="row">
             <div class="col-md-12">
                 <div class="header">
@@ -82,12 +82,12 @@
                                             </button>
                                           </div>
                                           <form>
-                                              <div class="modal-body">
+                                            <div class="modal-body">
                                                   
-                                                    <input type="hidden" name="_method" value="PUT">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    @include('admin/ventas/frm.prt')
-                                              </div>
+                                                  <input type="hidden" name="_method" value="PUT">
+                                                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                  @include('admin.venta.frm.prt')
+                                            </div>
                                           </form>
                                           </div>
                                         </div>
@@ -99,54 +99,50 @@
                                     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
                                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-                                    <section class="example mt-4">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-bordered table-hover">
-                                                <thead>
-                                                    <tr>
-                                                      <th>Id_Producto</th>
-                                                      <th>Cantidad</th>
-                                                      <th>Precio</th>
-                                                      <th>Total</th>
-                                                      <th>Acciones</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                          @foreach($ventas as $venta)
-                                          <tr>
-                                            <td class="v-align-middle">{{$venta->id_venta}}</td>
-                                            <td class="v-align-middle">{{$venta->id_producto}}</td>
-                                            <td class="v-align-middle">{{$venta->cantidad}}</td>
-                                            <td class="v-align-middle">{{$venta->precio}}</td>
-                                            <td class="v-align-middle">{{$venta->total}}</td>
-                                            <td class="v-align-middle">
+                    <div class="card-body bg-white">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover">
+                                <thead class="thead">
+                                    <tr>
+                                        <th>No</th>
+                                        
+									<th >Producto Id</th>
+									<th >Cantidad</th>
+                                    <th> Precio</th>
+									<th >Total</th>
 
-                                              <form action="{{ route('admin/ventas/eliminar',$venta->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($ventas as $venta)
+                                        <tr>
+                                            <td>{{ $loop->index+1 }}</td>
+                                            
+										<td >{{ $venta->nombre }}</td>
+										<td >{{ $venta->cantidad }}</td>
+                                        <td>$ {{$venta->precio}}</td>
+										<td >$ {{ $venta->total }}</td>
 
-                                                <input type="hidden" name="_method" value="PUT">
-                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">    
-                                                <a href="{{ route('admin/ventas/detalles',$venta->id) }}" class="btn btn-dark">Detalles</a>                                         
-                                                <a href="{{ route('admin/ventas/actualizar',$venta->id) }}" class="btn btn-primary">Editar</a>          
-                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-
-                                              </form>                             
-                                                
-                                            </td>                                                 
-                                          </tr>                                          
-                                          @endforeach
-                                        </tbody>
-                                            </table>
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
+                                            <td>
+                                                <form action="{{ route('ventas.destroy', $venta->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('ventas.show', $venta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('ventas.edit', $venta->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
+                {{--!! $ventas->withQueryString()->links() !!}--}}
             </div>
         </div>
-
-        <hr>
     </div>
 
     <footer class="text-muted mt-3 mb-3">

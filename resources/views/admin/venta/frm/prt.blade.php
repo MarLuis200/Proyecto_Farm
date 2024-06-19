@@ -25,7 +25,13 @@
                     <div class="mb-3">
                         <label for="id_producto" class="negrita">Producto:</label> 
                         <div>
-                            <input class="form-control" placeholder="ID Producto" required="required" name="id_producto" type="text" id="id_producto"> 
+                            <select name="id" class="form-control @error('id') is-invalid @enderror" value="{{ old('id') }}" id="id" >
+                                <option value="" disabled selected>Selecciona un producto</option>
+                                    @foreach($productos as $productos)
+                                        <option value="{{$producto->id}}">{{$producto->nombre}}</option>
+                                    @endforeach
+                            </select>           
+                            {!! $errors->first('id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
                         </div>
                     </div>
 

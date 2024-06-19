@@ -40,13 +40,13 @@ class ProductosController extends Controller
         $productos = new Productos;
 
         // Recibo todos los datos del formulario de la vista 'crear.blade.php'
+        
         $productos->nombre = $request->nombre;
-        $productos->marca = $request->marca;
+        $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
-        $productos->contenido_neto = $request->contenido_neto;
-        $productos->stock =$request->stock;
         $productos->precio = $request->precio;
-
+        $productos->stock =$request->stock;
+       
 
         // Almacenos la imagen en la carpeta publica especifica, esto lo veremos más adelante
         $productos->img = $request->file('img')->store('/');
@@ -78,13 +78,13 @@ class ProductosController extends Controller
     // Proceso de Actualización de un Registro (Update)
     public function update(UpdateProductos $request, $id)
     {
-        $productos= Productos::find($id);
+        
+        $productos = Productos::find($id); // Cambiado de Productos a Proveedores
         $productos->nombre = $request->nombre;
-        $productos->marca = $request->marca;
+        $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
-        $productos->contenido_neto = $request->contenido_neto;
-        $productos->stock =$request->stock;
         $productos->precio = $request->precio;
+        $productos->stock =$request->stock;
 
         // Recibo la imagen desde el formulario Actualizar
         if ($request->hasFile('img')) {

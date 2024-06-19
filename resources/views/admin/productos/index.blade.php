@@ -103,12 +103,12 @@
                                         <table class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
+                                                    <th>Id_Producto</th>
                                                     <th>Nombre</th>
-                                                    <th>Marca</th>
+                                                    <th>Descripcion</th>
                                                     <th>Fecha Caducidad</th>
-                                                    <th>Contenido Neto</th>
-                                                    <th>Stock</th>
                                                     <th>Precio</th>
+                                                    <th>Stock</th>
                                                     <th>Imagen</th>
                                                     <th>Acciones</th>
                                                 </tr>
@@ -116,12 +116,12 @@
                                             <tbody>
                                                 @foreach($productos as $prod)
                                                     <tr>
+                                                        <td class="v-align-middle">{{$prod->id}}</td>
                                                         <td class="v-align-middle">{{$prod->nombre}}</td>
-                                                        <td class="v-align-middle">{{$prod->marca}}</td>
+                                                        <td class="v-align-middle">{{$prod->descripcion}}</td>
                                                         <td class="v-align-middle">{{$prod->fecha_caducidad}}</td>
-                                                        <td class="v-align-middle">{{$prod->contenido_neto}}</td>
+                                                        <td class="v-align-middle">${{$prod->precio}}</td>
                                                         <td class="v-align-middle">{{$prod->stock}}</td>
-                                                        <td class="v-align-middle">{{$prod->precio}}</td>
                                                         <td class="v-align-middle">
                                                             <img src="{!! asset("uploads/$prod->img") !!}" width="30" class="img-responsive">
                                                         </td>

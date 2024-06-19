@@ -18,12 +18,7 @@
                         </div>
                     </div>
                 @else
-                    <div class="mb-3">
-                        <label for="id" class="negrita">Id:</label>
-                        <div>
-                            <input class="form-control" placeholder="id" required name="id" type="text" id=id>
-                        </div>
-                    </div>
+                    
 
                     <div class="mb-3">
                         <label for="descripcion" class="negrita">Descripcion:</label>
