@@ -99,17 +99,21 @@
                                     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
                                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+
+
+
+
                     <div class="card-body bg-white">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-									<th >Producto Id</th>
-									<th >Cantidad</th>
-                                    <th> Precio</th>
-									<th >Total</th>
+                                    <th>Id_Venta</th> 
+									<th>Producto</th>
+									<th>Cantidad</th>
+                                    <th>Precio</th>
+									<th>Total</th>
 
                                         <th></th>
                                     </tr>
@@ -117,12 +121,11 @@
                                 <tbody>
                                     @foreach ($ventas as $venta)
                                         <tr>
-                                            <td>{{ $loop->index+1 }}</td>
-                                            
-										<td >{{ $venta->nombre }}</td>
-										<td >{{ $venta->cantidad }}</td>
-                                        <td>$ {{$venta->precio}}</td>
-										<td >$ {{ $venta->total }}</td>
+                                        <td>{{ $venta->id }}</td>  
+										<td>{{ $venta->nombre}}</td>
+										<td>{{ $venta->cantidad }}</td>
+                                        <td>$ {{$venta->$productos}}</td>
+										<td>$ {{ $venta->total }}</td>
 
                                             <td>
                                                 <form action="{{ route('ventas.destroy', $venta->id) }}" method="POST">

@@ -65,22 +65,22 @@ Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresC
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
 
-Route::get('admin/ventas/crear', 'App\Http\Controllers\VentasController@crear')->name('admin/ventas/crear');
-Route::put('admin/ventas/store', 'App\Http\Controllers\VentasController@store')->name('admin/ventas/store');
+Route::get('admin/ventas/crear', 'App\Http\Controllers\VentaController@crear')->name('admin/ventas/crear');
+Route::put('admin/ventas/store', 'App\Http\Controllers\VentaController@store')->name('admin/ventas/store');
 
 /* Leer */
-Route::get('admin/ventas/show/{id}', 'App\Http\Controllers\VentasController@show')->name('admin/ventas/detalles');
+Route::get('admin/ventas/show/{id}', 'App\Http\Controllers\VentaController@show')->name('admin/ventas/detalles');
 
 /* Actualizar */
-Route::get('admin/ventas/actualizar/{id}', 'App\Http\Controllers\VentasController@actualizar')->name('admin/ventas/actualizar');
+Route::get('admin/ventas/actualizar/{id}', 'App\Http\Controllers\VentaController@actualizar')->name('admin/ventas/actualizar');
 
-Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentasController@update')->name('admin/ventas/update');
+Route::put('admin/ventas/update/{id}', 'App\Http\Controllers\VentaController@update')->name('admin/ventas/update');
 
 /* Eliminar */
-Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentasController@eliminar')->name('admin/ventas/eliminar');
+Route::put('admin/ventas/eliminar/{id}', 'App\Http\Controllers\VentaController@eliminar')->name('admin/ventas/eliminar');
 
 /* Vista Ventas */
-Route::get('admin/ventas', 'App\Http\Controllers\VentasController@index')->name('admin/ventas');
+Route::get('admin/ventas', 'App\Http\Controllers\VentaController@index')->name('admin/ventas');
 
 
 // Rutas Inventario
@@ -149,8 +149,10 @@ Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('/salud
 
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('/salud/antibioticos');
 
-
-
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
 
 Route::resource('ventas', VentaController::class);
+
+// routes/web.php
+Route::resource('ventas', VentaController::class);
+

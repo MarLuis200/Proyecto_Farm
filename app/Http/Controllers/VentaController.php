@@ -3,27 +3,29 @@
 namespace App\Http\Controllers;
 
 use App\Models\Venta;
-use App\Models\Producto;
-
+use App\Models\CreateProductos;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\VentaRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Productos;
 
 class VentaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): View
+    public function index()
     {
+        $productos=Productos::all();
+
         $ventas = Venta::join("productos","ventas.id","productos.id")
             ->select("ventas.cantidad","ventas.total","ventas.id","productos.nombre","productos.precio")
             ->get();
 
-        return view('admin.venta.index', compact('ventas'));
-           // ->with('i', ($request->input('page', 1) - 1) * $ventas->perPage());
+        return view('admin.venta.index', compact('ventas','productos'));
+    
     }
 
     /**
@@ -40,23 +42,31 @@ class VentaController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(VentaRequest $request): RedirectResponse
-    {
-        $request->validated();
-        $total=0;
-        $productos=Productos::find($request->id);
-       
-        $total=$request->cantidad * $producto->precio;
-        $venta=[
-            "id"=>$request->id,
-            "cantidad"=>$request->cantidad,
-            "total"=>$total
-        ];
-      
-        Venta::create($venta);
-
-        return Redirect::route('ventas.index')
-            ->with('success', 'Venta created successfully.');
+{
+    // Encuentra el producto relacionado
+    $producto = Productos::find($request->producto_id);
+    if (!$producto) {
+        return redirect()->back()->with('error', 'Producto no encontrado.');
     }
+
+    // Calcula el total
+    $total = $request->cantidad * $producto->precio;
+
+    // Crea la venta con los datos del formulario
+    $venta = new Venta();
+    $venta->producto_id = $request->producto_id;
+    $venta->cantidad = $request->cantidad;
+    $venta->total = $total;
+
+    // Guarda la venta en la base de datos
+    $venta->save();
+
+    // Redirección a la vista principal con un mensaje
+    return redirect()->route('ventas.index')->with('message', 'Guardado Satisfactoriamente!');
+    }
+
+
+
 
     /**
      * Display the specified resource.
