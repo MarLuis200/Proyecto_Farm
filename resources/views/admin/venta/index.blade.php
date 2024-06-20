@@ -124,7 +124,7 @@
                                         <td>{{ $venta->id }}</td>  
 										<td>{{ $venta->nombre}}</td>
 										<td>{{ $venta->cantidad }}</td>
-                                        <td>$ {{$venta->$productos}}</td>
+                                        <td>$ {{$venta->precio}}</td>
 										<td>$ {{ $venta->total }}</td>
 
                                             <td>
