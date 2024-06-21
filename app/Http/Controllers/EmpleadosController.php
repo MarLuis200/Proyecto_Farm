@@ -77,28 +77,38 @@ class EmpleadosController extends Controller
     public function actualizar($id)
     {
         $empleados = Empleados::find($id);
-        return view('admin.empleados.actualizar',['empleados'=>$empleados]);
+        $personas = Personas::all(); // Fetch all personas
+    $puestos = Puestos::all(); // Fetch all puestos
+        return view('admin.empleados.actualizar',compact('empleados', 'personas','puestos'));
     } 
 
     
     // Proceso de Actualización de un Registro (Update)
+    
+
     public function update(UpdateEmpleados $request, $id)
     {
-        $empleados= Empleados::find($id);
-        $empleados->id_persona = $request->id_persona;
-        $empleados->id_puesto = $request->id_puesto;
-       
-        // Guardamos la fecha de actualización del registro
-        $empleados->updated_at = (new DateTime)->getTimestamp();
+    $empleados = Empleados::find($id);
 
-        // Actualizo los datos en la tabla 'productos'
-        $empleados->save();
-
-        // Muestro un mensaje y redirecciono a la vista principal
-        Session::flash('message', 'Editado Satisfactoriamente !');
-        return Redirect::to('admin/empleados');
+    if (!$empleados) {
+        return redirect()->back()->with('error', 'Empleado no encontrada.');
+    }
+    
+    $personas = Personas::find($request->id_persona);
+    if (!$personas) {
+        return redirect()->back()->with('error', 'Persona no encontrado.');
     }
 
+    $empleados->id_persona = $request->id_persona;
+    $empleados->id_puesto = $request->id_puesto;
+    
+    $empleados->save();
+    return redirect()->route('admin/empleados')->with('message', 'Actualizado Satisfactoriamente!');
+    }
+
+
+
+    
     // Eliminar un Registro
     public function eliminar($id)
     {
