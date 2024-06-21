@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dash2Controller;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\PersonasController;
 
 Route::get('/', function () {
     return view('/home');
@@ -61,7 +62,7 @@ Route::put('admin/proveedores/update/{id}', 'App\Http\Controllers\ProveedoresCon
 /* Eliminar */
 Route::put('admin/proveedores/eliminar/{id}', 'App\Http\Controllers\ProveedoresController@eliminar')->name('admin/proveedores/eliminar');
 
-/* Vista Clientes */
+/* Vista Proveedores */
 Route::get('admin/proveedores', 'App\Http\Controllers\ProveedoresController@index')->name('admin/proveedores');
 
 
@@ -155,4 +156,24 @@ Route::resource('ventas', VentaController::class);
 
 // routes/web.php
 Route::resource('ventas', VentaController::class);
+
+
+/* Crear  Cliente*/
+Route::get('admin/personas/crear', 'App\Http\Controllers\PersonasController@crear')->name('admin/personas/crear');
+Route::put('admin/personas/store', 'App\Http\Controllers\PersonasController@store')->name('admin/personas/store');
+
+/* Leer */
+Route::get('admin/personas/show/{id}', 'App\Http\Controllers\PersonasController@show')->name('admin/personas/detalles');
+
+/* Actualizar */
+Route::get('admin/personas/actualizar/{id}', 'App\Http\Controllers\PersonasController@actualizar')->name('admin/personas/actualizar');
+Route::put('admin/personas/update/{id}', 'App\Http\Controllers\PersonasController@update')->name('admin/personas/update');
+
+/* Eliminar */
+Route::put('admin/personas/eliminar/{id}', 'App\Http\Controllers\PersonasController@eliminar')->name('admin/personas/eliminar');
+
+/* Vista Clientes */
+Route::get('admin/personas', 'App\Http\Controllers\PersonasController@index')->name('admin/personas');
+
+
 

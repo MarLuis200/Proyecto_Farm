@@ -50,6 +50,12 @@
             <!-- Heading -->
             <div class="sidebar-heading">Tablas</div>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/personas">
+                    <i class="bx bxs-user-account"></i>
+                    <span>Personas</span>
+                </a>
+            </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="/admin/clientes">

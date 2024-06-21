@@ -14,37 +14,37 @@
 					</div>
 
 					<div class="mb-3">
-						<label for="ap" class="negrita">Apellido Paterno</label>
+						<label for="apellido_paterno" class="negrita">Apellido Materno</label>
 						<div>
-							<input class="form-control" placeholder="ap" required="required" name="ap" type="text" id="ap" value="{{ $personas->ap}}">
+							<input class="form-control" placeholder="apellido_paterno" required="required" name="apellido_paterno" type="text" id="apellido_paterno" value="{{ $personas->apellido_paterno}}">
 						</div>
 					</div>
 
                     <div class="mb-3">
-                        <label for="am" class="negrita">Apellido Materno</label>
+                        <label for="apellido_materno" class="negrita">Apellido Materno</label>
                         <div>
-                            <input class="form-control" placeholder="apellido_paterno" required="required" name="apellido_materno" type="text" id="apellido_materno" value="{{ $clientes->am}}">
+                            <input class="form-control" placeholder="apellido_paterno" required="required" name="apellido_materno" type="text" id="apellido_materno" value="{{ $personas->apellido_materno}}">
                         </div>
                     </div>
 
 					<div class="mb-3">
 						<label for="direccion" class="negrita">Direccion:</label>
 						<div>
-							<input class="form-control" placeholder="Dirección" required="required" name="direccion" type="text" id="direccion" value="{{ $clientes->direccion }}">
+							<input class="form-control" placeholder="Dirección" required="required" name="direccion" type="text" id="direccion" value="{{ $personas->direccion }}">
 						</div>
 					</div>
 
                     <div class="mb-3">
                         <label for="correo" class="negrita">Telefono:</label>
                         <div>
-                            <input class="form-control" placeholder="telefono" required="required" name="telefono" type="text" id="telefono" value="{{ $clientes->telefono}}">
+                            <input class="form-control" placeholder="telefono" required="required" name="telefono" type="text" id="telefono" value="{{ $personas->telefono}}">
                         </div>
                     </div>
 
                     <div class="mb-3">
                         <label for="correo" class="negrita">Correo:</label>
                         <div>
-                            <input class="form-control" placeholder="correo" required="required" name="correo" type="text" id="correo" value="{{ $clientes->correo}}">
+                            <input class="form-control" placeholder="correo" required="required" name="correo" type="text" id="correo" value="{{ $personas->correo}}">
                         </div>
                     </div>
 
@@ -55,11 +55,11 @@
 							<br>
 							<br>
 
-							@if ( !empty ( $clientes->img) )
+							@if ( !empty ( $personas->img) )
 
 								<span>Imagen Actual: </span>
 								<br>
-								<img src="../../../uploads/{{ $clientes->img }}" width="200" class="img-fluid">
+								<img src="../../../uploads/{{ $personas->img }}" width="200" class="img-fluid">
 
 							@else
 
@@ -124,7 +124,7 @@
 				@endif
 
 				<button type="submit" class="btn btn-info">Guardar</button>
-				<a href="{{ route('admin/clientes') }}" class="btn btn-warning">Cancelar</a> 
+				<a href="{{ route('admin/personas') }}" class="btn btn-warning">Cancelar</a> 
 
 				<br>
 				<br>
