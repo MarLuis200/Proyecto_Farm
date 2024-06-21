@@ -16,7 +16,7 @@ class VentaRequest extends FormRequest
         return [
             'producto_id' => 'required|exists:productos,id',
             'cantidad' => 'required|integer|min:1',
-            'img' => 'nullable|image|max:2048', // Valida que la imagen sea de tipo imagen y tenga un tamaño máximo de 2MB
+             // Valida que la imagen sea de tipo imagen y tenga un tamaño máximo de 2MB
         ];
     }
 }

@@ -90,7 +90,7 @@
 
             <li class="nav-item">
 
-                <a class="nav-link" href="/ventas">
+                <a class="nav-link" href="/admin/ventas">
                     <i class="bx bx-shopping-bag"></i>
                     <span>Ventas</span>
                 </a>
