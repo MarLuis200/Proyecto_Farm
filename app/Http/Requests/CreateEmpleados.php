@@ -25,9 +25,8 @@ class CreateEmpleados extends FormRequest
     {
 
         return [
-            'id_empleado' => 'required|unique:empleados|max:255',
-            'id_persona' => 'required',
-            'id_puesto' => 'required',
+            'id_persona' => 'required|unique:empleados|max:255',
+            'id_puesto' => 'required|unique:empleados|max:255',
         ];
 
 

@@ -112,9 +112,9 @@
                                             <tbody>
                                                 @foreach($empleados as $emple)
                                                     <tr>
-                                                        <td class="v-align-middle">{{$emple->id_empleado}}</td>
-                                                        <td class="v-align-middle">{{$emple->id_persona}}</td>
-                                                        <td class="v-align-middle">{{$emple->id_puesto}}</td>
+                                                        <td class="v-align-middle">{{$emple->id}}</td>
+                                                        <td class="v-align-middle">{{$emple->nombre}}</td>
+                                                        <td class="v-align-middle">{{$emple->descripcion}}</td>
                                                     
                                                         <td class="v-align-middle">
                                                             <form action="{{ route('admin/empleados/eliminar',$emple->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">

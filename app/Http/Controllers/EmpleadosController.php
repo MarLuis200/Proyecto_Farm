@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empleados;
+use App\Models\Personas;
+use App\Models\Puestos;
 use Session;
 use Redirect;
 use App\Http\Requests;
@@ -22,9 +24,18 @@ class EmpleadosController extends Controller
     // Listar todos los productos en la vista principal
     public function index()
     {
-        $empleados = Empleados::all();
-        return view('admin.empleados.index', compact('empleados'));
+        $personas = Personas::all();
+        $puestos = Puestos::all();
+
+        $empleados = Empleados::join("personas", "empleados.id_persona", "=", "personas.id")
+            ->join("puestos", "empleados.id_puesto", "=", "puestos.id")
+            ->select("empleados.id", "personas.nombre", "puestos.descripcion")
+            ->get();
+
+        return view('admin.empleados.index', compact('empleados', 'personas', 'puestos'));
     }
+
+
 
     // Crear un Registro (Create)
     public function crear()
@@ -40,7 +51,6 @@ class EmpleadosController extends Controller
         $empleados = new Empleados;
 
         // Recibo todos los datos del formulario de la vista 'crear.blade.php'
-        $empleados->id_empleado = $request->id_empleado;
         $empleados->id_persona = $request->id_persona;
         $empleados->id_puesto = $request->id_puesto;
         

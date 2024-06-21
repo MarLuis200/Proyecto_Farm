@@ -13,6 +13,6 @@ class Empleados extends Model
     protected $table = 'empleados';
 
     // Declaro los campos que usaré de la tabla 'productos'
-    protected $fillable = ['id_empleado', 'id_persona', 'id_puesto'];
+    protected $fillable = ['id_persona','id_puesto'];
 
 }

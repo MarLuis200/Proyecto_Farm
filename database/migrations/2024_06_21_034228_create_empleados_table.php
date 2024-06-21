@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
-            $table->string('id_empleado');
-            $table->string('id_persona');
-            $table->string('id_puesto');
+            $table->unsignedBigInteger('id_persona');
+            $table->unsignedBigInteger('id_puesto');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('id_persona')->references('id')->on('personas')->onDelete('cascade');
+            $table->foreign('id_puesto')->references('id')->on('puestos')->onDelete('cascade');
         });
     }
 
