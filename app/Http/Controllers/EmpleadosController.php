@@ -77,8 +77,8 @@ class EmpleadosController extends Controller
     public function actualizar($id)
     {
         $empleados = Empleados::find($id);
-        $personas = Personas::all(); // Fetch all personas
-    $puestos = Puestos::all(); // Fetch all puestos
+        $personas = Personas::all();
+        $puestos = Puestos::all();
         return view('admin.empleados.actualizar',compact('empleados', 'personas','puestos'));
     } 
 
