@@ -15,3 +15,4 @@ class Venta extends Model
     protected $fillable = ['id','cantidad','total'];
     
 }
+

@@ -99,11 +99,6 @@
                                     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
                                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-
-
-
-
                     <div class="card-body bg-white">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
@@ -127,13 +122,14 @@
                                         <td>$ {{$venta->precio}}</td>
 										<td>$ {{ $venta->total }}</td>
 
-                                            <td>
-                                                <form action="{{ route('ventas.destroy', $venta->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('ventas.show', $venta->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('ventas.edit', $venta->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                            <td class="v-align-middle">
+                                                <form action="{{ route('admin/ventas/eliminar',$venta->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
+                                                    <input type="hidden" name="_method" value="PUT">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <a href="{{ route('admin/ventas/detalles',$venta->id) }}" class="btn btn-dark">Detalles</a>
+
+                                                    <a href="{{ route('admin/ventas/actualizar',$venta->id) }}" class="btn btn-primary">Editar</a>
+                                                    <button type="submit" class="btn btn-danger">Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -143,7 +139,7 @@
                         </div>
                     </div>
                 </div>
-                {{--!! $ventas->withQueryString()->links() !!}--}}
+                {{--!! $ventas->withQueryString()->links() !!--}}
             </div>
         </div>
     </div>
