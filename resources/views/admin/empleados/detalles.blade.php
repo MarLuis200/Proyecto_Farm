@@ -65,7 +65,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('admin/empleados') }}">Empleados</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $empleados->id_empleado }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $empleados->id }}</li>
           </ol>
         </nav>
 
@@ -82,15 +82,15 @@
                       {{ Session::get('message') }}
                     </div>
                   @endif
+              
+                      <p class="h5">Id_empleado:</p>
+                      <p class="h6 mb-3">{{ $empleados->id }}</p>
 
-                    <p class="h5">Id_empleado:</p>
-                    <p class="h6 mb-3">{{ $empleados->id_empleado }}</p>
+                      <p class="h5">Persona:</p>
+                      <p class="h6 mb-3">{{ $empleados->persona->nombre }}</p>
 
-                      <p class="h5">Id_persona:</p>
-                      <p class="h6 mb-3">{{ $empleados->id_persona}}</p>
-
-                      <p class="h5">Id_puesto:</p>
-                      <p class="h6 mb-3">{{ $empleados->id_puesto }}</p>
+                      <p class="h5">Puesto:</p>
+                      <p class="h6 mb-3">{{ $empleados->puesto->descripcion }}</p>
 
 
                 </div>

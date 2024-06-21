@@ -15,4 +15,14 @@ class Empleados extends Model
     // Declaro los campos que usaré de la tabla 'productos'
     protected $fillable = ['id_persona','id_puesto'];
 
+    public function persona()
+    {
+        return $this->belongsTo(Personas::class, 'id_persona');
+    }
+
+    public function puesto()
+    {
+        return $this->belongsTo(Puestos::class, 'id_puesto');
+    }
+
 }

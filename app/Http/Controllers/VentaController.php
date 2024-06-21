@@ -76,6 +76,7 @@ class VentaController extends Controller
 
         // Muestro un mensaje y redirecciono a la vista principal
         return redirect()->route('ventas.index')->with('message', 'Eliminado Satisfactoriamente!');
+
         return Redirect::to('admin/venta');
     }
 }

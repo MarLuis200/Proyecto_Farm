@@ -69,6 +69,7 @@ class EmpleadosController extends Controller
     public function show($id)
     {
         $empleados = Empleados::find($id);
+        
         return view('admin.empleados.detalles', compact('empleados'));
     }
 
@@ -77,13 +78,13 @@ class EmpleadosController extends Controller
     {
         $empleados = Empleados::find($id);
         return view('admin.empleados.actualizar',['empleados'=>$empleados]);
-    }
+    } 
+
     
     // Proceso de Actualización de un Registro (Update)
     public function update(UpdateEmpleados $request, $id)
     {
         $empleados= Empleados::find($id);
-        $empleados->id_empleado = $request->id_empleado;
         $empleados->id_persona = $request->id_persona;
         $empleados->id_puesto = $request->id_puesto;
        

@@ -81,16 +81,16 @@
                     <p class="h6 mb-3">{{ $ventas->id }}</p>
 
                     <p class="h5">Producto:</p>
-                    <p class="h6 mb-3">{{ $ventas->nombre }}</p>
+                    <p class="h6 mb-3">{{ $ventas->producto->nombre }}</p>
 
                     <p class="h5">Cantidad:</p>
-                    <p class="h6 mb-3">{{ $ventas->marca}}</p>
+                    <p class="h6 mb-3">{{ $ventas->cantidad}}</p>
 
                     <p class="h5">Precio:</p>
-                    <p class="h6 mb-3">{{ $ventas->precio }}</p>
+                    <p class="h6 mb-3">${{ $ventas->producto->precio }}</p>
 
                     <p class="h5">Total:</p>
-                    <p class="h6 mb-3">{{ $ventas->total }}</p>
+                    <p class="h6 mb-3">${{ $ventas->total }}</p>
 
                 </div>
 

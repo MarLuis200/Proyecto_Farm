@@ -15,4 +15,5 @@ class Personas extends Model
     // Declaro los campos que usaré de la tabla 'personas'
     protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'direccion','telefono','correo','img'];
 
+
 }
