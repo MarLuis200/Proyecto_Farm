@@ -15,7 +15,6 @@ class VentaController extends Controller
     public function index()
     {
         $productos = Productos::all();
-
         $ventas = Venta::join("productos", "ventas.producto_id", "=", "productos.id")
             ->select("ventas.cantidad", "ventas.total", "ventas.id", "productos.nombre", "productos.precio")
             ->get();
@@ -28,55 +27,63 @@ class VentaController extends Controller
      */
     public function store(VentaRequest $request): RedirectResponse
     {
-        // Encuentra el producto relacionado
         $producto = Productos::find($request->producto_id);
         if (!$producto) {
             return redirect()->back()->with('error', 'Producto no encontrado.');
         }
 
-        // Calcula el total
         $total = $request->cantidad * $producto->precio;
 
-        // Crea la venta con los datos del formulario
         $venta = new Venta();
         $venta->producto_id = $request->producto_id;
         $venta->cantidad = $request->cantidad;
         $venta->total = $total;
 
-        // Guarda la venta en la base de datos
         $venta->save();
 
-        // Redirección a la vista principal con un mensaje
         return redirect()->route('ventas.index')->with('message', 'Guardado Satisfactoriamente!');
     }
 
     public function show($id)
     {
-        $ventas = Venta::find($id);
-        return view('admin.venta.detalles', compact('ventas'));
+        $venta = Venta::find($id);
+        return view('admin.venta.detalles', compact('venta'));
     }
 
     public function actualizar($id)
     {
-        $ventas = Venta::find($id);
-        return view('admin/venta/actualizar',['ventas'=>$ventas]);
+        $venta = Venta::find($id);
+        $productos = Productos::all();
+        return view('admin.venta.actualizar', compact('venta', 'productos'));
     }
+    public function update(VentaRequest $request, $id): RedirectResponse
+{
+    $venta = Venta::find($id);
+    if (!$venta) {
+        return redirect()->back()->with('error', 'Venta no encontrada.');
+    }
+
+    
+    $producto = Productos::find($request->producto_id);
+    if (!$producto) {
+        return redirect()->back()->with('error', 'Producto no encontrado.');
+    }
+
+   
+    $total = $request->cantidad * $producto->precio;
+    $venta->producto_id = $request->producto_id;
+    $venta->cantidad = $request->cantidad;
+    $venta->total = $total;
+    
+    $venta->save();
+    return redirect()->route('ventas.index')->with('message', 'Actualizado Satisfactoriamente!');
+}
 
     public function eliminar($id)
     {
-        // Indicamos el 'id' del registro que se va Eliminar
-        $ventas = Venta::find($id);
-
-        // Elimino el registro de la tabla 'productos'
+        $venta = Venta::find($id);
         Venta::destroy($id);
 
-        // Opcional: Si deseas guardar la fecha de eliminación de un registro, debes mantenerlo en
-        // una tabla llamada por ejemplo 'productos_eliminados' y alli guardas su fecha de eliminación
-        // $productos->deleted_at = (new DateTime)->getTimestamp();
-
-        // Muestro un mensaje y redirecciono a la vista principal
         return redirect()->route('ventas.index')->with('message', 'Eliminado Satisfactoriamente!');
-
-        return Redirect::to('admin/venta');
     }
 }
