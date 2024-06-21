@@ -40,13 +40,6 @@
                         </div>
                     @endif
 
-                    <div class="mb-3">
-                        <label for="img" class="negrita">Imagen:</label>
-                        <div>
-                            <input class="form-control" name="img" type="file" id="img">
-                        </div>
-                    </div>
-
                     <button type="submit" class="btn btn-info">Guardar</button>
                     <a href="{{ route('admin/ventas') }}" class="btn btn-warning">Cancelar</a> 
                 </div>
