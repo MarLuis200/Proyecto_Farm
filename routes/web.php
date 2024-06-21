@@ -156,7 +156,7 @@ Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middlewa
 Route::resource('ventas', VentaController::class);
 
 
-/* Crear  Cliente*/
+/* Crear  Personas*/
 Route::get('admin/personas/crear', 'App\Http\Controllers\PersonasController@crear')->name('admin/personas/crear');
 Route::put('admin/personas/store', 'App\Http\Controllers\PersonasController@store')->name('admin/personas/store');
 
