@@ -54,12 +54,11 @@ class VentaController extends Controller
         return view('admin.venta.actualizar', compact('venta', 'productos'));
     }
     public function update(VentaRequest $request, $id): RedirectResponse
-{
+    {
     $venta = Venta::find($id);
     if (!$venta) {
         return redirect()->back()->with('error', 'Venta no encontrada.');
     }
-
     
     $producto = Productos::find($request->producto_id);
     if (!$producto) {
@@ -74,7 +73,7 @@ class VentaController extends Controller
     
     $venta->save();
     return redirect()->route('ventas.index')->with('message', 'Actualizado Satisfactoriamente!');
-}
+    }
 
     public function eliminar($id)
     {

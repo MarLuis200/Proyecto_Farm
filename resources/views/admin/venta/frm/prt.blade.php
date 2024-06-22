@@ -8,14 +8,20 @@
                         <div class="mb-3">
                             <label for="producto_id" class="negrita">Producto:</label> 
                             <div>
-                                <input class="form-control" placeholder="ID Producto" required="required" name="producto_id" type="text" id="producto_id" value="{{ $venta->producto_id }}"> 
+                            <select name="producto_id" class="form-control @error('producto_id') is-invalid @enderror" value="{{ old('producto_id') }}" id="producto_id" required>
+                                    <option value="" disabled selected>Selecciona un producto</option>
+                                    @foreach($productos as $producto)
+                                        <option value="{{$producto->id}}">{{$producto->nombre}}</option>
+                                    @endforeach 
+                                </select>           
+                                {!! $errors->first('producto_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
                             </div>
                         </div>
 
                         <div class="mb-3">
                             <label for="cantidad" class="negrita">Cantidad:</label> 
                             <div>
-                                <input class="form-control" placeholder="Cantidad" required="required" name="cantidad" type="text" id="cantidad" value="{{ $venta->cantidad }}"> 
+                                <input class="form-control" placeholder="Cantidad" required="required" name="cantidad" type="number" id="cantidad"> 
                             </div>
                         </div>
                     @else
