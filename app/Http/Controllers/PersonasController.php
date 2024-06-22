@@ -24,7 +24,7 @@ class PersonasController extends Controller
     {
         $personas = Personas::all(); // Obtén todos los clientes (ajusta según tu lógica)
 
-    return view('admin.personas.index', [
+    return view('admin/personas/index', [
         'personas' => $personas
     ]);
     }
@@ -32,7 +32,7 @@ class PersonasController extends Controller
     public function crear()
     {
         $personas = Personas::all();
-        return view('admin.personas.crear', compact('personas'));
+        return view('admin/personas/crear', compact('personas'));
     }
 
     // Proceso de Creación de un Registro
@@ -66,14 +66,14 @@ class PersonasController extends Controller
     public function show($id)
     {
         $personas = Personas::find($id);
-        return view('admin.personas.detalles', compact('personas'));
+        return view('admin/personas/detalles', compact('personas'));
     }
 
     //  Actualizar un registro (Update)
     public function actualizar($id)
     {
         $personas = Personas::find($id);
-        return view('admin/personas.actualizar',['personas'=>$personas]);
+        return view('admin/personas/actualizar',['personas'=>$personas]);
     }
 
 

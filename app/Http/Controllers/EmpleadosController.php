@@ -32,7 +32,7 @@ class EmpleadosController extends Controller
             ->select("empleados.id", "personas.nombre", "puestos.descripcion")
             ->get();
 
-        return view('admin.empleados.index', compact('empleados', 'personas', 'puestos'));
+        return view('admin/empleados/index', compact('empleados', 'personas', 'puestos'));
     }
 
 
@@ -41,7 +41,7 @@ class EmpleadosController extends Controller
     public function crear()
     {
         $empleados = Empleados::all();
-        return view('admin.empleados.crear', compact('empleados'));
+        return view('admin/empleados/crear', compact('empleados'));
     }
 
     // Proceso de Creación de un Registro
@@ -70,7 +70,7 @@ class EmpleadosController extends Controller
     {
         $empleados = Empleados::find($id);
         
-        return view('admin.empleados.detalles', compact('empleados'));
+        return view('admin/empleados/detalles', compact('empleados'));
     }
 
     //  Actualizar un registro (Update)
@@ -79,7 +79,7 @@ class EmpleadosController extends Controller
         $empleados = Empleados::find($id);
         $personas = Personas::all();
         $puestos = Puestos::all();
-        return view('admin.empleados.actualizar',compact('empleados', 'personas','puestos'));
+        return view('admin/empleados/actualizar',compact('empleados', 'personas','puestos'));
     } 
 
     
