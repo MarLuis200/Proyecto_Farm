@@ -51,9 +51,18 @@ class ClientesController extends Controller
         $cliente->correo = $request->correo;
         $cliente->img = $request->img;
 
+        if ($request->hasFile('img')) {
+            // Obtener el archivo
+            $file = $request->file('img');
     
+            // Guardar el archivo en la carpeta 'uploads' (o la ruta deseada)
+            $filePath = $file->store('uploads'); // Almacenar en la carpeta 'uploads' dentro de storage/app
+            // $filePath = $file->store('uploads', 'public'); // Para almacenar en 'storage/app/public/uploads'
+    
+            // Asignar la ruta del archivo al campo 'img' en la base de datos
+            $cliente->img = $filePath;
+        }
         
-    
         // Guardar el cliente en la base de datos
         $cliente->save();
     
