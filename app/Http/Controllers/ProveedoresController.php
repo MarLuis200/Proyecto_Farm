@@ -51,6 +51,18 @@ class ProveedoresController extends Controller
         $proveedor->correo = $request->correo;
         $proveedor->img = $request->img;
 
+        if ($request->hasFile('img')) {
+            // Obtener el archivo
+            $file = $request->file('img');
+    
+            // Guardar el archivo en la carpeta 'uploads' (o la ruta deseada)
+            $filePath = $file->store('uploads'); // Almacenar en la carpeta 'uploads' dentro de storage/app
+            // $filePath = $file->store('uploads', 'public'); // Para almacenar en 'storage/app/public/uploads'
+    
+            // Asignar la ruta del archivo al campo 'img' en la base de datos
+            $proveedor->img = $filePath;
+        }
+
     
         
     
