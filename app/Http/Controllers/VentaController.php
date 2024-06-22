@@ -22,9 +22,6 @@ class VentaController extends Controller
         return view('admin.venta.index', compact('ventas', 'productos'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(VentaRequest $request): RedirectResponse
     {
         $producto = Productos::find($request->producto_id);

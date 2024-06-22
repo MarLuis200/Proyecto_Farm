@@ -30,7 +30,7 @@ Route::put('admin/productos/eliminar/{id}', 'App\Http\Controllers\ProductosContr
 Route::get('admin/productos', 'App\Http\Controllers\ProductosController@index')->name('admin/productos');
 
 
-/* Crear  Cliente*/
+/* Crear Cliente */
 Route::get('admin/clientes/crear', 'App\Http\Controllers\ClientesController@crear')->name('admin/clientes/crear');
 Route::put('admin/clientes/store', 'App\Http\Controllers\ClientesController@store')->name('admin/clientes/store');
 
@@ -46,6 +46,8 @@ Route::put('admin/clientes/eliminar/{id}', 'App\Http\Controllers\ClientesControl
 
 /* Vista Clientes */
 Route::get('admin/clientes', 'App\Http\Controllers\ClientesController@index')->name('admin/clientes');
+
+
 
 // Rutas PROVEEDORES
 /* Crear */

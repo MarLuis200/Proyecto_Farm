@@ -7,12 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clientes extends Model
 {
-    use HasFactory;
-
-    // Instancio la tabla 'productos'
-    protected $table = 'clientes';
-
-    // Declaro los campos que usaré de la tabla 'productos'
-    protected $fillable = ['nombre', 'apellido_paterno', 'apellido_materno', 'direccion','telefono','correo','img'];
-
+    // Relación para obtener la persona asociada al cliente
+    public function personas()
+    {
+        return $this->belongsTo(Personas::class, 'persona_id', 'id');
+    }
 }

@@ -22,10 +22,12 @@ class PersonasController extends Controller
     // Listar todos los productos en la vista principal
     public function index()
     {
-        $personas = Personas::all();
-        return view('admin.personas.index', compact('personas'));
-    }
+        $personas = Personas::all(); // Obtén todos los clientes (ajusta según tu lógica)
 
+    return view('admin.personas.index', [
+        'personas' => $personas
+    ]);
+    }
     // Crear un Registro (Create)
     public function crear()
     {

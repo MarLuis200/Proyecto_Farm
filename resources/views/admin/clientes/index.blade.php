@@ -99,7 +99,7 @@
                                             <table class="table table-striped table-bordered table-hover">
                                                 <thead>
                                                     <tr>
-                                                        <th>Id_Cliente</th>
+                                                        <th>Id</th>
                                                         <th>Nombre</th>
                                                         <th>Apellido Paterno</th>
                                                         <th>Apellido Materno</th>
@@ -112,6 +112,7 @@
                                                 </thead>
                                                 <tbody>
                                                     @foreach($clientes as $cli)
+                                                    
                                                     <tr>
                                                         <td class="v-align-middle">{{$cli->id}}</td>
                                                         <td class="v-align-middle">{{$cli->nombre}}</td>
