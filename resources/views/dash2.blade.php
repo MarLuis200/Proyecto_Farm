@@ -64,21 +64,21 @@
                 </a>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/productos">
-                    <i class='bx bxs-cart'></i>
-                    <span>Productos</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/proveedores">
                     <i class="bx bx-grid-alt"></i>
                     <span>Proveedores</span>
                 </a>
             </li>
+
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/productos">
+                    <i class='bx bxs-cart'></i>
+                    <span>Productos</span>
+                </a>
+            </li>   
+            
 
             <li class="nav-item">
                 <a class="nav-link" href="/admin/inventario">
