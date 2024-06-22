@@ -60,23 +60,27 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="img" class="negrita">Selecciona una imagen:</label>
-                        <div>
-                            <input name="img" type="file" id="img">
-                            <br>
-                            <br>
+						<label for="img" class="negrita">Selecciona una imagen:</label>
+						<div>
+							<input name="img" type="file" id="img">
+							<br>
+							<br>
 
-                            @if ( !empty ( $clientes->img) )
-                                <span>Imagen Actual: </span>
-                                <br>
-                                <img src="../../../uploads/{{ $clientes->img }}" width="200" class="img-fluid">
-                            @else
-                                Aún no se ha cargado una imagen para este cliente
-                            @endif
+							@if ( !empty ( $clientes->img) )
 
-							
-                        </div>
-                    </div>
+								<span>Imagen Actual: </span>
+								<br>
+								<img src="../../../uploads/{{ $clientes->img }}" width="200" class="img-fluid">
+
+							@else
+
+								Aún no se ha cargado una imagen para este producto
+
+							@endif
+
+						</div>
+
+					</div>
 
                 @else
 
@@ -135,11 +139,13 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="img" class="negrita">Selecciona una imagen:</label>
+                        <label for="img" class="negrita">Imagen Persona:</label>
                         <div>
-                            <input name="img" type="file" id="img">
+                            <img id="persona_img" src="" alt="Imagen Persona" style="max-width: 200px; display: none;">
                         </div>
                     </div>
+
+
 
                 @endif
 
@@ -166,17 +172,27 @@
             document.getElementById('direccion').value = selectedPersona.direccion;
             document.getElementById('telefono').value = selectedPersona.telefono;
             document.getElementById('correo').value = selectedPersona.correo;
-            document.getElementById('img').value = selectedPersona.img;
 
+            // Mostrar la imagen de la persona seleccionada
+            var imgElement = document.getElementById('persona_img');
+            if (selectedPersona.img) {
+                imgElement.src = '{{ asset('uploads/' . ':img') }}'.replace(':img', selectedPersona.img);
+                imgElement.style.display = 'block'; // Mostrar la imagen
+            } else {
+                imgElement.src = ''; // Limpiar la imagen si no hay ninguna
+                imgElement.style.display = 'none'; // Ocultar el elemento de imagen
+            }
         } else {
+            // Limpiar todos los campos si no se selecciona ninguna persona
             document.getElementById('nombre').value = '';
             document.getElementById('apellido_paterno').value = '';
             document.getElementById('apellido_materno').value = '';
             document.getElementById('direccion').value = '';
             document.getElementById('telefono').value = '';
             document.getElementById('correo').value = '';
-            document.getElementById('img').value = '';
-
+            document.getElementById('persona_img').src = '';
         }
     }
 </script>
+
+

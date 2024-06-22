@@ -32,7 +32,7 @@ class ItemCreateRequest extends FormRequest
             'direccion' => 'required',
             'telefono' => 'required',
             'correo' => 'required',
-            'img' => 'required',
+            
         ];
 
 
