@@ -108,7 +108,7 @@
                                         <table class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th>Id_Proveedor</th>
+                                                    <th>Id</th>
                                                     <th>Nombre</th>
                                                     <th>Dirección</th>
                                                     <th>Teléfono</th>

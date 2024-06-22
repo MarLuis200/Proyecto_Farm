@@ -2,123 +2,136 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Proveedores;
+use App\Models\Personas;
 use Illuminate\Http\Request;
-use App\Models\Proveedores; // Cambiado de Productos a Proveedores
 use Session;
 use Redirect;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ItemCreateRequestProveedores; // Cambiado de ItemCreateRequest a ItemCreateRequestProveedores
-use App\Http\Requests\ItemUpdateRequestProveedores; // Cambiado de ItemUpdateRequest a ItemUpdateRequestProveedores
+use App\Http\Requests\ItemUpdateRequest;
+use App\Http\Requests\ItemCreateRequest;
 use Illuminate\Support\Facades\Validator;
-use DB;
-use Input;
 use Storage;
-use DateTime; 
+use DateTime;
 
 class ProveedoresController extends Controller
 {
-    
-    // Listar todos los proveedores en la vista principal 
     public function index()
-    {
-        $proveedores = Proveedores::all(); // Cambiado de Productos a Proveedores
-        return view('admin.proveedores.index', compact('proveedores')); 
-    }
+{
+    $proveedores = Proveedores::all(); 
+    $personas = Personas::all();
 
-    // Crear un Registro (Create) 
+    return view('admin/proveedores/index', [
+        'proveedores' => $proveedores,
+        'personas' => $personas
+    ]);
+}
+
+    // Crear un Registro (Create)
     public function crear()
     {
-        $proveedores = Proveedores::all(); // Cambiado de Productos a Proveedores
-        return view('admin.proveedores.crear', compact('proveedores')); // Cambiado de productos a proveedores
-    } 
+        $personas = Personas::all();
+        return view('admin/proveedores/crear', compact('personas'));
+    }
 
-    // Proceso de Creación de un Registro 
-    public function store(ItemCreateRequestProveedores $request) // Cambiado de ItemCreateRequest a ItemCreateRequestProveedores
+    // Proceso de Creación de un Registro
+    public function store(ItemCreateRequest $request)
     {
-        // Instancio al modelo Proveedores que hace llamado a la tabla 'proveedores' de la Base de Datos
-        $proveedores = new Proveedores; // Cambiado de Productos a Proveedores
-
-        // Recibo todos los datos del formulario de la vista 'crear.blade.php'
-        $proveedores->nombre = $request->nombre;
-        $proveedores->direccion = $request->direccion;
-        $proveedores->telefono = $request->telefono;
-        $proveedores->correo = $request->correo;
-
-        // Almaceno la imagen en la carpeta pública especifica, esto lo veremos más adelante 
-        $proveedores->img = $request->file('img')->store('/');
-        
-        // Guardo la fecha de creación del registro 
-        $proveedores->created_at = (new DateTime)->getTimestamp();
-
-        // Inserto todos los datos en mi tabla 'proveedores' 
-        $proveedores->save();
-
-        // Hago una redirección a la vista principal con un mensaje 
-        return redirect('admin/proveedores')->with('message','Guardado Satisfactoriamente !'); 
-    } 
-
-    // Leer Registro por 'id' (Read) 
-    public function show($id)
-    {
-        $proveedores = Proveedores::find($id); // Cambiado de Productos a Proveedores
-        return view('admin.proveedores.detalles', compact('proveedores')); // Cambiado de productos a proveedores
-    } 
-
-    //  Actualizar un registro (Update)
-    public function actualizar($id)
-    {
-        $proveedores = Proveedores::find($id); // Cambiado de Productos a Proveedores
-        return view('admin.proveedores.actualizar',['proveedores'=>$proveedores]); // Cambiado de productos a proveedores
-    } 
+        // Crear una nueva instancia de Cliente
+        $proveedor = new Proveedores();
+    
+        // Asignar valores del formulario
+        $proveedor->persona_id = $request->persona_id;
+        $proveedor->nombre = $request->nombre;
+        $proveedor->apellido_paterno = $request->apellido_paterno;
+        $proveedor->apellido_materno = $request->apellido_materno;
+        $proveedor->direccion = $request->direccion;
+        $proveedor->telefono = $request->telefono;
+        $proveedor->correo = $request->correo;
+        $proveedor->img = $request->img;
 
     
-    // Proceso de Actualización de un Registro (Update)
-    public function update(ItemUpdateRequestProveedores $request, $id) // Cambiado de ItemUpdateRequest a ItemUpdateRequestProveedores
-    {        
-        // Recibo todos los datos desde el formulario Actualizar
-        $proveedores = Proveedores::find($id); // Cambiado de Productos a Proveedores
+        
+    
+        // Guardar el cliente en la base de datos
+        $proveedor->save();
+    
+        // Redireccionar a la vista principal de clientes con un mensaje
+        return redirect('admin/proveedores')->with('message', 'Guardado Satisfactoriamente !');
+    }
+    
+    
+    public function actualizar($id)
+    {
+        // Obtener el cliente por su ID
+        $proveedores = Proveedores::find($id);
+
+        if (!$proveedores) {
+            // Manejo del caso donde no se encuentra el cliente
+            abort(404);
+        }
+
+        // Obtener todas las personas disponibles
+        $personas = Personas::all();
+
+        // Retornar la vista 'edit' con los datos del cliente y personas
+        return view('admin/proveedores/actualizar', [
+            'proveedores' => $proveedores,
+            'personas' => $personas,
+        ]);
+    }
+
+    public function show($id)
+    {
+        try {
+          
+            $proveedores = Proveedores::findOrFail($id);
+            return view('admin/proveedores/detalles', compact('proveedores'));
+        } catch (ModelNotFoundException $e) 
+        {
+            abort(404);
+        }
+    }
+
+
+    public function update(ItemUpdateRequest $request, $id)
+    {
+        $proveedores = Proveedores::find($id);
         $proveedores->nombre = $request->nombre;
+        $proveedores->apellido_paterno = $request->apellido_paterno;
+        $proveedores->apellido_materno = $request->apellido_materno;
         $proveedores->direccion = $request->direccion;
         $proveedores->telefono = $request->telefono;
         $proveedores->correo = $request->correo;
+        $proveedores->img = $request->img;
 
-        // Recibo la imagen desde el formulario Actualizar
-        if ($request->hasFile('img')) {
-            $proveedores->img = $request->file('img')->store('/');
-        }
-
-        // Guardo la fecha de actualización del registro 
+        // Guardamos la fecha de actualización del registro
         $proveedores->updated_at = (new DateTime)->getTimestamp();
-        
-        // Actualizo los datos en la tabla 'proveedores'
+
+        // Actualizo los datos en la tabla 'clientes'
         $proveedores->save();
 
-        // Muestro un mensaje y redirecciono a la vista principal 
+        // Muestro un mensaje y redirecciono a la vista principal
         Session::flash('message', 'Editado Satisfactoriamente !');
         return Redirect::to('admin/proveedores');
     }
 
-    // Eliminar un Registro 
+    // Eliminar un Registro
     public function eliminar($id)
     {
-        // Indicamos el 'id' del registro que se va Eliminar
-        $proveedores = Proveedores::find($id); // Cambiado de Productos a Proveedores
+        $proveedores = Proveedores::find($id);
 
-        // Elimino la imagen de la carpeta 'uploads', esto lo veremos más adelante
-        $imagen = explode(",", $proveedores->img);
-        Storage::delete($imagen);
-            
-        // Elimino el registro de la tabla 'proveedores' 
-        Proveedores::destroy($id); // Cambiado de Productos a Proveedores
+        Proveedores::destroy($id);
 
-        // Opcional: Si deseas guardar la fecha de eliminación de un registro, debes mantenerlo en 
-        // una tabla llamada por ejemplo 'proveedores_eliminados' y allí guardas su fecha de eliminación 
-        // $proveedores->deleted_at = (new DateTime)->getTimestamp();
-            
-        // Muestro un mensaje y redirecciono a la vista principal 
         Session::flash('message', 'Eliminado Satisfactoriamente !');
         return Redirect::to('admin/proveedores');
-    } 
+    }
 
+    // Método para obtener los datos de una persona por id (para AJAX)
+    public function getPersona($id)
+    {
+        $persona = Personas::find($id);
+        return response()->json($persona);
+    }
 }
