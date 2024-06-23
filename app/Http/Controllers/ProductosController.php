@@ -124,6 +124,13 @@ class ProductosController extends Controller
         return Redirect::to('admin/productos');
     }
 
+    public function vista($id)
+{
+    $productos = Productos::findOrFail($id);
+    return view('admin.productos.vista', compact('productos'));
+}
+
+
 }
 
 

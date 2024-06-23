@@ -9,6 +9,7 @@ class SaludController extends Controller
    
     public function index()
     {
-        return view('salud');
+        return view('/home/salud/salud');
     }
+    
 }

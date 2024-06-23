@@ -14,6 +14,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
                         <div class="collapse navbar-collapse id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
@@ -27,41 +28,41 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/bebes">Bebes</a>
+                                    <a class="nav-link" href="/bebes">Bebes</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/bebes/antibioticos">Pañales</a></li>
-                                        <li><a href="/home/bebes/dolor">Formulas Infantiles</a></li>
-                                        <li><a href="/home/bebes/dermatologia">Alimentos Infantiles</a></li>
+                                        <li><a href="/bebes/pañales">Pañales</a></li>
+                                        <li><a href="/bebes/formulas">Formulas Infantiles</a></li>
+                                        <li><a href="/bebes/alimentos">Alimentos Infantiles</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/vitaminas">Vitaminas y Suplementos</a>
+                                    <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/vitaminas/complementos">Complementos Alimenticios</a></li>
-                                        <li><a href="/home/vitaminas/multivitaminas">Multivitaminas</a></li>
-                                        <li><a href="/home/vitaminas/suplementos">Suplementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/multivitaminas">Multivitaminas</a></li>
+                                        <li><a href="/vitaminas/suplementos">Suplementos Alimenticios</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/departamentos">Departamentos</a>
+                                    <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/departamentos/alimentos">Alimentos</a></li>
-                                        <li><a href="/home/departamentos/bebidas">Bebidas</a></li>
-                                        <li><a href="/home/departamentos/higiene">Higiene y Belleza</a></li>
+                                        <li><a href="/departamentos/alimentos">Alimentos</a></li>
+                                        <li><a href="/departamentos/bebidas">Bebidas</a></li>
+                                        <li><a href="/departamentos/higiene">Higiene y Belleza</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/carrito">Carrito de Compras
+                                    <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/ayuda">Ayuda</a>
+                                    <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/ayuda/contacto">Contactanos</a></li>
-                                        <li><a href="/home/ayuda/preguntas">Preguntas Frecuentes</a></li>
+                                        <li><a href="/ayuda/contacto">Contactanos</a></li>
+                                        <li><a href="/ayuda/preguntas">Preguntas Frecuentes</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
@@ -91,8 +92,8 @@
                                                     {{ __('Dashboard') }}
                                                 </a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();">
+                                                   onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
 
@@ -113,7 +114,7 @@
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                             <li class="breadcrumb-item"><a href="/salud">Salud</a></li>
                             <li class="breadcrumb-item"><a>Antibioticos</a></li>
                         </ol>
@@ -121,19 +122,19 @@
 
                         
                     <body>
-                        <h1>Antibióticos</h1>
+                        <h1>Dolor</h1>
     
                         <div class="productos-container">
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/fosfocil.jpeg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                                <a class="nav-link" href="#"><h2>Fosfocil</h2></a>
-                                <p> Fosfocil 250mg/5ml Suspensión, 60 ml.</p>
-                                <p>Precio: $219.45</p>
+                                <a class="nav-link" href="#"><img src="/img/tempra.png" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
+                                <a class="nav-link" href="#"><h2>Tempra Boots</h2></a>
+                                <p> Tempra Boots 500mg/Para dolor de cabeza y migraña</p>
+                                <p>Precio: $210.45</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/amoxil.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
+                                <a class="nav-link" href="#"><img src="/img/advil.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
                                 <a class="nav-link" href="#"><h2>Amoxil</h2></a>
                                 <p>Amoxil 500 mg, 12 Cápsulas.</p><br>
                                 <p>Precio: $218.34</p>
@@ -141,7 +142,7 @@
                             </div>
 
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/argentafil.webp" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
+                                <a class="nav-link" href="#"><img src="/img/bio.jpg" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
                                 <a class="nav-link" href="#"><h2>Argentafil</h2></a>
                                 <p>Argentafil 1% Suspensión Spray, 30 ml.</p>
                                 <p>Precio: $193.48</p>
@@ -149,7 +150,7 @@
                             </div>
 
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/gremiltal.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><img src="/img/tylenol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
                                 <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
                                 <p>Gremiltal 75 mg, 10 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
@@ -157,25 +158,7 @@
                             </div>
 
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/azi.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/amox.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/clamo.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><img src="/img/ibe.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
                                 <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
                                 <p>Gremiltal 75 mg, 10 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
@@ -183,10 +166,34 @@
                             </div>
 
                             <div class="producto">
-                                <img src="ruta/a/tu/imagen2.jpg" alt="Producto 2">
-                                <h2>Producto 8</h2>
-                                <p>Descripción breve del Producto 8.</p>
-                                <p>Precio: $30.00</p>
+                                <a class="nav-link" href="#"><img src="/img/maal.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/flanax.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/act.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/tem.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 

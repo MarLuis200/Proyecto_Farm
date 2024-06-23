@@ -20,6 +20,9 @@ Auth::routes();
 
 // Dashboard
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
+    
+// Bebes
+Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
@@ -99,4 +102,5 @@ Route::put('admin/personas/eliminar/{id}', [PersonasController::class, 'eliminar
 Route::put('admin/personas/store', [PersonasController::class, 'store'])->name('admin.personas.store');
 
 // Rutas de Vistas de Productos
-Route::get('/producto/{id}', [ProductosController::class, 'show'])->name('producto.detalle');
+Route::get('/producto/vista/{id}', [ProductosController::class, 'vista'])->name('producto.vista');
+

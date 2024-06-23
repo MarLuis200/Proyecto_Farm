@@ -9,6 +9,6 @@ class AntibioticosController extends Controller
    
     public function index()
     {
-        return view('antibioticos');
+        return view('/home/salud/antibioticos');
     }
 }

@@ -1,10 +1,9 @@
-
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_antibioticos.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <link rel="icon" href="/img/logo_farmacia.png" />
-<title>Salud a tu alcanze</title>
+<title>Bebes</title>
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -15,6 +14,7 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
+
                         <div class="collapse navbar-collapse id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
@@ -28,41 +28,41 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/bebes">Bebes</a>
+                                    <a class="nav-link" href="/bebes">Bebes</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/bebes/antibioticos">Pañales</a></li>
-                                        <li><a href="/home/bebes/dolor">Formulas Infantiles</a></li>
-                                        <li><a href="/home/bebes/dermatologia">Alimentos Infantiles</a></li>
+                                        <li><a href="/bebes/pañales">Pañales</a></li>
+                                        <li><a href="/bebes/formulas">Formulas Infantiles</a></li>
+                                        <li><a href="/bebes/alimentos">Alimentos Infantiles</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/vitaminas">Vitaminas y Suplementos</a>
+                                    <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/vitaminas/complementos">Complementos Alimenticios</a></li>
-                                        <li><a href="/home/vitaminas/multivitaminas">Multivitaminas</a></li>
-                                        <li><a href="/home/vitaminas/suplementos">Suplementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/multivitaminas">Multivitaminas</a></li>
+                                        <li><a href="/vitaminas/suplementos">Suplementos Alimenticios</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/departamentos">Departamentos</a>
+                                    <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/departamentos/alimentos">Alimentos</a></li>
-                                        <li><a href="/home/departamentos/bebidas">Bebidas</a></li>
-                                        <li><a href="/home/departamentos/higiene">Higiene y Belleza</a></li>
+                                        <li><a href="/departamentos/alimentos">Alimentos</a></li>
+                                        <li><a href="/departamentos/bebidas">Bebidas</a></li>
+                                        <li><a href="/departamentos/higiene">Higiene y Belleza</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/carrito">Carrito de Compras
+                                    <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/ayuda">Ayuda</a>
+                                    <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/ayuda/contacto">Contactanos</a></li>
-                                        <li><a href="/home/ayuda/preguntas">Preguntas Frecuentes</a></li>
+                                        <li><a href="/ayuda/contacto">Contactanos</a></li>
+                                        <li><a href="/ayuda/preguntas">Preguntas Frecuentes</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
@@ -92,8 +92,8 @@
                                                     {{ __('Dashboard') }}
                                                 </a>
                                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();">
+                                                   onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
                                                 </a>
 
@@ -114,23 +114,23 @@
 
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
-                            <li class="breadcrumb-item"><a>Salud</a></li>
+                            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+                            <li class="breadcrumb-item"><a>Bebés</a></li>
                         </ol>
                     </nav>
 
                         
                     <body>
-                        <h1>Salud</h1>
+                        <h1>Bebés</h1>
 
                         <section id="anuncios">
                             <!-- Aquí puedes incluir tus anuncios publicitarios -->
                             <div class="productos-container">
-                                <a class="nav-link" href="#"><img src="/img/publicidadsalud.png" alt="Anuncio 1"></a>
+                                <a class="nav-link" href="#"><img src="/img/bebes.png" alt="Anuncio 1"></a>
                             </div>
                         </section>
 
-                        <h2>Encuentra las categorias de Salud</h2>
+                        <h2>Encuentra las categorias de Bebés</h2>
                 
                         <div class="container mt-5">
                             
@@ -140,82 +140,37 @@
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-center">
                                         <div>
-                                            <a class="nav-link" href="/salud/antibioticos"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/CAT_THUMB/medicina/ANTIBIOTICOS/DESK_2X_MEDICINA_ANTIBIOTICO.png" class="d-block mx-3" alt="Imagen 1"></a>
+                                            <img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C3/D4C3.png" class="d-block mx-3" alt="Imagen 1"></a>
                                             <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Antibioticos</a>
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Pañales</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/CAT_THUMB/medicina/PRIMEROS%20AUX/DESK_2X_MEDICINA_PRIMEROS%20AUXILIOS.png" class="d-block mx-3" alt="Imagen 2">
-                                            <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Dolor</a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D2D5C3/D2D5C3.png" class="d-block mx-3" alt="Imagen 3">
-                                            <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Dermatologia</a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img src="/img/saludsexual.jpg" class="d-block mx-3" alt="Imagen 4">
-                                            <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Salud Sexual</a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <img src="/img/formulas.jpg" class="d-block mx-3" alt="Imagen 5">
+                                            <a href="/bebes/cuidado-del-bebe"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C1/D4C1.png" class="d-block mx-3" alt="Imagen 2">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Formulas Infantiles</a>
                                             </div>
                                         </div>
+                                        <div>
+                                            <a href="/bebes/alimentos"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C5/D4C5.png" class="d-block mx-3" alt="Imagen 3">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos para Bebe</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/bebes/toallitas"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C4W3/D4C4W3.png" class="d-block mx-3" alt="Imagen 4">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Toallitas Humedas</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/bebes/cuidado-del-bebe"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C4/D4C4.png" class="d-block mx-3" alt="Imagen 5">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Cuidado del Bebe</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Segunda tanda de imágenes -->
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-center">
-                                            <div>
-                                                <img src="/img/multivitaminas.jpg" class="d-block mx-3" alt="Imagen 1">
-                                                <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Multivitaminas</a>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <img src="/img/alimentos.jpg" class="d-block mx-3" alt="Imagen 2">
-                                                <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos</a>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <img src="/img/bebidas.jpg" class="d-block mx-3" alt="Imagen 3">
-                                                <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Bebidas</a>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <img src="/img/higiene.jpg" class="d-block mx-3" alt="Imagen 4">
-                                                <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Higiene y Belleza</a>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <img src="/img/pañales.jpg" class="d-block mx-3" alt="Imagen 5">
-                                                <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Pañales</a>
-                                                </div>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Siguiente</span>
-                            </a>
-                            </div>
                         </div>
 
                                         

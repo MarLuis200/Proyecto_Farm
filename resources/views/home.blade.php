@@ -29,41 +29,41 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/bebes">Bebes</a>
+                                    <a class="nav-link" href="/bebes">Bebes</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/bebes/antibioticos">Pañales</a></li>
-                                        <li><a href="/home/bebes/dolor">Formulas Infantiles</a></li>
-                                        <li><a href="/home/bebes/dermatologia">Alimentos Infantiles</a></li>
+                                        <li><a href="/bebes/pañales">Pañales</a></li>
+                                        <li><a href="/bebes/formulas">Formulas Infantiles</a></li>
+                                        <li><a href="/bebes/alimentos">Alimentos Infantiles</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/vitaminas">Vitaminas y Suplementos</a>
+                                    <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/vitaminas/complementos">Complementos Alimenticios</a></li>
-                                        <li><a href="/home/vitaminas/multivitaminas">Multivitaminas</a></li>
-                                        <li><a href="/home/vitaminas/suplementos">Suplementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/multivitaminas">Multivitaminas</a></li>
+                                        <li><a href="/vitaminas/suplementos">Suplementos Alimenticios</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/departamentos">Departamentos</a>
+                                    <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/departamentos/alimentos">Alimentos</a></li>
-                                        <li><a href="/home/departamentos/bebidas">Bebidas</a></li>
-                                        <li><a href="/home/departamentos/higiene">Higiene y Belleza</a></li>
+                                        <li><a href="/departamentos/alimentos">Alimentos</a></li>
+                                        <li><a href="/departamentos/bebidas">Bebidas</a></li>
+                                        <li><a href="/departamentos/higiene">Higiene y Belleza</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/carrito">Carrito de Compras
+                                    <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/ayuda">Ayuda</a>
+                                    <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/ayuda/contacto">Contactanos</a></li>
-                                        <li><a href="/home/ayuda/preguntas">Preguntas Frecuentes</a></li>
+                                        <li><a href="/ayuda/contacto">Contactanos</a></li>
+                                        <li><a href="/ayuda/preguntas">Preguntas Frecuentes</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
@@ -159,14 +159,23 @@
 
                         <div class="productos-container">
                             
-                                @foreach ($productos as $producto)
-                                <div class="producto">
-                                    <img src="{!! asset('uploads/' . $producto->img) !!}" width="200" height="200" class="img-responsive" alt="{{ $producto->nombre }}">
-                                    <h3>{{ $producto->nombre }}</h3>
-                                    <p>{{ $producto->descripcion }}</p>
-                                    <p>Precio:$ {{ $producto->precio }} MXN</p>
-                                </div>
-                                @endforeach
+                        @foreach ($productos as $producto)
+                            <div class="producto">
+                                
+                                <a id="catalogEntry_img3074457345616696129" href="{{ route('producto.vista', $producto->id) }}" class="plp-product-link-thumbnail" tabindex="0">
+
+                                <input type="hidden" id="hasSingleSKU" value="true" tabindex="0">
+                                <input type="hidden" id="hasSingleSKUtest" value="false" tabindex="0">
+                                                
+                                <img src="{!! asset('uploads/' . $producto->img) !!}" width="200" height="200" class="img-responsive" alt="{{ $producto->nombre }}">
+
+                                </a>
+                                <h3>{{ $producto->nombre }}</h3>
+                                <p>{{ $producto->descripcion }}</p>
+                                <p>Precio: ${{ $producto->precio }} MXN</p>
+                            </div>
+                        @endforeach
+
                             
                         </div>
                     </section>
@@ -210,7 +219,7 @@
                 <br>
                 <h3>TIENDA EN LÍNEA</h3>
                 <ul class="fg-link-box">
-                    <li><a href="/salud-es" style="color: white;">Salud</a></li>
+                    <li><a href="/salud" style="color: white;">Salud</a></li>
                     <li><a href="/departamento/alimentos" style="color: white;">Alimentos</a></li>
                     <li><a href="/bebes" style="color: white;">Bebés</a></li>
                     <li><a href="/departamento/bebidas-es" style="color: white;">Bebidas</a></li>
