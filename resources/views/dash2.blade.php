@@ -71,27 +71,10 @@
                 </a>
             </li>
 
-            <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/productos">
-                    <i class='bx bxs-cart'></i>
-                    <span>Productos</span>
-                </a>
-            </li>   
-            
-
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/inventario">
-                    <i class="bx bx-box"></i>
-                    <span>Inventario</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-
-                <a class="nav-link" href="/admin/ventas">
-                    <i class="bx bx-shopping-bag"></i>
-                    <span>Ventas</span>
+                <a class="nav-link" href="/admin/empleados">
+                    <i class="bx bx-user"></i>
+                    <span>Empleados</span>
                 </a>
             </li>
 
@@ -102,10 +85,26 @@
                 </a>
             </li>
 
+            <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="/admin/empleados">
-                    <i class="bx bx-user"></i>
-                    <span>Empleados</span>
+                <a class="nav-link" href="/admin/productos">
+                    <i class='bx bxs-cart'></i>
+                    <span>Productos</span>
+                </a>
+            </li>   
+
+            <li class="nav-item">
+
+                <a class="nav-link" href="/admin/ventas">
+                    <i class="bx bx-shopping-bag"></i>
+                    <span>Ventas</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/inventario">
+                    <i class="bx bx-box"></i>
+                    <span>Inventario</span>
                 </a>
             </li>
 

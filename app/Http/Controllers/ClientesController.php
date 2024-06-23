@@ -37,38 +37,34 @@ class ClientesController extends Controller
 
     // Proceso de Creación de un Registro
     public function store(ItemCreateRequest $request)
-    {
-        // Crear una nueva instancia de Cliente
-        $cliente = new Clientes();
-    
-        // Asignar valores del formulario
-        $cliente->persona_id = $request->persona_id;
-        $cliente->nombre = $request->nombre;
-        $cliente->apellido_paterno = $request->apellido_paterno;
-        $cliente->apellido_materno = $request->apellido_materno;
-        $cliente->direccion = $request->direccion;
-        $cliente->telefono = $request->telefono;
-        $cliente->correo = $request->correo;
-        $cliente->img = $request->img;
+{
+    // Crear una nueva instancia de Cliente
+    $cliente = new Clientes();
 
-        if ($request->hasFile('img')) {
-            // Obtener el archivo
-            $file = $request->file('img');
-    
-            // Guardar el archivo en la carpeta 'uploads' (o la ruta deseada)
-            $filePath = $file->store('uploads'); // Almacenar en la carpeta 'uploads' dentro de storage/app
-            // $filePath = $file->store('uploads', 'public'); // Para almacenar en 'storage/app/public/uploads'
-    
-            // Asignar la ruta del archivo al campo 'img' en la base de datos
-            $cliente->img = $filePath;
-        }
-        
-        // Guardar el cliente en la base de datos
-        $cliente->save();
-    
-        // Redireccionar a la vista principal de clientes con un mensaje
-        return redirect('admin/clientes')->with('message', 'Guardado Satisfactoriamente !');
+    // Asignar valores del formulario
+    $cliente->persona_id = $request->persona_id;
+    $cliente->nombre = $request->nombre;
+    $cliente->apellido_paterno = $request->apellido_paterno;
+    $cliente->apellido_materno = $request->apellido_materno;
+    $cliente->direccion = $request->direccion;
+    $cliente->telefono = $request->telefono;
+    $cliente->correo = $request->correo;
+
+    // Obtener la información de la persona seleccionada
+    $persona = Personas::find($request->persona_id);
+
+    if ($persona) {
+        // Asignar la imagen de la persona al cliente
+        $cliente->img = $persona->img;
     }
+
+    // Guardar el cliente en la base de datos
+    $cliente->save();
+
+    // Redireccionar a la vista principal de clientes con un mensaje
+    return redirect('admin/clientes')->with('message', 'Guardado Satisfactoriamente !');
+}
+
     
     
     public function actualizar($id)

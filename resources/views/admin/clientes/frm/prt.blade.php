@@ -3,7 +3,7 @@
         <section class="panel">
             <div class="panel-body">
 
-                @if ( !empty ( $clientes->id) )
+                @if (!empty($clientes->id))
 
                     <div class="mb-3">
                         <label for="persona_id" class="negrita">Seleccionar Persona:</label>
@@ -60,27 +60,19 @@
                     </div>
 
                     <div class="mb-3">
-						<label for="img" class="negrita">Selecciona una imagen:</label>
-						<div>
-							<input name="img" type="file" id="img">
-							<br>
-							<br>
+                        <label for="img" class="negrita">Selecciona una imagen:</label>
+                        <div>
+                            <input name="img" type="file" id="img">
+                            <br><br>
 
-							@if ( !empty ( $clientes->img) )
-
-								<span>Imagen Actual: </span>
-								<br>
-								<img src="../../../uploads/{{ $clientes->img }}" width="200" class="img-fluid">
-
-							@else
-
-								Aún no se ha cargado una imagen para este producto
-
-							@endif
-
-						</div>
-
-					</div>
+                            @if (!empty($clientes->img))
+                                <span>Imagen Actual:</span><br>
+                                <img src="{{ asset('uploads/' . $clientes->img) }}" width="200" class="img-fluid">
+                            @else
+                                Aún no se ha cargado una imagen para este cliente
+                            @endif
+                        </div>
+                    </div>
 
                 @else
 
@@ -139,21 +131,18 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="img" class="negrita">Imagen Persona:</label>
+                        <label for="persona_img" class="negrita">Imagen Persona:</label>
                         <div>
                             <img id="persona_img" src="" alt="Imagen Persona" style="max-width: 200px; display: none;">
                         </div>
                     </div>
 
-
-
                 @endif
 
                 <button type="submit" class="btn btn-info">Guardar</button>
-                <a href="{{ route('admin/clientes') }}" class="btn btn-warning">Cancelar</a> 
+                <a href="{{ route('admin/clientes') }}" class="btn btn-warning">Cancelar</a>
 
-                <br>
-                <br>
+                <br><br>
 
             </div>
         </section>
@@ -173,10 +162,9 @@
             document.getElementById('telefono').value = selectedPersona.telefono;
             document.getElementById('correo').value = selectedPersona.correo;
 
-            // Mostrar la imagen de la persona seleccionada
             var imgElement = document.getElementById('persona_img');
             if (selectedPersona.img) {
-                imgElement.src = '{{ asset('uploads/' . ':img') }}'.replace(':img', selectedPersona.img);
+                imgElement.src = '{{ asset('uploads/') }}/' + selectedPersona.img;
                 imgElement.style.display = 'block'; // Mostrar la imagen
             } else {
                 imgElement.src = ''; // Limpiar la imagen si no hay ninguna
@@ -191,8 +179,7 @@
             document.getElementById('telefono').value = '';
             document.getElementById('correo').value = '';
             document.getElementById('persona_img').src = '';
+            document.getElementById('persona_img').style.display = 'none';
         }
     }
 </script>
-
-

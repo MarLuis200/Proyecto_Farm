@@ -57,7 +57,6 @@
                 </a>
             </li>
 
-
             <li class="nav-item">
                 <a class="nav-link" href="/admin/clientes">
                     <i class="bx bxs-user-account"></i>
@@ -65,7 +64,6 @@
                 </a>
             </li>
 
-              <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/proveedores">
                     <i class="bx bx-grid-alt"></i>
@@ -73,22 +71,27 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/empleados">
+                    <i class="bx bx-user"></i>
+                    <span>Empleados</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/admin/puestos">
+                    <i class='bx bxs-pin'></i>
+                    <span>Puestos</span>
+                </a>
+            </li>
+
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="/admin/productos">
-                    <i class="bx bx-cart"></i>
+                    <i class='bx bxs-cart'></i>
                     <span>Productos</span>
                 </a>
-            </li>
-
-          
-
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/inventario">
-                    <i class="bx bx-box"></i>
-                    <span>Inventario</span>
-                </a>
-            </li>
+            </li>   
 
             <li class="nav-item">
 
@@ -97,18 +100,11 @@
                     <span>Ventas</span>
                 </a>
             </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/puestos">
-                    <i class='bx bxs-pin'></i>
-                    <span>Puestos</span>
-                </a>
-            </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/admin/empleados">
-                    <i class="bx bx-user"></i>
-                    <span>Empleados</span>
+                <a class="nav-link" href="/admin/inventario">
+                    <i class="bx bx-box"></i>
+                    <span>Inventario</span>
                 </a>
             </li>
 
