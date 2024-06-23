@@ -135,9 +135,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="img" class="negrita">Selecciona una imagen:</label>
+                        <label for="persona_img" class="negrita">Imagen Persona:</label>
                         <div>
-                            <input name="img" type="file" id="img">
+                            <img id="persona_img" src="" alt="Imagen Persona" style="max-width: 200px; display: none;">
                         </div>
                     </div>
 
@@ -167,10 +167,9 @@
             document.getElementById('telefono').value = selectedPersona.telefono;
             document.getElementById('correo').value = selectedPersona.correo;
 
-            // Mostrar la imagen de la persona seleccionada
             var imgElement = document.getElementById('persona_img');
             if (selectedPersona.img) {
-                imgElement.src = '{{ asset('uploads/' . ':img') }}'.replace(':img', selectedPersona.img);
+                imgElement.src = '{{ asset('uploads/') }}/' + selectedPersona.img;
                 imgElement.style.display = 'block'; // Mostrar la imagen
             } else {
                 imgElement.src = ''; // Limpiar la imagen si no hay ninguna
@@ -185,6 +184,7 @@
             document.getElementById('telefono').value = '';
             document.getElementById('correo').value = '';
             document.getElementById('persona_img').src = '';
+            document.getElementById('persona_img').style.display = 'none';
         }
     }
 </script>

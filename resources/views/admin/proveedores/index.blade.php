@@ -110,10 +110,12 @@
                                                 <tr>
                                                     <th>Id</th>
                                                     <th>Nombre</th>
+                                                    <th>Apellido Paterno</th>
+                                                    <th>Apellido Materno</th>
                                                     <th>Dirección</th>
                                                     <th>Teléfono</th>
                                                     <th>Correo</th>
-                                                    <th>Imagen</th>
+                                                    <th>Img</th>
                                                     <th>Acciones</th>
                                                 </tr>
                                             </thead>
@@ -122,11 +124,13 @@
                                                     <tr>
                                                         <td class="v-align-middle">{{$prov->id}}</td>
                                                         <td class="v-align-middle">{{$prov->nombre}}</td>
+                                                        <td class="v-align-middle">{{$prov->apellido_paterno}}</td>
+                                                        <td class="v-align-middle">{{$prov->apellido_materno}}</td>
                                                         <td class="v-align-middle">{{$prov->direccion}}</td>
                                                         <td class="v-align-middle">{{$prov->telefono}}</td>
                                                         <td class="v-align-middle">{{$prov->correo}}</td>
                                                         <td class="v-align-middle">
-                                                            <img src="{!! asset("uploads/$prov->img") !!}" width="30" class="img-responsive">
+                                                            <img src="{!! asset('uploads/' . $prov->img) !!}" width="30" class="img-responsive">
                                                         </td>
                                                         <td class="v-align-middle">
                                                             <form action="{{ route('admin/proveedores/eliminar',$prov->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">

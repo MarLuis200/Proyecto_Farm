@@ -37,41 +37,34 @@ class ProveedoresController extends Controller
 
     // Proceso de Creación de un Registro
     public function store(ItemCreateRequest $request)
-    {
-        // Crear una nueva instancia de Cliente
-        $proveedor = new Proveedores();
-    
-        // Asignar valores del formulario
-        $proveedor->persona_id = $request->persona_id;
-        $proveedor->nombre = $request->nombre;
-        $proveedor->apellido_paterno = $request->apellido_paterno;
-        $proveedor->apellido_materno = $request->apellido_materno;
-        $proveedor->direccion = $request->direccion;
-        $proveedor->telefono = $request->telefono;
-        $proveedor->correo = $request->correo;
-        $proveedor->img = $request->img;
+{
+    // Crear una nueva instancia de Cliente
+    $proveedores = new Proveedores();
 
-        if ($request->hasFile('img')) {
-            // Obtener el archivo
-            $file = $request->file('img');
-    
-            // Guardar el archivo en la carpeta 'uploads' (o la ruta deseada)
-            $filePath = $file->store('uploads'); // Almacenar en la carpeta 'uploads' dentro de storage/app
-            // $filePath = $file->store('uploads', 'public'); // Para almacenar en 'storage/app/public/uploads'
-    
-            // Asignar la ruta del archivo al campo 'img' en la base de datos
-            $proveedor->img = $filePath;
-        }
+    // Asignar valores del formulario
+    $proveedores->persona_id = $request->persona_id;
+    $proveedores->nombre = $request->nombre;
+    $proveedores->apellido_paterno = $request->apellido_paterno;
+    $proveedores->apellido_materno = $request->apellido_materno;
+    $proveedores->direccion = $request->direccion;
+    $proveedores->telefono = $request->telefono;
+    $proveedores->correo = $request->correo;
 
-    
-        
-    
-        // Guardar el cliente en la base de datos
-        $proveedor->save();
-    
-        // Redireccionar a la vista principal de clientes con un mensaje
-        return redirect('admin/proveedores')->with('message', 'Guardado Satisfactoriamente !');
+    // Obtener la información de la persona seleccionada
+    $persona = Personas::find($request->persona_id);
+
+    if ($persona) {
+        // Asignar la imagen de la persona al cliente
+        $proveedores->img = $persona->img;
     }
+
+    // Guardar el cliente en la base de datos
+    $proveedores->save();
+
+    // Redireccionar a la vista principal de clientes con un mensaje
+    return redirect('admin/proveedores')->with('message', 'Guardado Satisfactoriamente !');
+}
+
     
     
     public function actualizar($id)
