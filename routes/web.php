@@ -23,6 +23,7 @@ Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middlewa
     
 // Bebes
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
+Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
 
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');

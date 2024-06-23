@@ -140,7 +140,7 @@
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-center">
                                         <div>
-                                            <img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C3/D4C3.png" class="d-block mx-3" alt="Imagen 1"></a>
+                                            <a href="/bebes/pañales"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C3/D4C3.png" class="d-block mx-3" alt="Imagen 1"></a>
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Pañales</a>
                                             </div>
