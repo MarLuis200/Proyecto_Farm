@@ -153,6 +153,9 @@ Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('/salud
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('/salud/antibioticos');
 
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
+Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('/salud/dolor');
+
+Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
 
 // routes/web.php
 Route::resource('ventas', VentaController::class);
