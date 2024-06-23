@@ -27,6 +27,7 @@ class EmpleadosController extends Controller
         $personas = Personas::all();
         $puestos = Puestos::all();
 
+
         $empleados = Empleados::join("personas", "empleados.id_persona", "=", "personas.id")
             ->join("puestos", "empleados.id_puesto", "=", "puestos.id")
             ->select("empleados.id", "personas.nombre", "puestos.descripcion")
