@@ -157,26 +157,28 @@
                             </div>
 
                             <div class="producto">
-                                <img src="ruta/a/tu/imagen2.jpg" alt="Producto 2">
-                                <h2>Producto 5</h2>
-                                <p>Descripción breve del Producto 5.</p>
-                                <p>Precio: $30.00</p>
+                                <a class="nav-link" href="#"><img src="/img/azi.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
+                            
                             <div class="producto">
-                                <img src="ruta/a/tu/imagen2.jpg" alt="Producto 2">
-                                <h2>Producto 6</h2>
-                                <p>Descripción breve del Producto 6.</p>
-                                <p>Precio: $30.00</p>
+                                <a class="nav-link" href="#"><img src="/img/amox.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
+                            
                             <div class="producto">
-                                <img src="ruta/a/tu/imagen2.jpg" alt="Producto 2">
-                                <h2>Producto 7</h2>
-                                <p>Descripción breve del Producto 7.</p>
-                                <p>Precio: $30.00</p>
+                                <a class="nav-link" href="#"><img src="/img/clamo.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
+                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
