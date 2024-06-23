@@ -69,7 +69,7 @@
                                     <button type="button" class="btn btn-success mt-4 ml-3" data-toggle="modal" data-target="#exampleModal">Crear
                                     </button>
 
-                                    <form method="POST" action="{{ route('admin/ventas/store') }}" role="form" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ route('admin.ventas.store') }}" role="form" enctype="multipart/form-data">
                                     
                                     <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -123,12 +123,12 @@
 										<td>$ {{ $venta->total }}</td>
 
                                             <td class="v-align-middle">
-                                                <form action="{{ route('admin/ventas/eliminar',$venta->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
+                                                <form action="{{ route('admin.ventas.eliminar',$venta->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
                                                     <input type="hidden" name="_method" value="PUT">
                                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    <a href="{{ route('admin/ventas/detalles',$venta->id) }}" class="btn btn-dark">Detalles</a>
+                                                    <a href="{{ route('admin.ventas.detalles',$venta->id) }}" class="btn btn-dark">Detalles</a>
 
-                                                    <a href="{{ route('admin/ventas/actualizar',$venta->id) }}" class="btn btn-primary">Editar</a>
+                                                    <a href="{{ route('admin.ventas.actualizar',$venta->id) }}" class="btn btn-primary">Editar</a>
                                                     <button type="submit" class="btn btn-danger">Eliminar</button>
                                                 </form>
                                             </td>

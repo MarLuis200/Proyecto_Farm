@@ -60,7 +60,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/puestos') }}">Puestos</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.puestos') }}">Puestos</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $puestos->descripcion }}</li>
           </ol>
         </nav>
@@ -87,7 +87,7 @@
 
                 </div>
 
-                <a href="{{ route('admin/puestos') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('admin.puestos') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 

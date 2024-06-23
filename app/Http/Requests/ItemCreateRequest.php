@@ -20,7 +20,7 @@ class ItemCreateRequest extends FormRequest
             'direccion' => 'required|max:255',
             'telefono' => 'required|max:15',
             'correo' => 'required|email|max:255',
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,avif|max:2048',
         ];
     }
 }

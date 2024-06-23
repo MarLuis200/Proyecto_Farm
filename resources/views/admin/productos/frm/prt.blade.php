@@ -120,7 +120,7 @@
 				@endif
 
 				<button type="submit" class="btn btn-info">Guardar</button>
-				<a href="{{ route('admin/productos') }}" class="btn btn-warning">Cancelar</a>  
+				<a href="{{ route('admin.productos') }}" class="btn btn-warning">Cancelar</a>  
 
 				<br>
 				<br>

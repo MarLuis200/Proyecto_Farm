@@ -64,7 +64,7 @@
                                     <button type="button" class="btn btn-success mt-4 ml-3" data-toggle="modal" data-target="#exampleModal">Crear
                                     </button>
 
-                                    <form method="POST" action="{{ route('admin/clientes/store') }}" role="form" enctype="multipart/form-data">
+                                    <form method="POST" action="{{ route('admin.clientes.store') }}" role="form" enctype="multipart/form-data">
                                     
                                                                 <!-- Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,48 +95,29 @@
                                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
                                     <section class="example mt-4">
-                                        <div class="table-responsive">
-                                            <table class="table table-striped table-bordered table-hover">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Id</th>
-                                                        <th>Nombre</th>
-                                                        <th>Apellido Paterno</th>
-                                                        <th>Apellido Materno</th>
-                                                        <th>Dirección</th>
-                                                        <th>Teléfono</th>
-                                                        <th>Correo</th>
-                                                        <th>Img</th>
-                                                        <th>Acciones</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    @foreach($clientes as $cli)
-                                                    
-                                                    <tr>
-                                                        <td class="v-align-middle">{{$cli->id}}</td>
-                                                        <td class="v-align-middle">{{$cli->nombre}}</td>
-                                                        <td class="v-align-middle">{{$cli->apellido_paterno}}</td>
-                                                        <td class="v-align-middle">{{$cli->apellido_materno}}</td>
-                                                        <td class="v-align-middle">{{$cli->direccion}}</td>
-                                                        <td class="v-align-middle">{{$cli->telefono}}</td>
-                                                        <td class="v-align-middle">{{$cli->correo}}</td>
-                                                        <td class="v-align-middle">
-                                                            <img src="{!! asset('uploads/' . $cli->img) !!}" width="30" class="img-responsive">
-                                                        </td>
-                                                        <td class="v-align-middle">
-                                                            <form action="{{ route('admin/clientes/eliminar', $cli->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
-                                                                <input type="hidden" name="_method" value="PUT">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <a href="{{ route('admin/clientes/detalles', $cli->id) }}" class="btn btn-dark">Detalles</a>
-                                                                <a href="{{ route('admin/clientes/actualizar', $cli->id) }}" class="btn btn-primary">Editar</a>
-                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                        <div class="row">
+                                            @foreach($clientes as $cli)
+                                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                                <div class="card">
+                                                    <img src="{!! asset('uploads/' . $cli->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$cli->nombre}}">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">{{$cli->nombre}} {{$cli->apellido_paterno}} {{$cli->apellido_materno}}</h5>
+                                                        <p class="card-text">Dirección: {{$cli->direccion}}</p>
+                                                        <p class="card-text">Teléfono: {{$cli->telefono}}</p>
+                                                        <p class="card-text">Correo: {{$cli->correo}}</p>
+                                                        <div class="text-center">
+                                                            <a href="{{ route('admin.clientes.detalles', $cli->id) }}" class="btn btn-dark">Detalles</a>
+                                                            
+                                                            <form action="{{ route('admin.clientes.eliminar', $cli->id) }}" method="POST" style="display: inline-block;">
+                                                                @csrf
+                                                                @method('PUT')
+                                                                <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
                                                             </form>
-                                                        </td>
-                                                    </tr>
-                                                    @endforeach
-                                                </tbody>
-                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
                                         </div>
                                     </section>
                                 </div>

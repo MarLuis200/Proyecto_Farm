@@ -47,7 +47,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/inventario') }}">Inventario</a></li>
+                          <li><a href="{{ route('admin.inventario') }}">Inventario</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -62,7 +62,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/inventario') }}">Inventario</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.inventario') }}">Inventario</a></li>
             <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
           </ol>
         </nav>
@@ -82,7 +82,7 @@
 
                     <section class="example mt-4">
 
-                    <form method="POST" action="{{ route('admin/inventario/update',$inventario->id) }}" role="form" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.inventario.update',$inventario->id) }}" role="form" enctype="multipart/form-data">
 
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">

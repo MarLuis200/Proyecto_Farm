@@ -49,7 +49,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('ventas.index') }}">Detalles</a></li>
+                          <li><a href="{{ route('admin.ventas') }}">Detalles</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -64,8 +64,8 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ $ventas->nombre }}</li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.ventas') }}">Ventas</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ $venta->nombre }}</li>
           </ol>
         </nav>
 
@@ -78,23 +78,23 @@
                 <div class="panel-body">
 
                     <p class="h5">Id_Venta:</p>
-                    <p class="h6 mb-3">{{ $ventas->id }}</p>
+                    <p class="h6 mb-3">{{ $venta->id }}</p>
 
                     <p class="h5">Producto:</p>
-                    <p class="h6 mb-3">{{ $ventas->producto->nombre }}</p>
+                    <p class="h6 mb-3">{{ $venta->producto->nombre }}</p>
 
                     <p class="h5">Cantidad:</p>
-                    <p class="h6 mb-3">{{ $ventas->cantidad}}</p>
+                    <p class="h6 mb-3">{{ $venta->cantidad}}</p>
 
                     <p class="h5">Precio:</p>
-                    <p class="h6 mb-3">${{ $ventas->producto->precio }}</p>
+                    <p class="h6 mb-3">${{ $venta->producto->precio }}</p>
 
                     <p class="h5">Total:</p>
-                    <p class="h6 mb-3">${{ $ventas->total }}</p>
+                    <p class="h6 mb-3">${{ $venta->total }}</p>
 
                 </div>
 
-                <a href="{{ route('admin/ventas') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('admin.ventas') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 

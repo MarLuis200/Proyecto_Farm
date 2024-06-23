@@ -159,21 +159,17 @@
 
                         <div class="productos-container">
                             
-                                @isset($productos)
-                                    @foreach ($productos as $producto)
-                                    <div class="producto">
-                                        <img src="{!! asset('uploads/' . $producto->img) !!}" width="200" height="200" class="img-responsive" alt="{{ $producto->nombre }}">
-                                        <h3>{{ $producto->nombre }}</h3>
-                                        <p>{{ $producto->descripcion }}</p>
-                                        <p>Precio: ${{ $producto->precio }} MXN</p>
-                                    </div>
-                                    @endforeach
-                                @endisset
+                                @foreach ($productos as $producto)
+                                <div class="producto">
+                                    <img src="{!! asset('uploads/' . $producto->img) !!}" width="200" height="200" class="img-responsive" alt="{{ $producto->nombre }}">
+                                    <h3>{{ $producto->nombre }}</h3>
+                                    <p>{{ $producto->descripcion }}</p>
+                                    <p>Precio:$ {{ $producto->precio }} MXN</p>
+                                </div>
+                                @endforeach
                             
                         </div>
                     </section>
-
-                    
 
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->

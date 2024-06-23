@@ -1,4 +1,4 @@
-<form action="{{ route('ventas.store') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('admin.ventas.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="row">
         <div class="col-md-12">
@@ -47,7 +47,7 @@
                     @endif
 
                     <button type="submit" class="btn btn-info">Guardar</button>
-                    <a href="{{ route('admin/ventas') }}" class="btn btn-warning">Cancelar</a> 
+                    <a href="{{ route('admin.ventas') }}" class="btn btn-warning">Cancelar</a> 
                 </div>
             </section>
         </div>

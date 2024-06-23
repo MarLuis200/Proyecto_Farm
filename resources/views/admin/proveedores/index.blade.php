@@ -48,7 +48,7 @@
                             <div class="navbar navbar-inverse" role="banner">
                                 <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                                     <ul class="nav navbar-nav">
-                                        <li><a href="{{ route('admin/proveedores') }}">Administrador</a></li>
+                                        <li><a href="{{ route('admin.proveedores') }}">Administrador</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -73,7 +73,7 @@
                                 <button type="button" class="btn btn-success mt-4 ml-3" data-toggle="modal" data-target="#exampleModal">Crear
                                 </button>
 
-                                <form method="POST" action="{{ route('admin/proveedores/store') }}" role="form" enctype="multipart/form-data">
+                                <form method="POST" action="{{ route('admin.proveedores.store') }}" role="form" enctype="multipart/form-data">
                                 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -104,47 +104,29 @@
                                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
                                 <section class="example mt-4">
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
-                                            <thead>
-                                                <tr>
-                                                    <th>Id</th>
-                                                    <th>Nombre</th>
-                                                    <th>Apellido Paterno</th>
-                                                    <th>Apellido Materno</th>
-                                                    <th>Dirección</th>
-                                                    <th>Teléfono</th>
-                                                    <th>Correo</th>
-                                                    <th>Img</th>
-                                                    <th>Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach($proveedores as $prov)
-                                                    <tr>
-                                                        <td class="v-align-middle">{{$prov->id}}</td>
-                                                        <td class="v-align-middle">{{$prov->nombre}}</td>
-                                                        <td class="v-align-middle">{{$prov->apellido_paterno}}</td>
-                                                        <td class="v-align-middle">{{$prov->apellido_materno}}</td>
-                                                        <td class="v-align-middle">{{$prov->direccion}}</td>
-                                                        <td class="v-align-middle">{{$prov->telefono}}</td>
-                                                        <td class="v-align-middle">{{$prov->correo}}</td>
-                                                        <td class="v-align-middle">
-                                                            <img src="{!! asset('uploads/' . $prov->img) !!}" width="30" class="img-responsive">
-                                                        </td>
-                                                        <td class="v-align-middle">
-                                                            <form action="{{ route('admin/proveedores/eliminar',$prov->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
-                                                                <input type="hidden" name="_method" value="PUT">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">    
-                                                                <a href="{{ route('admin/proveedores/detalles',$prov->id) }}" class="btn btn-dark">Detalles</a>                                         
-                                                                <a href="{{ route('admin/proveedores/actualizar',$prov->id) }}" class="btn btn-primary">Editar</a>          
-                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                            </form>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
+                                    <div class="row">
+                                        @foreach($proveedores as $prov)
+                                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                            <div class="card">
+                                                <img src="{!! asset('uploads/' . $prov->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$prov->nombre}}">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">{{$prov->nombre}} {{$prov->apellido_paterno}} {{$prov->apellido_materno}}</h5>
+                                                    <p class="card-text">Dirección: {{$prov->direccion}}</p>
+                                                    <p class="card-text">Teléfono: {{$prov->telefono}}</p>
+                                                    <p class="card-text">Correo: {{$prov->correo}}</p>
+                                                    <div class="text-center">
+                                                        <a href="{{ route('admin.proveedores.detalles', $prov->id) }}" class="btn btn-dark">Detalles</a>
+                                                        
+                                                        <form action="{{ route('admin.proveedores.eliminar', $prov->id) }}" method="POST" style="display: inline-block;">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endforeach
                                     </div>
                                 </section>
                             </div>

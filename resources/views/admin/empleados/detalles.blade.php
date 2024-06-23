@@ -49,7 +49,7 @@
                   <div class="navbar navbar-inverse" role="banner">
                       <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
                         <ul class="nav navbar-nav">
-                          <li><a href="{{ route('admin/empleados') }}">Detalles</a></li>
+                          <li><a href="{{ route('admin.empleados') }}">Detalles</a></li>
                         </ul>
                       </nav>
                   </div>
@@ -64,7 +64,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/empleados') }}">Empleados</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.empleados') }}">Empleados</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ $empleados->id }}</li>
           </ol>
         </nav>
@@ -95,7 +95,7 @@
 
                 </div>
 
-                <a href="{{ route('admin/empleados') }}" class="btn btn-warning mt-3">Volver</a>
+                <a href="{{ route('admin.empleados') }}" class="btn btn-warning mt-3">Volver</a>
 
               </div>
 

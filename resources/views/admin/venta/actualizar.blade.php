@@ -56,7 +56,7 @@
 
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ route('admin/ventas') }}">Ventas</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('admin.ventas') }}">Ventas</a></li>
             <li class="breadcrumb-item active" aria-current="page">Actualizar</li>
           </ol>
         </nav>
@@ -76,7 +76,7 @@
 
                 <section class="example mt-4">
 
-                    <form method="POST" action="{{ route('admin/ventas/update',$venta->id) }}" role="form" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('admin.ventas.update',$venta->id) }}" role="form" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
