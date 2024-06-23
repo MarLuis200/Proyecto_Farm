@@ -190,6 +190,8 @@
                         </div>
                     </section>
 
+                    
+
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
                         <div class="anuncio">
