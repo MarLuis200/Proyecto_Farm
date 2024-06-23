@@ -5,10 +5,11 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Dash2Controller;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\PersonasController;
 
 Route::get('/', function () {
-    return view('/home');
+    return view('home');
 });
 
 // Rutas CRUD
@@ -146,6 +147,7 @@ Route::get('/dash2', 'App\Http\Controllers\Dash2Controller@index')->name('/dash2
 Auth::routes();
 
 /*Vistas Home */
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('/salud');
@@ -177,6 +179,5 @@ Route::put('admin/personas/eliminar/{id}', 'App\Http\Controllers\PersonasControl
 
 /* Vista Clientes */
 Route::get('admin/personas', 'App\Http\Controllers\PersonasController@index')->name('admin/personas');
-
 
 
