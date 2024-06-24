@@ -30,65 +30,65 @@
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/advil.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
-                                <a class="nav-link" href="#"><h2>Amoxil</h2></a>
-                                <p>Amoxil 500 mg, 12 Cápsulas.</p><br>
-                                <p>Precio: $218.34</p>
+                                <a class="nav-link" href="#"><h2>Advil</h2></a>
+                                <p>Advil 500 mg, 10 Cápsulas liquidad.</p><br>
+                                <p>Precio: $210.34</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/bio.jpg" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
-                                <a class="nav-link" href="#"><h2>Argentafil</h2></a>
-                                <p>Argentafil 1% Suspensión Spray, 30 ml.</p>
+                                <a class="nav-link" href="#"><h2>Bio Electro</h2></a>
+                                <p>Bio Electro para el dolor de cabeza y migraña 250 mg, 25 Cápsulas.</p>
                                 <p>Precio: $193.48</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/tylenol.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <a class="nav-link" href="#"><h2>Tylenol</h2></a>
+                                <p>Tylenol paracetamol 500 mg, 20 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/ibe.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
+                                <a class="nav-link" href="#"><h2>Iberogast</h2></a>
+                                <p>Iberogast para el dolor de estomago 50 ml.</p>
+                                <p>Precio: $301.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/maal.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <a class="nav-link" href="#"><h2>Maalox</h2></a>
+                                <p>Maalox dolor de estomago y acides  400 mg, 10 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/flanax.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
+                                <a class="nav-link" href="#"><h2>Flanax 550</h2></a>
+                                <p>Desinflama y alivia el dolor intenso .5 Cápsulas.</p>
+                                <p>Precio: $601.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/act.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <a class="nav-link" href="#"><h2></h2></a>
+                                <p>Actromadol 660 mg, 8 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/tem.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
+                                <a class="nav-link" href="#"><h2>Tempra Forte</h2></a>
+                                <p>Tempra Forte 500 mg, 25 Cápsulas.</p>
+                                <p>Precio: $401.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 

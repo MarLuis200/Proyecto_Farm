@@ -54,17 +54,17 @@
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/azi.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
+                                <a class="nav-link" href="#"><h2>azitromicina</h2></a>
+                                <p> Se usa para tratar ciertas infecciones bacterianas, como la bronquitis, neumonía, enfermedades de transmisión sexual 50 ml.</p>
+                                <p>Precio: $131.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/amox.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <a class="nav-link" href="#"><h2>Amoxilina</h2></a>
+                                <p>Su acción consiste en detener el crecimiento de las bacterias 60ml</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
@@ -72,17 +72,25 @@
                             
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/clamo.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
+                                <a class="nav-link" href="#"><h2>Clamoxin</h2></a>
+                                <p>Sirve Para tratar ciertas infecciones causadas por bacterias, incluyendo infecciones en los oídos, pulmones, senos, piel y vías urinarias.</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
                             <div class="producto">
-                                <img src="ruta/a/tu/imagen2.jpg" alt="Producto 2">
-                                <h2>Producto 8</h2>
-                                <p>Descripción breve del Producto 8.</p>
-                                <p>Precio: $30.00</p>
+                                <a class="nav-link" href="#"><img src="/img/diclo.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Dicloxacilina</h2></a>
+                                <p>Dicloxacilina 500 mg,12 cápsulas</p>
+                                <p>Precio: $101.02</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a class="nav-link" href="#"><img src="/img/clind.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><h2>Clindamicina</h2></a>
+                                <p>Clindamicina 300 mg Oral 16 cápsulas</p>
+                                <p>Precio: $141.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
 
