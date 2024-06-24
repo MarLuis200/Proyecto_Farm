@@ -10,14 +10,14 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                            <li class="breadcrumb-item"><a href="/salud">Salud</a></li>
-                            <li class="breadcrumb-item"><a>Salud Sexual</a></li>
+                            <li class="breadcrumb-item"><a href="/vitaminas">Vitaminas</a></li>
+                            <li class="breadcrumb-item"><a>Vitaminas y Suplementos</a></li>
                         </ol>
                     </nav>
 
                         
                     <body>
-                        <h1>Salud Sexual</h1>
+                        <h1>Vitaminas y complementos</h1>
     
                         <div class="productos-container">
                             <div class="producto">
