@@ -21,6 +21,11 @@ Auth::routes();
 // Dashboard
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
     
+// Ayuda
+Route::get('/ayuda', 'App\Http\Controllers\AyudaController@index')->name('ayuda');
+Route::get('/ayuda/preguntas', 'App\Http\Controllers\PreguntasController@index')->name('ayuda.preguntas');
+Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->name('ayuda.contacto');
+
 // Bebes
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');

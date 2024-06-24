@@ -116,6 +116,8 @@
     </div>
 </div>
 
+
+
 @extends('layouts.footer')
 
 @section('footer')
