@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/maal.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
+                                <a class="nav-link" href="#"><img src="/img/maal.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a><br><br><br>
                                 <a class="nav-link" href="#"><h2>Maalox</h2></a>
                                 <p>Maalox dolor de estomago y acides  400 mg, 10 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
@@ -78,7 +78,7 @@
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/act.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2></h2></a>
+                                <a class="nav-link" href="#"><h2>Actromadol</h2></a>
                                 <p>Actromadol 660 mg, 8 Cápsulas.</p>
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>

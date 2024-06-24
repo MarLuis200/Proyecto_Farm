@@ -3,7 +3,7 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="es">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayuda - MultiFarma</title>
@@ -64,7 +64,6 @@
             text-decoration: none;
         }
     </style>
-</head>
 <body>
 
 <section class="help-section">
@@ -89,8 +88,8 @@
                     <p>Para cualquier otra pregunta o asistencia adicional, no dudes en contactarnos:</p>
                     <ul>
                         <li><strong>Teléfono:</strong> <a href="tel:+523338181818">33-3818-1818</a> (Guadalajara), <a href="tel:+525554205420">55-5420-5420</a> (CDMX), <a href="tel:+528183308330">81-8330-8330</a> (Monterrey), 83FARMACIA (toda la República Mexicana)</li>
-                        <li><strong>Email:</strong> <a href="7ayuda">soporte@multifarma.com</a></li>
-                        <li><strong>Formulario de Contacto:</strong> <a href="/ayuda/contatco">Completa nuestro formulario de contacto</a></li>
+                        <li><strong>Email:</strong> <a href="/ayuda/contacto">soporte@multifarma.com</a></li>
+                        <li><strong>Formulario de Contacto:</strong> <a href="/ayuda/contacto">Completa nuestro formulario de contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -98,13 +97,9 @@
     </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
 
-
-    
 @extends('layouts.footer')
 
 @section('footer')

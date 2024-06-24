@@ -61,9 +61,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="existencia" class="negrita">Existencia:</label>
+                        <label for="stock" class="negrita">Stock:</label>
                         <div>
-                            <input class="form-control" placeholder="Existencia" required name="existencia" type="text" id="existencia">
+                            <input class="form-control" placeholder="Stock" required name="stock" type="text" id="stock">
                         </div>
                     </div>
 
@@ -75,16 +75,9 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="no_compra" class="negrita">Número de Compra:</label>
+                        <label for="precio" class="negrita">Precio:</label>
                         <div>
-                            <input class="form-control" placeholder="#" required name="no_compra" type="text" id="no_compra">
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="clave_proveedor" class="negrita">Clave Proveedor:</label>
-                        <div>
-                            <input class="form-control" placeholder="#" required name="clave_proveedor" type="text" id="clave_proveedor">
+                            <input class="form-control" placeholder="$" required name="precio" type="text" id="precio">
                         </div>
                     </div>
 

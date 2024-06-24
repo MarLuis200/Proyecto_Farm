@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('inventario', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->integer('existencia');
+            $table->unsignedBigInteger('producto_id');
+            $table->integer('stock');
             $table->string('fecha_caducidad');
-            $table->integer('no_compra');
-            $table->integer('clave_proveedor');
+            $table->integer('precio');
             $table->string('img');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade');
         });
     }
 

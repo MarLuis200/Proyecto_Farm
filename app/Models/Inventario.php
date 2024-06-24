@@ -12,5 +12,5 @@ class Inventario extends Model
     protected $table = 'inventario';
 
     // Declaro los campos que usaré de la tabla 'productos'.
-    protected $fillable = ['nombre', 'existencia', 'fecha_caducidad', 'no_compra','clave_proveedor','img'];
+    protected $fillable = ['persona_id', 'stock', 'fecha_caducidad','precio','img'];
 }
