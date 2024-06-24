@@ -25,11 +25,10 @@ class CreateInventario extends FormRequest
     {
 
         return [
-            'nombre' => 'required|unique:inventario|max:255',
-            'existencia' => 'required',
+            'persona_id' => 'required|unique:inventario|max:255',
+            'stock' => 'required',
             'fecha_caducidad' => 'required',
-            'no_compra' => 'required',
-            'clave_proveedor' => 'required',
+            'precio' => 'required',
             'img' => 'required',
         ];
 

@@ -38,7 +38,7 @@ class VentaController extends Controller
 
         $venta->save();
 
-        return redirect()->route('ventas.index')->with('message', 'Guardado Satisfactoriamente!');
+        return redirect()->route('admin.ventas')->with('message', 'Guardado Satisfactoriamente!');
     }
 
     public function show($id)
@@ -72,7 +72,7 @@ class VentaController extends Controller
     $venta->total = $total;
     
     $venta->save();
-    return redirect()->route('ventas.index')->with('message', 'Actualizado Satisfactoriamente!');
+    return redirect()->route('admin.ventas')->with('message', 'Actualizado Satisfactoriamente!');
     }
 
     public function eliminar($id)
@@ -80,6 +80,6 @@ class VentaController extends Controller
         $venta = Venta::find($id);
         Venta::destroy($id);
 
-        return redirect()->route('ventas.index')->with('message', 'Eliminado Satisfactoriamente!');
+        return redirect()->route('admin.ventas')->with('message', 'Eliminado Satisfactoriamente!');
     }
 }

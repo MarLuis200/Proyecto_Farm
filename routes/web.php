@@ -41,8 +41,6 @@ Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosControll
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
-Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
-Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');

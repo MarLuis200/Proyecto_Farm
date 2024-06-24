@@ -94,10 +94,9 @@
                                             <thead>
                                                 <tr>
                                                     <th>Nombre</th>
-                                                    <th>Existencia</th>
+                                                    <th>Stock</th>
                                                     <th>Fecha Caducidad</th>
-                                                    <th>No Compra</th>
-                                                    <th>Clave Proveedor</th>
+                                                    <th>Precio</th>
                                                     <th>Imagen</th>
                                                     <th>Acciones</th>
                                                 </tr>
