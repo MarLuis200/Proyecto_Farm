@@ -1,10 +1,31 @@
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'MultiFarma') }}</title>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+</head>
+
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style_antibioticos.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-<title>Compra Antibioticos y Medicamentos</title>
+<link rel="icon" href="/img/logo_farmacia.png" />
 <div class="container col-md-10">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-10">
             <div class="card">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                     <div class="container">
@@ -35,32 +56,32 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/vitaminas">Vitaminas y Suplementos</a>
+                                    <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/vitaminas/complementos">Complementos Alimenticios</a></li>
-                                        <li><a href="/home/vitaminas/multivitaminas">Multivitaminas</a></li>
-                                        <li><a href="/home/vitaminas/suplementos">Suplementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
+                                        <li><a href="/vitaminas/multivitaminas">Multivitaminas</a></li>
+                                        <li><a href="/vitaminas/suplementos">Suplementos Alimenticios</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/departamentos">Departamentos</a>
+                                    <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/departamentos/alimentos">Alimentos</a></li>
-                                        <li><a href="/home/departamentos/bebidas">Bebidas</a></li>
-                                        <li><a href="/home/departamentos/higiene">Higiene y Belleza</a></li>
+                                        <li><a href="/departamentos/alimentos">Alimentos</a></li>
+                                        <li><a href="/departamentos/bebidas">Bebidas</a></li>
+                                        <li><a href="/departamentos/higiene">Higiene y Belleza</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/carrito">Carrito de Compras
+                                    <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/home/ayuda">Ayuda</a>
+                                    <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
-                                        <li><a href="/home/ayuda/contacto">Contactanos</a></li>
-                                        <li><a href="/home/ayuda/preguntas">Preguntas Frecuentes</a></li>
+                                        <li><a href="/ayuda/contacto">Contactanos</a></li>
+                                        <li><a href="/ayuda/preguntas">Preguntas Frecuentes</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
@@ -107,3 +128,5 @@
                         </div>
                     </div>
                 </nav>
+                
+
