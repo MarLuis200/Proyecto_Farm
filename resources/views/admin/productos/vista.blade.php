@@ -160,7 +160,7 @@
         <div class="breadcrumb-module">
             <ul>
                 <li><a href="/">Inicio</a> <span class="divider">/</span></li>
-                <li class="current">Graneodín B Sabor Frambuesa, 24 Pastillas</li>
+                <li class="current">{{ $producto->nombre }}</li>
             </ul>
         </div>
     </nav>

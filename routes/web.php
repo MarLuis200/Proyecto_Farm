@@ -34,7 +34,7 @@ Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
 
-// complementos
+// Complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
 Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosController@index')->name('vitaminas.complementos');
 Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
@@ -44,6 +44,8 @@ Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
+Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
+Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');

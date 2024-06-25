@@ -1,6 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
+
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -20,13 +21,17 @@
                         <h1>Dolor</h1>
     
                         <div class="productos-container">
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/tempra.png" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                                <a class="nav-link" href="#"><h2>Tempra Boots</h2></a>
-                                <p> Tempra Boots 500mg/Para dolor de cabeza y migraña</p>
-                                <p>Precio: $210.45</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            @if($producto2)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto2->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto2->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto2->nombre }}</h2>
+                                    <p>{{ $producto2->descripcion }}</p>
+                                    <p>${{ $producto2->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
 
                             <div class="producto">
                                 <a class="nav-link" href="#"><img src="/img/advil.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
@@ -83,18 +88,7 @@
                                 <p>Precio: $501.02</p>
                                 <button>Agregar al Carrito</button>
                             </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/tem.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Tempra Forte</h2></a>
-                                <p>Tempra Forte 500 mg, 25 Cápsulas.</p>
-                                <p>Precio: $401.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <!-- Puedes agregar más productos siguiendo el mismo patrón -->
                         </div>
-
                     </body>
                 </main>
             </div>

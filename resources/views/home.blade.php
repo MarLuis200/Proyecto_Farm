@@ -196,6 +196,30 @@
                                 </div>
                             @endif
 
+                            @if($producto4)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto4->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto4->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto4->nombre }}</h2>
+                                    <p>{{ $producto4->descripcion }}</p>
+                                    <p>${{ $producto4->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
+
+                            @if($producto5)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto5->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto5->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto5->nombre }}</h2>
+                                    <p>{{ $producto5->descripcion }}</p>
+                                    <p>${{ $producto5->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
+
                             
 
                         </div>
