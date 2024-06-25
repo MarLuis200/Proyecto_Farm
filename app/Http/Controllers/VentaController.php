@@ -6,6 +6,7 @@ use App\Models\Productos;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\VentaRequest;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\DB;
 
 class VentaController extends Controller
 {
@@ -29,19 +30,26 @@ class VentaController extends Controller
             return redirect()->back()->with('error', 'Producto no encontrado.');
         }
 
-        $total = $request->cantidad * $producto->precio;
+        if ($request->cantidad > $producto->stock) {
+            return redirect()->back()->with('error', 'Cantidad solicitada excede el stock disponible.');
+        }
 
-        $venta = new Venta();
-        $venta->producto_id = $request->producto_id;
-        $venta->cantidad = $request->cantidad;
-        $venta->total = $total;
+        DB::transaction(function() use ($producto, $request) {
+            $total = $request->cantidad * $producto->precio;
 
-        $venta->save();
+            $venta = new Venta();
+            $venta->producto_id = $request->producto_id;
+            $venta->cantidad = $request->cantidad;
+            $venta->total = $total;
+            $venta->save();
+
+            $producto->stock -= $request->cantidad;
+            $producto->save();
+        });
 
         return redirect()->route('admin.ventas')->with('message', 'Guardado Satisfactoriamente!');
     }
 
-    
     public function show($id)
     {
         $venta = Venta::find($id);
@@ -55,33 +63,56 @@ class VentaController extends Controller
         return view('admin.venta.actualizar', compact('venta', 'productos'));
     }
     
-
     public function update(VentaRequest $request, $id): RedirectResponse
     {
-    $venta = Venta::find($id);
-    if (!$venta) {
-        return redirect()->back()->with('error', 'Venta no encontrada.');
-    }
-    
-    $producto = Productos::find($request->producto_id);
-    if (!$producto) {
-        return redirect()->back()->with('error', 'Producto no encontrado.');
-    }
+        $venta = Venta::find($id);
+        if (!$venta) {
+            return redirect()->back()->with('error', 'Venta no encontrada.');
+        }
 
-    $total = $request->cantidad * $producto->precio;
-    $venta->producto_id = $request->producto_id;
-    $venta->cantidad = $request->cantidad;
-    $venta->total = $total;
-    
-    $venta->save();
-    return redirect()->route('admin.ventas')->with('message', 'Actualizado Satisfactoriamente!');
-    }
+        $producto = Productos::find($request->producto_id);
+        if (!$producto) {
+            return redirect()->back()->with('error', 'Producto no encontrado.');
+        }
 
+        if ($request->cantidad > $producto->stock) {
+            return redirect()->back()->with('error', 'Cantidad solicitada excede el stock disponible.');
+        }
+
+        DB::transaction(function() use ($producto, $venta, $request) {
+            $total = $request->cantidad * $producto->precio;
+
+            // Restoring previous stock
+            $previousStock = $venta->cantidad;
+            $producto->stock += $previousStock;
+
+            // Updating venta
+            $venta->producto_id = $request->producto_id;
+            $venta->cantidad = $request->cantidad;
+            $venta->total = $total;
+            $venta->save();
+
+            // Updating stock
+            $producto->stock -= $request->cantidad;
+            $producto->save();
+        });
+
+        return redirect()->route('admin.ventas')->with('message', 'Actualizado Satisfactoriamente!');
+    }
 
     public function eliminar($id)
     {
         $venta = Venta::find($id);
-        Venta::destroy($id);
+        if ($venta) {
+            $producto = Productos::find($venta->producto_id);
+
+            if ($producto) {
+                $producto->stock += $venta->cantidad;
+                $producto->save();
+            }
+
+            Venta::destroy($id);
+        }
 
         return redirect()->route('admin.ventas')->with('message', 'Eliminado Satisfactoriamente!');
     }
