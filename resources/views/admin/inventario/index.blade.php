@@ -54,10 +54,6 @@
                                     </div>
                                 @endif
 
-                                <!-- Contenido de tu página -->
-                                <button type="button" class="btn btn-success mt-4 ml-3" data-toggle="modal" data-target="#exampleModal">Crear
-                                </button>
-
                                 <form method="POST" action="{{ route('admin.inventario.store') }}" role="form" enctype="multipart/form-data">
                                 
                                                             <!-- Modal -->
@@ -98,28 +94,17 @@
                                                     <th>Fecha Caducidad</th>
                                                     <th>Precio</th>
                                                     <th>Imagen</th>
-                                                    <th>Acciones</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @foreach($inventario as $prov)
+                                                @foreach($productos as $inv)
                                                 <tr>
-                                                    <td class="v-align-middle">{{ $prov->nombre }}</td>
-                                                    <td class="v-align-middle">{{ $prov->existencia }}</td>
-                                                    <td class="v-align-middle">{{ $prov->fecha_caducidad }}</td>
-                                                    <td class="v-align-middle">{{ $prov->no_compra }}</td>
-                                                    <td class="v-align-middle">{{ $prov->clave_proveedor }}</td>
+                                                    <td class="v-align-middle">{{ $inv->nombre }}</td>
+                                                    <td class="v-align-middle">{{ $inv->stock }}</td>
+                                                    <td class="v-align-middle">{{ $inv->fecha_caducidad }}</td>
+                                                    <td class="v-align-middle">${{ $inv->precio}}</td>
                                                     <td class="v-align-middle">
-                                                        <img src="{{ asset("uploads/$prov->img") }}" width="30" class="img-responsive" alt="Imagen">
-                                                    </td>
-                                                    <td class="v-align-middle">
-                                                        <form action="{{ route('admin.inventario.eliminar',$prov->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
-                                                            <input type="hidden" name="_method" value="PUT">
-                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                            <a href="{{ route('admin.inventario.detalles',$prov->id) }}" class="btn btn-dark">Detalles</a>
-                                                            <a href="{{ route('admin.inventario.actualizar',$prov->id) }}" class="btn btn-primary">Editar</a>
-                                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                        </form>
+                                                    <img src="{{ asset('uploads/' . $inv->img) }}" alt="Imagen del Producto" style="max-width: 50px;">
                                                     </td>
                                                 </tr>
                                                 @endforeach
@@ -147,4 +132,4 @@
     </script>
 </body>
 </html>
-@endsection           
+@endsection        

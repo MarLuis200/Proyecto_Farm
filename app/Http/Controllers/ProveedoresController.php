@@ -35,7 +35,7 @@ class ProveedoresController extends Controller
         return view('admin/proveedores/crear', compact('personas'));
     }
 
-    // Proceso de Creación de un Registro
+    
     public function store(ItemCreateRequest $request)
 {
     // Crear una nueva instancia de Cliente

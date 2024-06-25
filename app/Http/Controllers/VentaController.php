@@ -41,6 +41,7 @@ class VentaController extends Controller
         return redirect()->route('admin.ventas')->with('message', 'Guardado Satisfactoriamente!');
     }
 
+    
     public function show($id)
     {
         $venta = Venta::find($id);
@@ -53,6 +54,8 @@ class VentaController extends Controller
         $productos = Productos::all();
         return view('admin.venta.actualizar', compact('venta', 'productos'));
     }
+    
+
     public function update(VentaRequest $request, $id): RedirectResponse
     {
     $venta = Venta::find($id);
@@ -65,7 +68,6 @@ class VentaController extends Controller
         return redirect()->back()->with('error', 'Producto no encontrado.');
     }
 
-   
     $total = $request->cantidad * $producto->precio;
     $venta->producto_id = $request->producto_id;
     $venta->cantidad = $request->cantidad;
@@ -74,6 +76,7 @@ class VentaController extends Controller
     $venta->save();
     return redirect()->route('admin.ventas')->with('message', 'Actualizado Satisfactoriamente!');
     }
+
 
     public function eliminar($id)
     {

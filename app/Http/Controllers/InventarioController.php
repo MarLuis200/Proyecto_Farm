@@ -4,116 +4,105 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Inventario;
+use App\Models\Productos;
 use Session;
 use Redirect;
 use App\Http\Requests\CreateInventario;
 use App\Http\Requests\UpdateInventario;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use DateTime;
 
 class InventarioController extends Controller
 {
-    // Listar todos los productos en la vista principal
     public function index()
     {
-        $inventario = Inventario::all();
-        return view('admin.inventario.index', compact('inventario'));
+        $productos = Productos::all();
+        $inventario = Inventario::join("productos", "inventario.producto_id", "=", "productos.id")
+            ->select("inventario.stock", "inventario.fecha_caducidad", "inventario.id", "productos.nombre", "productos.precio")
+            ->get();
+        return view('admin.inventario.index', compact('inventario', 'productos'));
     }
 
-    // Mostrar la vista para crear un nuevo registro
     public function crear()
     {
-        return view('admin.inventario.crear');
+        $productos = Productos::all();
+        return view('admin.inventario.crear', compact('productos'));
     }
 
-    // Proceso de creación de un registro
     public function store(CreateInventario $request)
-    {
-        $inventario = new Inventario;
-
-        // Recibo todos los datos del formulario de la vista 'crear.blade.php'
-        $inventario->nombre = $request->nombre;
-        $inventario->existencia = $request->existencia;
-        $inventario->fecha_caducidad = $request->fecha_caducidad;
-        $inventario->no_compra = $request->no_compra;
-        $inventario->clave_proveedor = $request->clave_proveedor;
-
-        // Almaceno la imagen en la carpeta publica especifica
-        $inventario->img = $request->file('img')->store('/');
-
-        // Guardamos la fecha de creación del registro
-        $inventario->created_at = (new DateTime)->getTimestamp();
-
-        // Inserto todos los datos en la tabla 'inventario'
-        $inventario->save();
-
-        // Hago una redirección a la vista principal con un mensaje
-        return redirect('admin/inventario')->with('message', 'Guardado Satisfactoriamente!');
+{
+    $producto = Productos::find($request->producto_id);
+    if (!$producto) {
+        return redirect()->back()->with('error', 'Producto no encontrado.');
     }
 
-    // Leer Registro por 'id' (Read)
+    $inventario = new Inventario();
+    $inventario->producto_id = $request->producto_id;
+    $inventario->stock = $request->stock;
+    $inventario->fecha_caducidad = $request->fecha_caducidad;
+    $inventario->precio = $request->precio;
+
+    $producto = Productos::find($request->producto_id);
+
+    if ($producto) {
+        // Asignar la imagen de la persona al cliente
+        $inventario->img = $producto->img;
+    }
+
+    $inventario->save();
+    return redirect()->route('admin.inventario')->with('message', 'Guardado Satisfactoriamente!');
+}
+
+
     public function show($id)
     {
-        $inventario = Inventario::findOrFail($id);
-        return view('admin.inventario.detalles', compact('inventario'));
+        try {
+            $inventario = Inventario::findOrFail($id);
+            return view('admin.inventario.detalles', compact('inventario'));
+        } catch (ModelNotFoundException $e) {
+            abort(404);
+        }
     }
 
-    // Mostrar la vista para actualizar un registro
     public function actualizar($id)
     {
         $inventario = Inventario::findOrFail($id);
-        return view('admin.inventario.actualizar', ['inventario' => $inventario]);
+        $productos = Productos::all();
+        return view('admin.inventario.actualizar', compact('inventario', 'productos'));
     }
 
-    // Proceso de actualización de un registro
+    
     public function update(UpdateInventario $request, $id)
     {
         $inventario = Inventario::findOrFail($id);
-        $inventario->nombre = $request->nombre;
-        $inventario->existencia = $request->existencia;
+        $inventario->producto_id = $request->producto_id;
+        $inventario->stock = $request->stock;
         $inventario->fecha_caducidad = $request->fecha_caducidad;
-        $inventario->no_compra = $request->no_compra;
-        $inventario->clave_proveedor = $request->clave_proveedor;
+        $inventario->precio = $request->precio;
 
-        // Recibo la imagen desde el formulario Actualizar
+        
         if ($request->hasFile('img')) {
-            // Elimino la imagen anterior si existe
+            
             if ($inventario->img) {
                 Storage::delete($inventario->img);
             }
             $inventario->img = $request->file('img')->store('/');
         }
 
-        // Guardamos la fecha de actualización del registro
         $inventario->updated_at = (new DateTime)->getTimestamp();
-
-        // Actualizo los datos en la tabla 'inventario'
         $inventario->save();
 
-        // Muestro un mensaje y redirecciono a la vista principal
         Session::flash('message', 'Editado Satisfactoriamente!');
         return Redirect::to('admin/inventario');
     }
 
-    // Eliminar un Registro
     public function eliminar($id)
     {
-        // Indicamos el 'id' del registro que se va Eliminar
         $inventario = Inventario::find($id);
-
-        // Elimino la imagen de la carpeta 'uploads', esto lo veremos más adelante.
-        $imagen = explode(",", $inventario->img);
-        Storage::delete($imagen);
-
-        // Elimino el registro de la tabla 'productos'
         Inventario::destroy($id);
 
-        
-
-        // Muestro un mensaje y redirecciono a la vista principal
-        Session::flash('message', 'Eliminado Satisfactoriamente !');
-        return Redirect::to('admin/inventario');
+        return redirect()->route('admin.inventario')->with('message', 'Eliminado Satisfactoriamente!');
     }
-
 }

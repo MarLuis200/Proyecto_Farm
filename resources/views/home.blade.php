@@ -158,25 +158,21 @@
                         <h2>Productos Destacados</h2>
 
                         <div class="productos-container">
-                            
-                        @foreach ($productos as $producto)
-                            <div class="producto">
-                                
-                                <a id="catalogEntry_img3074457345616696129" href="{{ route('producto.vista', $producto->id) }}" class="plp-product-link-thumbnail" tabindex="0">
-
-                                <input type="hidden" id="hasSingleSKU" value="true" tabindex="0">
-                                <input type="hidden" id="hasSingleSKUtest" value="false" tabindex="0">
-                                                
-                                <img src="{!! asset('uploads/' . $producto->img) !!}" width="200" height="200" class="img-responsive" alt="{{ $producto->nombre }}">
-
-                                </a>
-                                <h3>{{ $producto->nombre }}</h3>
-                                <p>{{ $producto->descripcion }}</p>
-                                <p>Precio: ${{ $producto->precio }} MXN</p>
-                            </div>
-                        @endforeach
-
-                            
+                            @foreach ($productos as $producto)
+                                <div class="col-lg-2 col-md-3 col-sm-4 mb-2">
+                                    <div class="card">
+                                        <img src="{!! asset('uploads/' . $producto->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$producto->nombre}}">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{$producto->nombre}}</h5>
+                                            <p class="card-text">{{$producto->descripcion}}</p>
+                                            <p class="card-text">${{$producto->precio}}</p>
+                                            <div class="text-center">
+                                                <a href="{{ route('admin.clientes.detalles', $producto->id) }}" class="btn btn-dark bg-primary text-white text-center">Agregar al carrito</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
                     </section>
 

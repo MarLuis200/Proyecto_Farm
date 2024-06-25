@@ -23,15 +23,12 @@ class CreateInventario extends FormRequest
      */
     public function rules()
     {
-
         return [
-            'persona_id' => 'required|unique:inventario|max:255',
-            'stock' => 'required',
-            'fecha_caducidad' => 'required',
-            'precio' => 'required',
-            'img' => 'required',
+            'producto_id' => 'required|exists:productos,id',
+            'stock' => 'required|integer',
+            'fecha_caducidad' => 'required|date',
+            'precio' => 'required|numeric',
+            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,avif|max:2048',
         ];
-
-
     }
 }
