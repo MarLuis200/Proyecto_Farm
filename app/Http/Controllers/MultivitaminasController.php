@@ -4,13 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ComplementosVitController extends Controller
+class MultivitaminasController extends Controller
 {
-   
     public function index()
     {
-        return view('/home/vitaminas/complementosVit');
+        return view('/home/vitaminas/multivitaminas');
     }
 }
-
-
