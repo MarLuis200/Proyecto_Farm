@@ -68,6 +68,17 @@ class ProductosController extends Controller
         return view('admin.productos.detalles', compact('productos'));
     }
 
+    public function showProducto($id)
+    {
+        $producto = Productos::find($id);
+
+        if (!$producto) {
+            return redirect()->route('home')->with('error', 'Producto no encontrado.');
+        }
+
+        return view('admin.productos.vista', compact('producto'));
+    }
+
     //  Actualizar un registro (Update)
     public function actualizar($id)
     {
@@ -127,7 +138,7 @@ class ProductosController extends Controller
     public function vista($id)
 {
     $productos = Productos::findOrFail($id);
-    return view('admin.productos.vista', compact('productos'));
+    return view('productos.vista', compact('productos'));
 }
 
 

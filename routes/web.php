@@ -117,5 +117,6 @@ Route::put('admin/personas/eliminar/{id}', [PersonasController::class, 'eliminar
 Route::put('admin/personas/store', [PersonasController::class, 'store'])->name('admin.personas.store');
 
 // Rutas de Vistas de Productos
-Route::get('/producto/vista/{id}', [ProductosController::class, 'vista'])->name('producto.vista');
+Route::get('/producto/{id}/vista', [ProductosController::class, 'showProducto'])->name('producto.vista');
+
 

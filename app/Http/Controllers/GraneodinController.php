@@ -10,8 +10,9 @@ class GraneodinController extends Controller
    
     public function index()
     {
-        $producto3 = Productos::find(3);
-        return view('/home/destacados/graneodin',compact('producto3'));
+        $producto1 = Productos::find(1);
+        return view('/home/destacados/graneodin',compact('producto1'));
     }
+    
 }
 

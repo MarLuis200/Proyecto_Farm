@@ -160,37 +160,43 @@
 
                         <div class="productos-container">
 
-                            <div class="producto">
-                                <a href="/home/tukol-d"><img src="{{ asset('uploads/' . $producto1->img) }}" class="card-img-top" alt="Imagen del Producto 1"></a>
-                                <h5 class="card-title">{{ $producto1->nombre }}</h5>
-                                <p class="card-text">{{ $producto1->descripcion }}</p>
-                                <p class="card-text">Precio: ${{ $producto1->precio }}</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            @if($producto1)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto1->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto1->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto1->nombre }}</h2>
+                                    <p>{{ $producto1->descripcion }}</p>
+                                    <p>${{ $producto1->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
 
-                            <div class="producto">
-                                <a href="/home/xl-3"><img src="{{ asset('uploads/' . $producto2->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
-                                <h5 class="card-title">{{ $producto2->nombre }}</h5>
-                                <p class="card-text">{{ $producto2->descripcion }}</p>
-                                <p class="card-text">Precio: ${{ $producto2->precio }}</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            @if($producto2)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto2->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto2->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto2->nombre }}</h2>
+                                    <p>{{ $producto2->descripcion }}</p>
+                                    <p>${{ $producto2->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
 
-                            <div class="producto">
-                                <a href="/graneodin"><img src="{{ asset('uploads/' . $producto3->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
-                                <h5 class="card-title">{{ $producto3->nombre }}</h5>
-                                <p class="card-text">{{ $producto3->descripcion }}</p>
-                                <p class="card-text">Precio: ${{ $producto3->precio }}</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            @if($producto3)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto3->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto3->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto3->nombre }}</h2>
+                                    <p>{{ $producto3->descripcion }}</p>
+                                    <p>${{ $producto3->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
 
-                            <div class="producto">
-                                <a href="/home/vitacilina"><img src="{{ asset('uploads/' . $producto4->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
-                                <h5 class="card-title">{{ $producto4->nombre }}</h5>
-                                <p class="card-text">{{ $producto4->descripcion  }}</p>
-                                <p class="card-text">Precio: ${{ $producto4->precio }}</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            
 
                         </div>
                     </section>
