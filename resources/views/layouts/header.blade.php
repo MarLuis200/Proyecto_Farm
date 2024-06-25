@@ -29,7 +29,7 @@
             <div class="card">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                     <div class="container">
-                        <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
+                        <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" ></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>

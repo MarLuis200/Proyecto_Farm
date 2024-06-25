@@ -3,6 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style_cards.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <title>Compra Antibioticos y Medicamentos</title>
 <div class="container col-md-10">
@@ -158,21 +159,39 @@
                         <h2>Productos Destacados</h2>
 
                         <div class="productos-container">
-                            @foreach ($productos as $producto)
-                                <div class="col-lg-2 col-md-3 col-sm-4 mb-2">
-                                    <div class="card">
-                                        <img src="{!! asset('uploads/' . $producto->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$producto->nombre}}">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{$producto->nombre}}</h5>
-                                            <p class="card-text">{{$producto->descripcion}}</p>
-                                            <p class="card-text">${{$producto->precio}}</p>
-                                            <div class="text-center">
-                                                <a href="{{ route('admin.clientes.detalles', $producto->id) }}" class="btn btn-dark bg-primary text-white text-center">Agregar al carrito</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+
+                            <div class="producto">
+                                <a href="/home/tukol-d"><img src="{{ asset('uploads/' . $producto1->img) }}" class="card-img-top" alt="Imagen del Producto 1"></a>
+                                <h5 class="card-title">{{ $producto1->nombre }}</h5>
+                                <p class="card-text">{{ $producto1->descripcion }}</p>
+                                <p class="card-text">Precio: ${{ $producto1->precio }}</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a href="/home/xl-3"><img src="{{ asset('uploads/' . $producto2->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
+                                <h5 class="card-title">{{ $producto2->nombre }}</h5>
+                                <p class="card-text">{{ $producto2->descripcion }}</p>
+                                <p class="card-text">Precio: ${{ $producto2->precio }}</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a href="/graneodin"><img src="{{ asset('uploads/' . $producto3->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
+                                <h5 class="card-title">{{ $producto3->nombre }}</h5>
+                                <p class="card-text">{{ $producto3->descripcion }}</p>
+                                <p class="card-text">Precio: ${{ $producto3->precio }}</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
+                            <div class="producto">
+                                <a href="/home/vitacilina"><img src="{{ asset('uploads/' . $producto4->img) }}" class="card-img-top" alt="Imagen del Producto 2"></a>
+                                <h5 class="card-title">{{ $producto4->nombre }}</h5>
+                                <p class="card-text">{{ $producto4->descripcion  }}</p>
+                                <p class="card-text">Precio: ${{ $producto4->precio }}</p>
+                                <button>Agregar al Carrito</button>
+                            </div>
+
                         </div>
                     </section>
 
