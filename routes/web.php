@@ -12,6 +12,8 @@ use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\VentaController;
 
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -29,6 +31,11 @@ Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->
 // Bebes
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
+
+// complementos
+Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
+Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosController@index')->name('vitaminas.complementos');
+
 
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
