@@ -13,7 +13,6 @@ use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\VentaController;
 
 
-
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/home', [HomeController::class, 'index']);
 
@@ -22,6 +21,9 @@ Auth::routes();
 
 // Dashboard
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
+
+// Destacados
+Route::get('/graneodin', 'App\Http\Controllers\GraneodinController@index')->name('ayuda.graneodin');
     
 // Ayuda
 Route::get('/ayuda', 'App\Http\Controllers\AyudaController@index')->name('ayuda');
