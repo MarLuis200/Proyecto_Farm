@@ -37,7 +37,8 @@ Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->
 // complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
 Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosController@index')->name('vitaminas.complementos');
-
+Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
+Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController@index')->name('vitaminas.suplementos');
 
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
