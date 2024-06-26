@@ -24,9 +24,13 @@ class ProductosController extends Controller
     public function index()
     {
         $tipos = Tipos::all();
-        $productos = Productos::all();
-        return view('admin.productos.index', compact('productos'));
+        $productos = Productos::join("tipos", "tipos.id", "=", "productos.id_tipo")
+            ->select("productos.*", "tipos.desc_tipos")
+            ->get();
+            
+        return view('admin.productos.index', compact('productos','tipos'));
     }
+
 
     // Crear un Registro (Create)
     public function crear()
@@ -46,6 +50,7 @@ class ProductosController extends Controller
         $productos->nombre = $request->nombre;
         $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
+        $productos->id_tipo = $request->id_tipo;
         $productos->precio = $request->precio;
         $productos->stock =$request->stock;
        
@@ -67,7 +72,8 @@ class ProductosController extends Controller
     public function show($id)
     {
         $productos = Productos::find($id);
-        return view('admin.productos.detalles', compact('productos'));
+        $tipos = Tipos::all();
+        return view('admin.productos.detalles', compact('productos','tipos'));
     }
 
     public function showProducto($id)
@@ -85,17 +91,19 @@ class ProductosController extends Controller
     public function actualizar($id)
     {
         $productos = Productos::find($id);
-        return view('admin/productos.actualizar',['productos'=>$productos]);
+        $tipos = Tipos::all();
+        return view('admin.productos.actualizar', compact('tipos', 'productos'));
     }
     
     // Proceso de Actualización de un Registro (Update)
     public function update(UpdateProductos $request, $id)
     {
         
-        $productos = Productos::find($id); // Cambiado de Productos a Proveedores
+        $productos = Productos::find($id);
         $productos->nombre = $request->nombre;
         $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
+        $productos->id_tipo = $request->id_tipo;
         $productos->precio = $request->precio;
         $productos->stock =$request->stock;
 

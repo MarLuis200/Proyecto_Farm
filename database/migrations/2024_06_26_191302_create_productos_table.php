@@ -17,12 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->string('fecha_caducidad');
-            $table->string('precio');
-            $table->string('stock');
+            $table->date('fecha_caducidad'); // Cambiado a tipo de dato date
+            $table->unsignedBigInteger('id_tipo');
+            $table->decimal('precio', 8, 2); // Cambiado a tipo de dato decimal
+            $table->integer('stock'); // Cambiado a tipo de dato integer
             $table->string('img');
             $table->timestamps();
             $table->softDeletes();
+
+            $table->foreign('id_tipo')->references('id')->on('tipos')->onDelete('cascade');
         });
     }
 

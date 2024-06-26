@@ -34,6 +34,19 @@
                         </div>
                     </div>
 
+						<div class="mb-3">
+                            <label for="id_tipo" class="negrita">Producto:</label> 
+                            <div>
+                            <select name="id_tipo" class="form-control @error('id_tipo') is-invalid @enderror" value="{{ old('id_tipo') }}" id="id_tipo" required>
+                                    <option value="" disabled selected>Selecciona un tipo</option>
+                                    @foreach($tipos as $tipo)
+                                        <option value="{{$tipo->id}}">{{$tipo->desc_tipos}}</option>
+                                    @endforeach 
+                                </select>           
+                                {!! $errors->first('id_tipo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+                            </div>
+                        </div>
+
                     <div class="mb-3">
                         <label for="precio" class="negrita">Precio:</label>
                         <div>
@@ -94,6 +107,19 @@
                             <input class="form-control" placeholder="150" required="required" name="fecha_caducidad" type="date" id="fecha_caducidad">
                         </div>
                     </div>
+
+					<div class="mb-3">
+                            <label for="id_tipo" class="negrita">Producto:</label> 
+                            <div>
+                            <select name="id_tipo" class="form-control @error('id_tipo') is-invalid @enderror" value="{{ old('id_tipo') }}" id="id_tipo" required>
+                                    <option value="" disabled selected>Selecciona un tipo</option>
+                                    @foreach($tipos as $tipo)
+                                        <option value="{{$tipo->id}}">{{$tipo->desc_tipos}}</option>
+                                    @endforeach 
+                                </select>           
+                                {!! $errors->first('id_tipo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+                            </div>
+                        </div>
 
                     <div class="mb-3">
                         <label for="precio" class="negrita">Precio:</label>

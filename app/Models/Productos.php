@@ -13,6 +13,6 @@ class Productos extends Model
     protected $table = 'productos';
 
     // Declaro los campos que usaré de la tabla 'productos'
-    protected $fillable = ['nombre','descripcion', 'fecha_caducidad','precio','stock','img'];
+    protected $fillable = ['nombre','descripcion', 'fecha_caducidad','id_tipo','precio','stock','img'];
 
 }

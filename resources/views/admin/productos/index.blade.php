@@ -120,7 +120,7 @@
                                                         <td class="v-align-middle">{{$prod->id}}</td>
                                                         <td class="v-align-middle">{{$prod->nombre}}</td>
                                                         <td class="v-align-middle">{{$prod->descripcion}}</td>
-                                                        <td class="v-align-middle">{{$prod->descripcion}}</td>
+                                                        <td class="v-align-middle">{{$prod->desc_tipos}}</td>
                                                         <td class="v-align-middle">{{$prod->fecha_caducidad}}</td>
                                                         <td class="v-align-middle">${{$prod->precio}}</td>
                                                         <td class="v-align-middle">{{$prod->stock}}</td>
