@@ -106,6 +106,7 @@
                                                     <th>Id_Producto</th>
                                                     <th>Nombre</th>
                                                     <th>Descripcion</th>
+                                                    <th>Tipo</th>
                                                     <th>Fecha Caducidad</th>
                                                     <th>Precio</th>
                                                     <th>Stock</th>
@@ -118,6 +119,7 @@
                                                     <tr>
                                                         <td class="v-align-middle">{{$prod->id}}</td>
                                                         <td class="v-align-middle">{{$prod->nombre}}</td>
+                                                        <td class="v-align-middle">{{$prod->descripcion}}</td>
                                                         <td class="v-align-middle">{{$prod->descripcion}}</td>
                                                         <td class="v-align-middle">{{$prod->fecha_caducidad}}</td>
                                                         <td class="v-align-middle">${{$prod->precio}}</td>

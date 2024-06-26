@@ -7,6 +7,7 @@ use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\PuestosController;
+use App\Http\Controllers\TiposController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\PersonasController;
@@ -118,6 +119,15 @@ Route::get('admin/personas/actualizar/{id}', [PersonasController::class, 'actual
 Route::put('admin/personas/update/{id}', [PersonasController::class, 'update'])->name('admin.personas.update');
 Route::put('admin/personas/eliminar/{id}', [PersonasController::class, 'eliminar'])->name('admin.personas.eliminar');
 Route::put('admin/personas/store', [PersonasController::class, 'store'])->name('admin.personas.store');
+
+// Rutas CRUD de Tipos
+Route::get('admin/tipos', [TiposController::class, 'index'])->name('admin.tipos');
+Route::get('admin/tipos/crear', [TiposController::class, 'crear'])->name('admin.tipos.crear');
+Route::get('admin/tiposshow/{id}', [TiposController::class, 'show'])->name('admin.tipos.detalles');
+Route::get('admin/tipos/actualizar/{id}', [TiposController::class, 'actualizar'])->name('admin.tipos.actualizar');
+Route::put('admin/tipos/update/{id}', [TiposController::class, 'update'])->name('admin.tipos.update');
+Route::put('admin/tipos/eliminar/{id}', [TiposController::class, 'eliminar'])->name('admin.tipos.eliminar');
+Route::put('admin/tipos/store', [TiposController::class, 'store'])->name('admin.tipos.store');
 
 // Rutas de Vistas de Productos
 Route::get('/producto/{id}/vista', [ProductosController::class, 'showProducto'])->name('producto.vista');

@@ -109,6 +109,13 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="/admin/tipos">
+                    <i class="bx bx-box"></i>
+                    <span>Tipos</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="/home">
                     <i class="bx bx-log-out"></i>
                     <span>Home</span>

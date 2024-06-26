@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\Tipos;
 use Session;
 use Redirect;
 use App\Http\Requests;
@@ -22,6 +23,7 @@ class ProductosController extends Controller
     // Listar todos los productos en la vista principal
     public function index()
     {
+        $tipos = Tipos::all();
         $productos = Productos::all();
         return view('admin.productos.index', compact('productos'));
     }
