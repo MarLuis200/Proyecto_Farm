@@ -14,6 +14,11 @@
     <!-- Bootstrap -->
     @vite(['resources/js/app.js'])
 
+    <style>
+        .navbar-search .form-control {
+            width: 400px; /* Ajusta el tamaño según sea necesario */
+        }
+    </style>
 </head>
 
 <body>
@@ -34,7 +39,17 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="input-group form">
-                                           
+                                           <!-- Topbar Search -->
+                                           <form id="globalSearchForm" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                                <div class="input-group">
+                                                    <input type="text" id="searchInput" class="form-control bg-light border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="button">
+                                                            <i class="bx bx-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -66,38 +81,36 @@
 
                                     <form method="POST" action="{{ route('admin.clientes.store') }}" role="form" enctype="multipart/form-data">
                                     
-                                                                <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                      <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                          <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                              <span aria-hidden="true">&times;</span>
-                                            </button>
-                                          </div>
-                                          <form>
-                                              <div class="modal-body">
-                                                  
-                                                    <input type="hidden" name="_method" value="PUT">
-                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                    @include('admin.clientes.frm.prt')
-                                              </div>
-                                          </form>
-                                          </div>
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Crear Cliente</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <form>
+                                                        <div class="modal-body">
+                                                            <input type="hidden" name="_method" value="PUT">
+                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                            @include('admin.clientes.frm.prt')
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                      </div>
-                                    </div>
                                     </form>
 
                                     <!-- Incluye jQuery y la librería de Bootstrap JS -->
-                                    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                                    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
                                     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
                                     <section class="example mt-4">
-                                        <div class="row">
+                                        <div class="row" id="clientesContainer">
                                             @foreach($clientes as $cli)
-                                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 cliente-card">
                                                 <div class="card">
                                                     <img src="{!! asset('uploads/' . $cli->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$cli->nombre}}">
                                                     <div class="card-body">
@@ -145,7 +158,15 @@
         else
             return false;
     }
-</script>
+    $(document).ready(function() {
+        $('#searchInput').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('#clientesContainer .cliente-card').filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+    </script>
 </body>
 </html>
 @endsection

@@ -31,8 +31,16 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="input-group form">
-                                           
-                                           
+                                        <form id="globalSearchForm" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                                <div class="input-group">
+                                                    <input type="text" id="searchInput" class="form-control bg-light border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="button">
+                                                            <i class="bx bx-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>     
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +99,7 @@
 
                                 <section class="example mt-4">
                                     <div class="table-responsive">
-                                        <table class="table table-striped table-bordered table-hover">
+                                        <table id="tablatipos" class="table table-striped table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>Id_Tipo</th>
@@ -137,7 +145,21 @@
         function confirmarEliminar() {
             return confirm("¿Estás seguro de eliminar?");
         }
-    </script>
+        $(document).ready(function() {
+        $('#searchInput').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('#tablatipos tbody tr').filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
+</script>
+
+<style>
+    .navbar-search .form-control {
+        width: 400px; /* Ajusta el tamaño según sea necesario */
+    }
+</style>
 </body>
 </html>
 @endsection           

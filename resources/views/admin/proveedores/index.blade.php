@@ -34,12 +34,17 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="input-group form">
-                                        <!-- 
-                                        <input type="text" class="form-control" placeholder="Buscar...">
-                                        <span class="input-group-btn">
-                                            <button class="btn btn-primary" type="button">Buscar</button>
-                                        </span>
-                                        -->
+                                        <!-- Topbar Search -->
+                                        <form id="globalSearchForm" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                            <div class="input-group">
+                                                <input type="text" id="searchInput" class="form-control bg-light border-0 small" placeholder="Buscar..." aria-label="Search" aria-describedby="basic-addon2">
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button">
+                                                        <i class="bx bx-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -104,9 +109,9 @@
                                 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
                                 <section class="example mt-4">
-                                    <div class="row">
+                                    <div class="row" id="proveedoresContainer"> <!-- Agregado id="proveedoresContainer" -->
                                         @foreach($proveedores as $prov)
-                                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 proveedor-card"> <!-- Agregado clase "proveedor-card" -->
                                             <div class="card">
                                                 <img src="{!! asset('uploads/' . $prov->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$prov->nombre}}">
                                                 <div class="card-body">
@@ -119,7 +124,7 @@
                                                         
                                                         <form action="{{ route('admin.proveedores.eliminar', $prov->id) }}" method="POST" style="display: inline-block;">
                                                             @csrf
-                                                            @method('PUT')
+                                                            @method('DELETE') <!-- Corregido a DELETE -->
                                                             <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
                                                         </form>
                                                     </div>
@@ -154,7 +159,21 @@
         else
             return false;
     }
+    $(document).ready(function() {
+        $('#searchInput').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('#proveedoresContainer .proveedor-card').filter(function() { // Corregido a ".proveedor-card"
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
+        });
+    });
 </script>
+
+<style>
+    .navbar-search .form-control {
+        width: 400px; /* Ajusta el tamaño según sea necesario */
+    }
+</style>
 
 </body>
 </html>
