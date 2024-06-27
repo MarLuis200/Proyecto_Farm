@@ -35,16 +35,17 @@
                         <td>{{ $item['cantidad'] }}</td>
                         <td>${{ number_format($item['precio'] * $item['cantidad'], 2) }}</td>
                         <td>
-                            <form action="{{ route('carrito.remove', $id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
-                            </form>
+                            
                             <form action="{{ route('carrito.update', $id) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('PUT')
                                 <input type="number" name="cantidad" value="{{ $item['cantidad'] }}" min="1" style="width: 50px;">
                                 <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </form>
+                            <form action="{{ route('carrito.remove', $id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
                             </form>
                         </td>
                     </tr>
