@@ -113,7 +113,7 @@
                                                 @foreach($empleados as $emple)
                                                     <tr>
                                                         <td class="v-align-middle">{{$emple->id}}</td>
-                                                        <td class="v-align-middle">{{$emple->nombre}} </td>
+                                                        <td class="v-align-middle">{{$emple->nombre}} {{$emple->apellido_paterno}} {{$emple->apellido_materno}}</td>
                                                         <td class="v-align-middle">{{$emple->descripcion}}</td>
                                                     
                                                         <td class="v-align-middle">

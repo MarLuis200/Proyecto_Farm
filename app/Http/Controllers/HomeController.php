@@ -15,10 +15,9 @@ class HomeController extends Controller
             $producto2 = Productos::find(2);
             $producto3 = Productos::find(3);
             $producto4 = Productos::find(4);
-            $producto5 = Productos::find(5);
             
             
             // Pasar los productos a la vista 'home'
-            return view('home', compact('producto1', 'producto2', 'producto3','producto4','producto5'));
+            return view('home', compact('producto1', 'producto2', 'producto3','producto4'));
     }
 }

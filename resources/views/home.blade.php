@@ -12,7 +12,7 @@
             <div class="card">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                     <div class="container">
-                        <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
+                        <a class="nav-link" href="/"><img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -111,10 +111,10 @@
                         </div>
                     </div>
                 </nav>
-            
+                <br>
                 <main class="main-content">
                     <header>
-                        <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
+                        <a class="nav-link" href="/ayuda/preguntas">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     </header>
 
                     <section id="ofertas">
@@ -129,13 +129,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -207,19 +207,6 @@
                                     <button>Agregar al Carrito</button>
                                 </div>
                             @endif
-
-                            @if($producto5)
-                                <div class="producto">
-                                    <a href="{{ route('producto.vista', ['id' => $producto5->id]) }}">
-                                    <img src="{{ asset('uploads/' . $producto5->img) }}" class="card-img-top" alt="Imagen del Producto 1">
-                                    </a>
-                                    <h2>{{ $producto5->nombre }}</h2>
-                                    <p>{{ $producto5->descripcion }}</p>
-                                    <p>${{ $producto5->precio }} MXN</p>
-                                    <button>Agregar al Carrito</button>
-                                </div>
-                            @endif
-
                             
 
                         </div>

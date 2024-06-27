@@ -10,7 +10,8 @@ class DolorController extends Controller
    
     public function index()
     {
-        $producto2 = Productos::find(2);
-        return view('/home/salud/dolor',compact('producto2'));
+        $producto1 = Productos::where('id_tipo', 1)->get();
+        
+        return view('/home/salud/dolor', compact('producto1'));
     }
 }

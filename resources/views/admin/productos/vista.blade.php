@@ -160,6 +160,7 @@
         <div class="breadcrumb-module">
             <ul>
                 <li><a href="/">Inicio</a> <span class="divider">/</span></li>
+                <li><a href="/salud/dolor">Dolor</a> <span class="divider">/</li>
                 <li class="current">{{ $producto->nombre }}</li>
             </ul>
         </div>
@@ -171,7 +172,7 @@
                 <div class="content">
                     <div class="image_container">
                         <div class="zoomWrapper">
-                        <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                        <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto" width="400" height="400" >
                         </div>
                     </div>
                     <div class="other_views" id="ProductAngleProdImagesArea">
