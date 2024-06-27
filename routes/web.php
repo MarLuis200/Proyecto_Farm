@@ -12,6 +12,7 @@ use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\VentaController;
+use App\Http\Controllers\CarritoController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -22,9 +23,6 @@ Auth::routes();
 
 // Dashboard
 Route::get('/dash2', [Dash2Controller::class, 'index'])->name('dash2')->middleware('auth');
-
-// Destacados
-Route::get('/graneodin', 'App\Http\Controllers\GraneodinController@index')->name('ayuda.graneodin');
     
 // Ayuda
 Route::get('/ayuda', 'App\Http\Controllers\AyudaController@index')->name('ayuda');
@@ -47,6 +45,13 @@ Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@i
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
 Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
 Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
+
+// Carrito de Compras
+Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('carrito');
+Route::post('/carrito/add', [CarritoController::class, 'addToCart'])->name('carrito.add');
+Route::delete('/carrito/remove/{id}', [CarritoController::class, 'remove'])->name('carrito.remove');
+Route::put('/carrito/update/{id}', [CarritoController::class, 'update'])->name('carrito.update');
+
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');

@@ -231,9 +231,11 @@
                         <label for="quantity" class="quantity_label">Cantidad:</label>
                         <input type="number" id="quantity" class="quantity_input" name="quantity" value="1" min="1" max="10">
                     </div>
-                    <div class="add-to-cart-button">
-                        <a href="#" class="fg-btn fg-btn__primary">Agregar al Carrito</a>
-                    </div>
+                    <form action="{{ route('carrito.add') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                    </form>
                 </div>
             </div>
         </div>

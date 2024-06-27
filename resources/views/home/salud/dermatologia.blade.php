@@ -1,7 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
-<div class="container col-md-10">
+<div class="container col-md-12">
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
@@ -29,7 +29,13 @@
                                     <a class="nav-link" href="#"><h2 class="card-title">{{ $producto->nombre }}</h2>
                                     <p class="card-text">{{ $producto->descripcion }}</p>
                                     <p class="card-text"><strong>Precio:</strong> ${{ $producto->precio }} MXN</p>
-                                    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                                    <div class="add-to-cart-button">
+                                        <form action="{{ route('carrito.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                                        </form>
+                                    </div>
                                 </div>
                             @endforeach
 

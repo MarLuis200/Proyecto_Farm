@@ -151,6 +151,37 @@ class ProductosController extends Controller
     return view('productos.vista', compact('productos'));
 }
 
+public function addToCart(Request $request)
+{
+    $id = $request->input('producto_id');
+    $quantity = $request->input('quantity', 1); // Por defecto, agregar 1 si no se especifica
+
+    // Obtener el producto desde la base de datos
+    $productos = Productos::findOrFail($id);
+
+    // Obtener el carrito desde la sesión (o crear uno nuevo si no existe)
+    $cart = session()->get('cart', []);
+
+    // Si el producto ya está en el carrito, aumentar la cantidad
+    if(isset($cart[$id])) {
+        $cart[$id]['cantidad'] += $quantity;
+    } else {
+        // Si el producto no está en el carrito, agregarlo
+        $cart[$id] = [
+            'id' => $productos->id, // Asegurarse de que el ID del producto esté aquí
+            'nombre' => $productos->nombre,
+            'precio' => $productos->precio,
+            'cantidad' => $quantity,
+            'img' => $productos->img
+        ];
+    }
+
+    // Guardar el carrito en la sesión
+    session()->put('cart', $cart);
+
+    return redirect()->route('carrito')->with('success', 'Producto agregado al carrito');
+}
+
 
 }
 

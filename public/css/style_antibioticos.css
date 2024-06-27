@@ -36,22 +36,8 @@ body {
 .producto p {
     margin-bottom: 10px;
 }
-.producto button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.producto button:hover {
-    background-color: #45a049;
-}
+
+
 .carousel-item img {
     border-radius: 50%; /* Hace que las imágenes sean redondas */
     width: 180px; /* Ajusta el tamaño de las imágenes */
