@@ -11,7 +11,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
                             <li class="breadcrumb-item"><a href="/departamentos">Departamentos</a></li>
-                            <li class="breadcrumb-item"><a>Bebidas</a></li>
+                            <li class="breadcrumb-item"><a>Alimentos</a></li>
                         </ol>
                     </nav>
 

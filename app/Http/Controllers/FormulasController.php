@@ -15,7 +15,7 @@ class FormulasController extends Controller
 
         if ($tipoFormulas) {
             
-            $productos = Productos::where('id_tipo', $tipoAlimentos->id)->get();
+            $productos = Productos::where('id_tipo', $tipoFormulas->id)->get();
         } else {
             $productos = [];
         }

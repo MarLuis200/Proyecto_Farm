@@ -34,7 +34,7 @@
                                     <ul class="dropdown-content">
                                         <li><a href="/bebes/pañales">Pañales</a></li>
                                         <li><a href="/bebes/formulas">Formulas Infantiles</a></li>
-                                        <li><a href="/bebes/alimentos">Alimentos Infantiles</a></li>
+                                        <li><a href="/bebes/infantiles">Alimentos Infantiles</a></li>
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
