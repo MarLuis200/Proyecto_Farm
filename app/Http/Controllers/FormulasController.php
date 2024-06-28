@@ -11,15 +11,14 @@ class FormulasController extends Controller
    
     public function index()
     {
-        // Obtener el tipo "dolor" según la descripción desde la tabla "tipos"
-        $tipoFormulas = Tipos::where('desc_tipos', 'formulas infantiles')->first();
+        $tipoFormula= Tipos::where('desc_tipos', 'formulas infantiles')->first();
 
-        if ($tipoFormulas) {
-            // Obtener todos los productos que tienen este tipo de dolor
-            $productos = Productos::where('id_tipo', $tipoFormulas->id)->get();
+        if ($tipoFormula) {
+            
+            $productos = Productos::where('id_tipo', $tipoFormula->id)->get();
         } else {
-            $productos = []; // O manejar el caso si no se encuentra el tipo "dolor"
-        return view('/home/bebes/formulas', compact('productos'));
+            $productos = [];
         }
+        return view('/home/bebes/formulas', compact('productos'));
     }
 }
