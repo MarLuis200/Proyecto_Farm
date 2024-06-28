@@ -8,6 +8,7 @@ use App\Models\Tipos;
 
 class FormulasController extends Controller
 {
+   
     public function index()
     {
         // Obtener el tipo "dolor" según la descripción desde la tabla "tipos"
@@ -18,7 +19,7 @@ class FormulasController extends Controller
             $productos = Productos::where('id_tipo', $tipoFormulas->id)->get();
         } else {
             $productos = []; // O manejar el caso si no se encuentra el tipo "dolor"
-        }
         return view('/home/bebes/formulas', compact('productos'));
+        }
     }
 }

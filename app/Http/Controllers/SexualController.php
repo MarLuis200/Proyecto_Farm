@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 use App\Models\Productos;
 use App\Models\Tipos;
 
-class SaludSexualController extends Controller
+class SexualController extends Controller
 {
    
     public function index()
     {
-        $tipoSexual = Tipos::where('desc_tipos', 'salud sexual')->first();
+        $tipoSexual= Tipos::where('desc_tipos', 'saludsexual')->first();
 
         if ($tipoSexual) {
             
@@ -19,6 +19,6 @@ class SaludSexualController extends Controller
         } else {
             $productos = [];
         }
-        return view('/home/salud/saludsexual', compact('productos'));
+        return view('home/salud/saludsexual', compact('productos'));
     }
 }

@@ -4,12 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\Tipos;
 
 class AlimentosController extends Controller
 {
+   
     public function index()
     {
-        $producto12 = Productos::where('id_tipo', 12)->get();
-        return view('/home/bebes/alimentos', compact('producto12'));
+        $tipoAlimentos = Tipos::where('desc_tipos', 'alimentos')->first();
+
+        if ($tipoAlimentos) {
+            
+            $productos = Productos::where('id_tipo', $tipoAlimentos->id)->get();
+        } else {
+            $productos = [];
+        }
+        return view('/home/departamentos/alimentos', compact('productos'));
     }
 }

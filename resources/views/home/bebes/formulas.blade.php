@@ -20,8 +20,7 @@
                         <h1>Fórmulas Infantiles</h1>
     
                         <div class="productos-container">
-
-                            @foreach($productos as $producto)
+                        @foreach($productos as $producto)
                                 <div class="producto">
                                     <a href="{{ route('producto.vista', ['id' => $producto->id]) }}">
                                         <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="{{ $producto->nombre }}">

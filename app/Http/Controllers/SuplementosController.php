@@ -10,7 +10,7 @@ class SuplementosController extends Controller
 {
     public function index()
     {
-        $tipoSuplementos = Tipos::where('desc_tipos', 'suplementos alimenticios')->first();
+        $tipoSuplementos = Tipos::where('desc_tipos', 'suplementos')->first();
 
         if ($tipoSuplementos) {
             

@@ -33,13 +33,13 @@ Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
 Route::get('/bebes/formulas', 'App\Http\Controllers\FormulasController@index')->name('bebes.formulas');
-Route::get('/bebes/alimentos', 'App\Http\Controllers\AlimentosController@index')->name('bebes.alimentos');
+Route::get('/bebes/infantiles', 'App\Http\Controllers\InfantilesController@index')->name('bebes.infantiles');
 
 // Departamentos
 Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
-Route::get('/departamentos/alimentos', 'App\Http\Controllers\D_AlimentosController@index')->name('bebes.alimentos');
-Route::get('/departamentos/bebidas', 'App\Http\Controllers\BebidasController@index')->name('bebes.bebidas');
-Route::get('/departamentos/higiene', 'App\Http\Controllers\HigieneController@index')->name('bebes.alimentos');
+Route::get('/departamentos/alimentos', 'App\Http\Controllers\AlimentosController@index')->name('departamentos.alimentos');
+Route::get('/departamentos/bebidas', 'App\Http\Controllers\BebidasController@index')->name('departamentos.bebidas');
+Route::get('/departamentos/higiene', 'App\Http\Controllers\HigieneController@index')->name('departamentos.higiene');
 
 // Complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
@@ -56,7 +56,7 @@ Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud'
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
 Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
-Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
+Route::get('/salud/saludsexual', 'App\Http\Controllers\SexualController@index')->name('salud.saludsexual');
 
 // Carrito de Compras
 Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('carrito');

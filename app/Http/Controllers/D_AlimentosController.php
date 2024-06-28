@@ -9,7 +9,7 @@ class D_AlimentosController extends Controller
 {
     public function index()
     {
-        $producto13 = Productos::where('id_tipo', 13)->get();
-        return view('/home/departamentos/alimentos', compact('producto13'));
+        $productos = Productos::where('id_tipo')->get();
+        return view('/home/departamentos/alimentos', compact('productos'));
     }
 }
