@@ -11,7 +11,7 @@ class SexualController extends Controller
    
     public function index()
     {
-        $tipoSexual= Tipos::where('desc_tipos', 'saludsexual')->first();
+        $tipoSexual= Tipos::where('desc_tipos', 'salud sexual')->first();
 
         if ($tipoSexual) {
             
