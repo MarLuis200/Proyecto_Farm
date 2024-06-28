@@ -54,7 +54,7 @@ Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud'
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
 Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
-Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
+Route::get('/salud/saludsexual', 'App\Http\Controllers\SexualController@index')->name('salud.saludsexual');
 
 // Carrito de Compras
 Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('carrito');
