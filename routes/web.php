@@ -32,6 +32,14 @@ Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->
 // Bebes
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
+Route::get('/bebes/formulas', 'App\Http\Controllers\FormulasController@index')->name('bebes.formulas');
+Route::get('/bebes/alimentos', 'App\Http\Controllers\AlimentosController@index')->name('bebes.alimentos');
+
+// Departamentos
+Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
+Route::get('/departamentos/alimentos', 'App\Http\Controllers\D_AlimentosController@index')->name('bebes.alimentos');
+Route::get('/departamentos/bebidas', 'App\Http\Controllers\BebidasController@index')->name('bebes.bebidas');
+Route::get('/departamentos/higiene', 'App\Http\Controllers\HigieneController@index')->name('bebes.alimentos');
 
 // Complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
