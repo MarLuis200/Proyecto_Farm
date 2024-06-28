@@ -68,31 +68,31 @@
                                 <div class="carousel-item">
                                     <div class="d-flex justify-content-center">
                                         <div>
-                                            <img src="/img/multivitaminas.jpg" class="d-block mx-3" alt="Imagen 1">
+                                            <a href="/vitaminas/multivitaminas"><img src="/img/multivitaminas.jpg" class="d-block mx-3" alt="Imagen 1">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Multivitaminas</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <img src="/img/alimentos.jpg" class="d-block mx-3" alt="Imagen 2">
+                                            <a href="/departamentos/alimentos"><img src="/img/alimentos.jpg" class="d-block mx-3" alt="Imagen 2">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Alimentos</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <img src="/img/bebidas.jpg" class="d-block mx-3" alt="Imagen 3">
+                                            <a href="/departamentos/bebidas"><img src="/img/bebidas.jpg" class="d-block mx-3" alt="Imagen 3">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Bebidas</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <img src="/img/higiene.jpg" class="d-block mx-3" alt="Imagen 4">
+                                            <a href="/departamentos/higiene"><img src="/img/higiene.jpg" class="d-block mx-3" alt="Imagen 4">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Higiene y Belleza</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <img src="/img/pañales.jpg" class="d-block mx-3" alt="Imagen 5">
+                                            <a href="/bebes/pañales"><img src="/img/pañales.jpg" class="d-block mx-3" alt="Imagen 5">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Pañales</a>
                                             </div>

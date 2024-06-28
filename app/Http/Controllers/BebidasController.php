@@ -9,7 +9,7 @@ class BebidasController extends Controller
 {
     public function index()
     {
-        $producto14 = Productos::where('id_tipo', 14)->get();
-        return view('/home/departamentos/bebidas', compact('producto14'));
+        $productos = Productos::where('id_tipo')->get();
+        return view('/home/departamentos/bebidas', compact('productos'));
     }
 }

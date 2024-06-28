@@ -39,13 +39,22 @@ Route::get('/bebes/alimentos', 'App\Http\Controllers\AlimentosController@index')
 Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
 Route::get('/departamentos/alimentos', 'App\Http\Controllers\AlimentosController@index')->name('departamentos.alimentos');
 Route::get('/departamentos/bebidas', 'App\Http\Controllers\BebidasController@index')->name('departamentos.bebidas');
-Route::get('/departamentos/higiene', 'App\Http\Controllers\HigieneController@index')->name('departamentos.alimentos');
+Route::get('/departamentos/higiene', 'App\Http\Controllers\HigieneController@index')->name('departamentos.higiene');
 
 // Complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
 Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosController@index')->name('vitaminas.complementos');
 Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
 Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController@index')->name('vitaminas.suplementos');
+
+
+//departamentos
+
+
+Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
+Route::get('/departamentos/alimentos', 'App\Http\Controllers\D_AlimentosController@index')->name('departamentos.alimentos');
+
+
 
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');

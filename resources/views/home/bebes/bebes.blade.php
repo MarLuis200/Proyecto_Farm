@@ -48,18 +48,6 @@
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos para Bebe</a>
                                             </div>
                                         </div>
-                                        <div>
-                                            <a href="/bebes/toallitas"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C4W3/D4C4W3.png" class="d-block mx-3" alt="Imagen 4">
-                                            <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Toallitas Humedas</a>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <a href="/bebes/cuidado-del-bebe"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C4/D4C4.png" class="d-block mx-3" alt="Imagen 5">
-                                            <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Cuidado del Bebe</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                         </div>

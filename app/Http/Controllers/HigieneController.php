@@ -9,7 +9,7 @@ class HigieneController extends Controller
 {
     public function index()
     {
-        $producto15 = Productos::where('id_tipo', 15)->get();
-        return view('/home/departamentos/higiene', compact('producto15'));
+        $productos = Productos::where('id_tipo')->get();
+        return view('/home/departamentos/higiene', compact('productos'));
     }
 }
