@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\Tipos;
 
 class PañalesController extends Controller
 {
     public function index()
     {
-        $producto5 = Productos::where('id_tipo', 5)->get();
-        return view('/home/bebes/pañales',compact('producto5'));
+        $tipoPañales = Tipos::where('desc_tipos', 'pañales')->first();
+
+        if ($tipoPañales) {
+            
+            $productos = Productos::where('id_tipo', $tipoPañales->id)->get();
+        } else {
+            $productos = [];
+        }
+        return view('/home/bebes/pañales',compact('productos'));
     }
 }

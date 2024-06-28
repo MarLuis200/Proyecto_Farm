@@ -156,7 +156,7 @@
     <br>
     <br>
     <br>
-    <nav aria-label="ruta de navegación"
+    <nav aria-label="ruta de navegación">
         <div class="breadcrumb-module">
             <ul>
                 <li><a href="/">Inicio</a> <span class="divider">/</span></li>
@@ -172,34 +172,34 @@
                 <div class="content">
                     <div class="image_container">
                         <div class="zoomWrapper">
-                        <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto" width="400" height="400" >
+                        <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top product_main_image" alt="Imagen del Producto" width="400" height="400">
                         </div>
                     </div>
                     <div class="other_views" id="ProductAngleProdImagesArea">
                         <ul id="ProductAngleProdImagesAreaProdList">
                             <li class="selected">
-                                <a href="javascript:changeThumbNail('productAngleProdLi0','https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/26484_A_1280_AL.jpg');">
+                                <a href="javascript:changeThumbNail('productAngleProdLi0','{{ asset('uploads/' . $producto->img) }}');">
                                     <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:changeThumbNail('productAngleProdLi1','https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/26484_S_1280_F.jpg');">
+                                <a href="javascript:changeThumbNail('productAngleProdLi1','{{ asset('uploads/' . $producto->img) }}');">
                                     <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:changeThumbNail('productAngleProdLi2','https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/26484_S_1280_B.jpg');">
+                                <a href="javascript:changeThumbNail('productAngleProdLi2','{{ asset('uploads/' . $producto->img) }}');">
                                     <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:changeThumbNail('productAngleProdLi3','https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/26484_P_1280_E.jpg');">
+                                <a href="javascript:changeThumbNail('productAngleProdLi3','{{ asset('uploads/' . $producto->img) }}');">
                                     <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:changeThumbNail('productAngleProdLi4','https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS/wcs/products/26484_P_1280_E2.jpg');">
-                                <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                <a href="javascript:changeThumbNail('productAngleProdLi4','{{ asset('uploads/' . $producto->img) }}');">
+                                    <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="Imagen del Producto 1">
                                 </a>
                             </li>
                         </ul>
@@ -227,14 +227,14 @@
                 </div>
 
                 <div class="add-to-cart-pdp-list">
-                    <div class="quantity_section">
-                        <label for="quantity" class="quantity_label">Cantidad:</label>
-                        <input type="number" id="quantity" class="quantity_input" name="quantity" value="1" min="1" max="10">
-                    </div>
                     <form action="{{ route('carrito.add') }}" method="POST">
                         @csrf
                         <input type="hidden" name="producto_id" value="{{ $producto->id }}">
-                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                        <div class="quantity_section">
+                            <label for="cantidad">Cantidad:</label>
+                            <input type="number" name="cantidad" id="cantidad" class="quantity_input" value="1" min="1" max="10">
+                        </div>
+                        <button type="submit" class="btn btn-primary fg-btn">Agregar al Carrito</button>
                     </form>
                 </div>
             </div>
@@ -243,16 +243,10 @@
 
     <div id="productFullWidthSlot56" class="pdp-container-detials">
         <div class="col12 acol9 ccol12 left slot5">
-        <h3>Descripcion del Producto</h3>
-        </div> 
-    </div>
-    <br>   
-
-    <div id="productFullWidthSlot56" class="pdp-container-detials">
-        <div class="col2 acol2 ccol2 left slot2">
+            <h3>Descripción del Producto</h3>
             <div class="product_text">
-                        <h4 >{{ $producto->nombre }}</h4>
-                        <p>{{ $producto->descripcion }}</p>
+                <h4>{{ $producto->nombre }}</h4>
+                <p>{{ $producto->descripcion }}</p>
             </div>
         </div>
     </div>
@@ -260,19 +254,13 @@
 
     <div id="productFullWidthSlot56" class="pdp-container-detials">
         <div class="col12 acol9 ccol12 left slot5">
-        <h3>Advertencias</h3>
-        </div> 
-    </div>
-    <br>   
-
-    <div id="productFullWidthSlot56" class="pdp-container-detials">
-        <div class="col2 acol2 ccol2 left slot2">
+            <h3>Advertencias</h3>
             <div class="product_text">
                 <p>
                     No usar Graneodín B en personas hipersensibles a la benzocaína o a los componentes de la fórmula. En caso de embarazo o lactancia, 
-                    consulte a su médico. El uso de Graneodín B puede causarle anestesia ligera en lengua y reacciones alérgicas. No se deje al alcance de los niños. 
-                    Si persisten las molestias consulte a su médico. Protéjase de la luz. Consérvese a no más de 30°C. Consérvese la caja bien cerrada.
-                    </p>
+                    consulte a su médico. El uso de Graneodín B puede causarle anestesia ligera en la lengua y reacciones alérgicas. No se deje al alcance de los niños. 
+                    Si persisten las molestias, consulte a su médico. Protéjase de la luz. Consérvese a no más de 30°C. Consérvese la caja bien cerrada.
+                </p>
             </div>
         </div>
     </div>
@@ -280,17 +268,11 @@
 
     <div id="productFullWidthSlot56" class="pdp-container-detials">
         <div class="col12 acol9 ccol12 left slot5">
-        <h3>Beneficios</h3>
-        </div> 
-    </div>
-    <br>   
-
-    <div id="productFullWidthSlot56" class="pdp-container-detials">
-        <div class="col2 acol2 ccol2 left slot2">
+            <h3>Beneficios</h3>
             <div class="product_text">
                 <p>
-                Para el alivio del dolor y el malestar que acompaña a los procesos irritativos leves de la garganta.
-                    </p>
+                    Para el alivio del dolor y el malestar que acompaña a los procesos irritativos leves de la garganta.
+                </p>
             </div>
         </div>
     </div>
@@ -306,3 +288,5 @@
     </script>
 </body>
 </html>
+
+

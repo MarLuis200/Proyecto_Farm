@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class  DepartamentosController extends Controller
 {
    
@@ -12,5 +13,3 @@ class  DepartamentosController extends Controller
         return view('/home/departamentos/departamentos');
     }
 }
-
-

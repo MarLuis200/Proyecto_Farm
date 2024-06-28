@@ -47,6 +47,14 @@ Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosControll
 Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
 Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController@index')->name('vitaminas.suplementos');
 
+//departamentos
+
+
+Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
+Route::get('/departamentos/alimentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos.alimentos');
+
+
+
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
@@ -59,7 +67,7 @@ Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('ca
 Route::post('/carrito/add', [CarritoController::class, 'addToCart'])->name('carrito.add');
 Route::delete('/carrito/remove/{id}', [CarritoController::class, 'remove'])->name('carrito.remove');
 Route::put('/carrito/update/{id}', [CarritoController::class, 'update'])->name('carrito.update');
-
+Route::post('/carrito/comprar', [CarritoController::class, 'comprar'])->name('carrito.comprar');
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');

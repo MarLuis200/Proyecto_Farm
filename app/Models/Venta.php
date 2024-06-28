@@ -4,25 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 class Venta extends Model
 {
-    
     use HasFactory;
 
     protected $table = 'ventas';
 
-    // Declaro los campos que usaré de la tabla 'productos'
-    protected $fillable = ['cantidad','total'];
+    // Declaro los campos que usaré de la tabla 'ventas'
+    protected $fillable = ['producto_id', 'cantidad', 'total'];
 
-    // En el modelo Venta
+    // Relación con el modelo Productos
     public function producto()
     {
         return $this->belongsTo(Productos::class);
     }
-
-    public function precio()
-    {
-        return $this->belongsTo(Productos::class, 'precio');
-    }
-    
 }

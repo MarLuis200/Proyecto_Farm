@@ -37,6 +37,10 @@
                         <div class="collapse navbar-collapse id="navbarsExample07">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home</a>
+                                </li>
+
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/salud">Salud</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/salud/antibioticos">Antibióticos</a></li>
@@ -46,7 +50,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/bebes">Bebes</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/bebes/pañales">Pañales</a></li>
@@ -55,7 +59,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
@@ -64,7 +68,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/departamentos/alimentos">Alimentos</a></li>
@@ -73,11 +77,11 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/ayuda/contacto">Contactanos</a></li>
@@ -99,7 +103,7 @@
                                             </li>
                                         @endif
                                     @else
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item active dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->name }}
                                             </a>
