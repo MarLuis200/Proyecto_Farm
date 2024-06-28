@@ -8,7 +8,6 @@ use App\Models\Venta;
 
 class CarritoController extends Controller
 {
-   
     public function index()
     {
         $cartItems = session()->get('cart', []);
@@ -16,12 +15,13 @@ class CarritoController extends Controller
             return $carry + ($item['precio'] * $item['cantidad']);
         }, 0);
 
-        return view('/home/carrito/carritodecompras',compact('cartItems', 'totalNeto'));
+        return view('/home/carrito/carritodecompras', compact('cartItems', 'totalNeto'));
     }
+
     public function remove($id)
     {
         $cart = session()->get('cart', []);
-        if(isset($cart[$id])) {
+        if (isset($cart[$id])) {
             unset($cart[$id]);
             session()->put('cart', $cart);
         }
@@ -31,25 +31,31 @@ class CarritoController extends Controller
     public function update(Request $request, $id)
     {
         $cart = session()->get('cart', []);
-        if(isset($cart[$id])) {
+        if (isset($cart[$id])) {
             $cart[$id]['cantidad'] = $request->cantidad;
             session()->put('cart', $cart);
         }
         return redirect()->route('carrito')->with('success', 'Cantidad del producto actualizada');
     }
+
     public function addToCart(Request $request)
     {
         $id = $request->input('producto_id');
         $quantity = $request->input('cantidad', 1); // Por defecto, agregar 1 si no se especifica
-    
+
         // Obtener el producto desde la base de datos
         $producto = Productos::findOrFail($id);
-    
+
+        // Verificar si hay suficiente stock
+        if ($producto->stock < $quantity) {
+            return redirect()->back()->with('error', 'No hay suficiente stock disponible.');
+        }
+
         // Obtener el carrito desde la sesión (o crear uno nuevo si no existe)
         $cart = session()->get('cart', []);
-    
+
         // Si el producto ya está en el carrito, aumentar la cantidad
-        if(isset($cart[$id])) {
+        if (isset($cart[$id])) {
             $cart[$id]['cantidad'] += $quantity;
         } else {
             // Si el producto no está en el carrito, agregarlo
@@ -61,19 +67,26 @@ class CarritoController extends Controller
                 'img' => $producto->img
             ];
         }
-    
+
         // Guardar el carrito en la sesión
         session()->put('cart', $cart);
-    
+
         return redirect()->route('carrito')->with('success', 'Producto agregado al carrito');
     }
-    
 
     public function comprar(Request $request)
     {
         $cartItems = session()->get('cart', []);
 
         foreach ($cartItems as $id => $item) {
+            // Obtener el producto desde la base de datos
+            $producto = Productos::findOrFail($id);
+
+            // Restar la cantidad comprada del stock
+            $producto->stock -= $item['cantidad'];
+            $producto->save();
+
+            // Crear la venta
             Venta::create([
                 'producto_id' => $id,
                 'cantidad' => $item['cantidad'],
@@ -86,6 +99,5 @@ class CarritoController extends Controller
 
         return redirect()->route('carrito')->with('success', 'Compra realizada con éxito.');
     }
-
-    
 }
+
