@@ -21,7 +21,7 @@
     
                         <div class="productos-container">
 
-                             @foreach($producto11 as $producto)
+                             @foreach($productos as $producto)
                                 <div class="producto">
                                     <a href="{{ route('producto.vista', ['id' => $producto->id]) }}">
                                         <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="{{ $producto->nombre }}">
