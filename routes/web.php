@@ -51,7 +51,7 @@ Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('ca
 Route::post('/carrito/add', [CarritoController::class, 'addToCart'])->name('carrito.add');
 Route::delete('/carrito/remove/{id}', [CarritoController::class, 'remove'])->name('carrito.remove');
 Route::put('/carrito/update/{id}', [CarritoController::class, 'update'])->name('carrito.update');
-
+Route::post('/carrito/comprar', [CarritoController::class, 'comprar'])->name('carrito.comprar');
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');
