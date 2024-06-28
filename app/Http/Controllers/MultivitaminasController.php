@@ -4,12 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\Tipos;
 
 class MultivitaminasController extends Controller
 {
     public function index()
     {
-        $producto9 = Productos::where('id_tipo', 9)->get();
-        return view('/home/vitaminas/multivitaminas', compact('producto9'));
+        $tipoMultivitaminas = Tipos::where('desc_tipos', 'multivitaminas')->first();
+
+        if ($tipoMultivitaminas) {
+            
+            $productos = Productos::where('id_tipo', $tipoMultivitaminas->id)->get();
+        } else {
+            $productos = [];
+        }
+        return view('/home/vitaminas/multivitaminas', compact('productos'));
     }
 }
