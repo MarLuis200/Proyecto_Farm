@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Productos;
+use App\Models\Tipos;
 use Session;
 use Redirect;
 use App\Http\Requests;
@@ -22,9 +23,14 @@ class ProductosController extends Controller
     // Listar todos los productos en la vista principal
     public function index()
     {
-        $productos = Productos::all();
-        return view('admin.productos.index', compact('productos'));
+        $tipos = Tipos::all();
+        $productos = Productos::join("tipos", "tipos.id", "=", "productos.id_tipo")
+            ->select("productos.*", "tipos.desc_tipos")
+            ->get();
+            
+        return view('admin.productos.index', compact('productos','tipos'));
     }
+
 
     // Crear un Registro (Create)
     public function crear()
@@ -44,6 +50,7 @@ class ProductosController extends Controller
         $productos->nombre = $request->nombre;
         $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
+        $productos->id_tipo = $request->id_tipo;
         $productos->precio = $request->precio;
         $productos->stock =$request->stock;
        
@@ -65,24 +72,38 @@ class ProductosController extends Controller
     public function show($id)
     {
         $productos = Productos::find($id);
-        return view('admin.productos.detalles', compact('productos'));
+        $tipos = Tipos::all();
+        return view('admin.productos.detalles', compact('productos','tipos'));
+    }
+
+    public function showProducto($id)
+    {
+        $producto = Productos::find($id);
+
+        if (!$producto) {
+            return redirect()->route('home')->with('error', 'Producto no encontrado.');
+        }
+
+        return view('admin.productos.vista', compact('producto'));
     }
 
     //  Actualizar un registro (Update)
     public function actualizar($id)
     {
         $productos = Productos::find($id);
-        return view('admin/productos.actualizar',['productos'=>$productos]);
+        $tipos = Tipos::all();
+        return view('admin.productos.actualizar', compact('tipos', 'productos'));
     }
     
     // Proceso de Actualización de un Registro (Update)
     public function update(UpdateProductos $request, $id)
     {
         
-        $productos = Productos::find($id); // Cambiado de Productos a Proveedores
+        $productos = Productos::find($id);
         $productos->nombre = $request->nombre;
         $productos->descripcion = $request->descripcion;
         $productos->fecha_caducidad = $request->fecha_caducidad;
+        $productos->id_tipo = $request->id_tipo;
         $productos->precio = $request->precio;
         $productos->stock =$request->stock;
 
@@ -127,7 +148,38 @@ class ProductosController extends Controller
     public function vista($id)
 {
     $productos = Productos::findOrFail($id);
-    return view('admin.productos.vista', compact('productos'));
+    return view('productos.vista', compact('productos'));
+}
+
+public function addToCart(Request $request)
+{
+    $id = $request->input('producto_id');
+    $quantity = $request->input('quantity', 1); // Por defecto, agregar 1 si no se especifica
+
+    // Obtener el producto desde la base de datos
+    $productos = Productos::findOrFail($id);
+
+    // Obtener el carrito desde la sesión (o crear uno nuevo si no existe)
+    $cart = session()->get('cart', []);
+
+    // Si el producto ya está en el carrito, aumentar la cantidad
+    if(isset($cart[$id])) {
+        $cart[$id]['cantidad'] += $quantity;
+    } else {
+        // Si el producto no está en el carrito, agregarlo
+        $cart[$id] = [
+            'id' => $productos->id, // Asegurarse de que el ID del producto esté aquí
+            'nombre' => $productos->nombre,
+            'precio' => $productos->precio,
+            'cantidad' => $quantity,
+            'img' => $productos->img
+        ];
+    }
+
+    // Guardar el carrito en la sesión
+    session()->put('cart', $cart);
+
+    return redirect()->route('carrito')->with('success', 'Producto agregado al carrito');
 }
 
 

@@ -3,12 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Productos;
+use App\Models\Tipos;
 
 class SaludSexualController extends Controller
 {
    
     public function index()
     {
-        return view('/home/salud/saludsexual');
+        $tipoSexual = Tipos::where('desc_tipos', 'salud sexual')->first();
+
+        if ($tipoSexual) {
+            
+            $productos = Productos::where('id_tipo', $tipoSexual->id)->get();
+        } else {
+            $productos = [];
+        }
+        return view('/home/salud/saludsexual', compact('productos'));
     }
 }

@@ -3,6 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
 <link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
+<link rel="stylesheet" href="{{ asset('css/style_cards.css') }}">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <title>Compra Antibioticos y Medicamentos</title>
 <div class="container col-md-10">
@@ -11,7 +12,7 @@
             <div class="card">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary text-white text-center">
                     <div class="container">
-                        <img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210" alt="Nombre de la Marca"></a>
+                        <a class="nav-link" href="/"><img src="/img/Logo_Multifarma.png" class="img-fluid" width="210" height="210"></a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
@@ -28,7 +29,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/bebes">Bebes</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/bebes/pañales">Pañales</a></li>
@@ -37,7 +38,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/vitaminas">Vitaminas y Suplementos</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/vitaminas/complementos">Complementos Alimenticios</a></li>
@@ -46,7 +47,7 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/departamentos">Departamentos</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/departamentos/alimentos">Alimentos</a></li>
@@ -55,11 +56,11 @@
                                         <!-- Agrega más elementos según sea necesario -->
                                     </ul>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/carrito">Carrito de Compras
                                     <img src="/img/carrito.png" class="img-fluid" width="30" height="10" alt="Carrito"></a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active">
                                     <a class="nav-link" href="/ayuda">Ayuda</a>
                                     <ul class="dropdown-content">
                                         <li><a href="/ayuda/contacto">Contactanos</a></li>
@@ -81,7 +82,7 @@
                                             </li>
                                         @endif
                                     @else
-                                        <li class="nav-item dropdown">
+                                        <li class="nav-item active dropdown">
                                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->name }}
                                             </a>
@@ -110,10 +111,10 @@
                         </div>
                     </div>
                 </nav>
-            
+                <br>
                 <main class="main-content">
                     <header>
-                        <a class="nav-link" href="123">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
+                        <a class="nav-link" href="/ayuda/preguntas">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     </header>
 
                     <section id="ofertas">
@@ -128,13 +129,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
+                                        <a class="nav-link" href="3"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -158,21 +159,56 @@
                         <h2>Productos Destacados</h2>
 
                         <div class="productos-container">
-                            @foreach ($productos as $producto)
-                                <div class="col-lg-2 col-md-3 col-sm-4 mb-2">
-                                    <div class="card">
-                                        <img src="{!! asset('uploads/' . $producto->img) !!}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="Imagen de {{$producto->nombre}}">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{$producto->nombre}}</h5>
-                                            <p class="card-text">{{$producto->descripcion}}</p>
-                                            <p class="card-text">${{$producto->precio}}</p>
-                                            <div class="text-center">
-                                                <a href="{{ route('admin.clientes.detalles', $producto->id) }}" class="btn btn-dark bg-primary text-white text-center">Agregar al carrito</a>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                            @if($producto1)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto1->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto1->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto1->nombre }}</h2>
+                                    <p>{{ $producto1->descripcion }}</p>
+                                    <p>${{ $producto1->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
                                 </div>
-                            @endforeach
+                            @endif
+
+                            @if($producto2)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto2->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto2->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto2->nombre }}</h2>
+                                    <p>{{ $producto2->descripcion }}</p>
+                                    <p>${{ $producto2->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
+
+                            @if($producto3)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto3->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto3->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto3->nombre }}</h2>
+                                    <p>{{ $producto3->descripcion }}</p>
+                                    <p>${{ $producto3->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
+
+                            @if($producto4)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto4->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto4->img) }}" class="card-img-top" alt="Imagen del Producto 1">
+                                    </a>
+                                    <h2>{{ $producto4->nombre }}</h2>
+                                    <p>{{ $producto4->descripcion }}</p>
+                                    <p>${{ $producto4->precio }} MXN</p>
+                                    <button>Agregar al Carrito</button>
+                                </div>
+                            @endif
+                            
+
                         </div>
                     </section>
 

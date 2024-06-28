@@ -32,11 +32,8 @@
                         <li><a href="/departamento/alimentos" style="color: white;">Alimentos</a></li>
                         <li><a href="/bebes" style="color: white;">Bebés</a></li>
                         <li><a href="/departamento/bebidas-es" style="color: white;">Bebidas</a></li>
-                        <li><a href="/departamento/higiene-y-belleza" style="color: white;">Higiene y Belleza</a></li>
-                        <li><a href="/departamento/electronicos" style="color: white;">Electrónico</a></li>
                         <li><a href="/bebes/alimentos" style="color: white;">Alimentos Infantiles</a></li>
                         <li><a href="/departamento/vitaminas" style="color: white;">Vitaminas y Suplementos</a></li>
-                        <li style="display: none"><a href="/recarga-tiempo-aire" style="color: white;">Recarga de Tiempo Aire</a></li>
                     </ul>
                 </div>
 

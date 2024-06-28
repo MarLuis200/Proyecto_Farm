@@ -20,7 +20,9 @@ class VentaController extends Controller
             ->select("ventas.cantidad", "ventas.total", "ventas.id", "productos.nombre", "productos.precio")
             ->get();
 
-        return view('admin.venta.index', compact('ventas', 'productos'));
+        $totalNeto = $ventas->sum('total');
+
+        return view('admin.venta.index', compact('ventas', 'productos','totalNeto'));
     }
 
     public function store(VentaRequest $request): RedirectResponse

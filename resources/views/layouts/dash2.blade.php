@@ -16,6 +16,7 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body id="page-top">
@@ -52,7 +53,7 @@
 
             <li class="nav-item">
                 <a class="nav-link" href="/admin/personas">
-                    <i class="bx bxs-user-account"></i>
+                    <i class="bx bxs-user"></i>
                     <span>Personas</span>
                 </a>
             </li>
@@ -109,7 +110,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="/home">
+                <a class="nav-link" href="/admin/tipos">
+                    <i class="fas fa-tags"></i>
+                    <span>Tipos</span>
+                </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="/">
                     <i class="bx bx-log-out"></i>
                     <span>Home</span>
                 </a>
@@ -132,19 +141,6 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">

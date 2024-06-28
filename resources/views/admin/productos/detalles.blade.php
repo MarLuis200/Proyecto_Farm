@@ -86,20 +86,17 @@
                     <p class="h5">Nombre:</p>
                     <p class="h6 mb-3">{{ $productos->nombre }}</p>
 
-                      <p class="h5">Marca:</p>
-                      <p class="h6 mb-3">{{ $productos->marca}}</p>
+                    <p class="h5">Descripcion:</p>
+                    <p class="h6 mb-3">{{ $productos->descripcion}}</p>
 
-                      <p class="h5">Fecha Caducidad:</p>
-                      <p class="h6 mb-3">{{ $productos->fecha_caducidad }}</p>
-
-                      <p class="h5">Contenido Neto:</p>
-                      <p class="h6 mb-3">{{ $productos->contenido_neto }}</p>
+                    <p class="h5">Fecha Caducidad:</p>
+                    <p class="h6 mb-3">{{ $productos->fecha_caducidad }}</p>
 
                     <p class="h5">Stock:</p>
                     <p class="h6 mb-3">{{ $productos->stock }}</p>
 
-                      <p class="h5">Precio:</p>
-                      <p class="h6 mb-3">{{ $productos->precio }}</p>
+                    <p class="h5">Precio:</p>
+                    <p class="h6 mb-3">${{ $productos->precio }}</p>
 
                     <p class="h5">Imagen:</p>
                     <img src="../../../uploads/{{ $productos->img }}" class="img-fluid" width="20%">

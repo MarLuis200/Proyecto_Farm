@@ -28,6 +28,7 @@ class CreateProductos extends FormRequest
             'nombre' => 'required|unique:productos|max:255',
             'descripcion' => 'required',
             'fecha_caducidad' => 'required',
+            'id_tipo' => 'required',
             'precio' => 'required',
             'stock' => 'required',
             'img' => 'required',

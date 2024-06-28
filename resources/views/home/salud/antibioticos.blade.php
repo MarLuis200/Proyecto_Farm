@@ -15,88 +15,31 @@
                         </ol>
                     </nav>
 
-                        
                     <body>
                         <h1>Antibióticos</h1>
     
                         <div class="productos-container">
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/fosfocil.jpeg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                                <a class="nav-link" href="#"><h2>Fosfocil</h2></a>
-                                <p> Fosfocil 250mg/5ml Suspensión, 60 ml.</p>
-                                <p>Precio: $219.45</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
 
+                            @foreach($productos as $producto)
                             <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/amoxil.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
-                                <a class="nav-link" href="#"><h2>Amoxil</h2></a>
-                                <p>Amoxil 500 mg, 12 Cápsulas.</p><br>
-                                <p>Precio: $218.34</p>
-                                <button>Agregar al Carrito</button>
+                                <a href="{{ route('producto.vista', ['id' => $producto->id]) }}">
+                                    <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top" alt="{{ $producto->nombre }}">
+                                </a>
+                                <a class="nav-link" href="#">
+                                    <h2 class="card-title">{{ $producto->nombre }}</h2>
+                                </a>
+                                <p class="card-text">{{ $producto->descripcion }}</p>
+                                <p class="card-text"><strong>Precio:</strong> ${{ $producto->precio }} MXN</p>
+                                <div class="add-to-cart-button">
+                                    <form action="{{ route('carrito.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                                    </form>
+                                </div>
                             </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/argentafil.webp" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
-                                <a class="nav-link" href="#"><h2>Argentafil</h2></a>
-                                <p>Argentafil 1% Suspensión Spray, 30 ml.</p>
-                                <p>Precio: $193.48</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/gremiltal.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Gremiltal</h2></a>
-                                <p>Gremiltal 75 mg, 10 Cápsulas.</p>
-                                <p>Precio: $501.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/azi.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>azitromicina</h2></a>
-                                <p> Se usa para tratar ciertas infecciones bacterianas, como la bronquitis, neumonía, enfermedades de transmisión sexual 50 ml.</p>
-                                <p>Precio: $131.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/amox.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Amoxilina</h2></a>
-                                <p>Su acción consiste en detener el crecimiento de las bacterias 60ml</p>
-                                <p>Precio: $501.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/clamo.jpg" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Clamoxin</h2></a>
-                                <p>Sirve Para tratar ciertas infecciones causadas por bacterias, incluyendo infecciones en los oídos, pulmones, senos, piel y vías urinarias.</p>
-                                <p>Precio: $501.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/diclo.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Dicloxacilina</h2></a>
-                                <p>Dicloxacilina 500 mg,12 cápsulas</p>
-                                <p>Precio: $101.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/clind.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Clindamicina</h2></a>
-                                <p>Clindamicina 300 mg Oral 16 cápsulas</p>
-                                <p>Precio: $141.02</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <!-- Puedes agregar más productos siguiendo el mismo patrón -->
+                            @endforeach
                         </div>
-
                     </body>
                 </main>
             </div>
@@ -104,8 +47,6 @@
     </div>
 </div>
 
-
-    
 @extends('layouts.footer')
 
 @section('footer')

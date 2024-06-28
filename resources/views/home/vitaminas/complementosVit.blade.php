@@ -16,12 +16,12 @@
 
                         
                     <body>
-                        <h1>Complementos Alimenticios</h1>
+                        <h1>Vitaminas Y Suplementos</h1>
 
                         <section id="anuncios">
                             <!-- Aquí puedes incluir tus anuncios publicitarios -->
                             <div class="productos-container">
-                                <a class="nav-link" href="#"><img src="/img/bebes.png" alt="Anuncio 1"></a>
+                                <a class="nav-link" href="/vitaminas/multivitaminas"><img src="/img/mutivitaminas.png" alt="Anuncio 1"></a>
                             </div>
                         </section>
 
@@ -34,21 +34,21 @@
                                         <div>
                                             <a href="/vitaminas/complementos"><img src="uploads/complementos1.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Complementos Alimenticios</a>
+                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/vitaminas/complementos">Complementos Alimenticios</a>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <a href="/vitaminas/complementos"><img src="uploads/complementos1.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
+                                            <a href="/vitaminas/multivitaminas"><img src="/img/multi.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 2"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Multivataminas</a>
+                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/vitaminas/multivitaminas">Multivataminas</a>
                                             </div>
                                         </div>
 
                                         <div>
-                                            <a href="/vitaminas/complementos"><img src="uploads/complementos1.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
+                                            <a href="/vitaminas/suplementos"><img src="/img/suplementosAlim.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 3"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Suplementos Alimenticios</a>
+                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/vitaminas/suplementos">Suplementos Alimenticios</a>
                                             </div>
                                         </div>
 

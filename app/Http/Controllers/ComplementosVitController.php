@@ -12,3 +12,5 @@ class ComplementosVitController extends Controller
         return view('/home/vitaminas/complementosVit');
     }
 }
+
+

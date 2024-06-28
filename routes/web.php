@@ -7,11 +7,12 @@ use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InventarioController;
 use App\Http\Controllers\PuestosController;
+use App\Http\Controllers\TiposController;
 use App\Http\Controllers\ProductosController;
 use App\Http\Controllers\ProveedoresController;
 use App\Http\Controllers\PersonasController;
 use App\Http\Controllers\VentaController;
-
+use App\Http\Controllers\CarritoController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -32,10 +33,11 @@ Route::get('/ayuda/contacto', 'App\Http\Controllers\ContactoController@index')->
 Route::get('/bebes', 'App\Http\Controllers\BebesController@index')->name('bebes');
 Route::get('/bebes/pañales', 'App\Http\Controllers\PañalesController@index')->name('bebes.pañales');
 
-// complementos
+// Complementos
 Route::get('/vitaminas', 'App\Http\Controllers\ComplementosVitController@index')->name('complementosVit');
 Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosController@index')->name('vitaminas.complementos');
-
+Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
+Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController@index')->name('vitaminas.suplementos');
 
 //departamentos
 
@@ -49,6 +51,15 @@ Route::get('/departamentos/alimentos', 'App\Http\Controllers\DepartamentosContro
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');
 Route::get('/salud/dolor', 'App\Http\Controllers\DolorController@index')->name('salud.dolor');
+Route::get('/salud/dermatologia', 'App\Http\Controllers\DermatologiaController@index')->name('salud.dermatologia');
+Route::get('/salud/saludsexual', 'App\Http\Controllers\SaludSexualController@index')->name('salud.saludsexual');
+
+// Carrito de Compras
+Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('carrito');
+Route::post('/carrito/add', [CarritoController::class, 'addToCart'])->name('carrito.add');
+Route::delete('/carrito/remove/{id}', [CarritoController::class, 'remove'])->name('carrito.remove');
+Route::put('/carrito/update/{id}', [CarritoController::class, 'update'])->name('carrito.update');
+Route::post('/carrito/comprar', [CarritoController::class, 'comprar'])->name('carrito.comprar');
 
 // Rutas CRUD de Productos
 Route::get('admin/productos', [ProductosController::class, 'index'])->name('admin.productos');
@@ -122,6 +133,16 @@ Route::put('admin/personas/update/{id}', [PersonasController::class, 'update'])-
 Route::put('admin/personas/eliminar/{id}', [PersonasController::class, 'eliminar'])->name('admin.personas.eliminar');
 Route::put('admin/personas/store', [PersonasController::class, 'store'])->name('admin.personas.store');
 
+// Rutas CRUD de Tipos
+Route::get('admin/tipos', [TiposController::class, 'index'])->name('admin.tipos');
+Route::get('admin/tipos/crear', [TiposController::class, 'crear'])->name('admin.tipos.crear');
+Route::get('admin/tiposshow/{id}', [TiposController::class, 'show'])->name('admin.tipos.detalles');
+Route::get('admin/tipos/actualizar/{id}', [TiposController::class, 'actualizar'])->name('admin.tipos.actualizar');
+Route::put('admin/tipos/update/{id}', [TiposController::class, 'update'])->name('admin.tipos.update');
+Route::put('admin/tipos/eliminar/{id}', [TiposController::class, 'eliminar'])->name('admin.tipos.eliminar');
+Route::put('admin/tipos/store', [TiposController::class, 'store'])->name('admin.tipos.store');
+
 // Rutas de Vistas de Productos
-Route::get('/producto/vista/{id}', [ProductosController::class, 'vista'])->name('producto.vista');
+Route::get('/producto/{id}/vista', [ProductosController::class, 'showProducto'])->name('producto.vista');
+
 
