@@ -51,7 +51,7 @@ Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController
 
 
 Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
-Route::get('/departamentos/alimentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos.alimentos');
+Route::get('/departamentos/alimentos', 'App\Http\Controllers\D_AlimentosController@index')->name('departamentos.alimentos');
 
 
 
