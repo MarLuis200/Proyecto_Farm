@@ -21,65 +21,31 @@
     
                         <div class="productos-container">
 
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/whey.jpg" class="img-fluid" width="200" height="200" alt="Producto 1"></a>
-                                <a class="nav-link" href="#"><h2>Proteína Whey Optimum Nutrition Gold Standard</h2></a>
-                                <p>Suplemento de proteína de suero de leche de alta calidad, ideal para el desarrollo muscular y la recuperación post-entrenamiento.</p>
-                                <p>Precio: $120.05</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
+                            @foreach($producto10 as $producto)
+                                <div class="producto">
+                                    <a href="{{ route('producto.vista', ['id' => $producto->id]) }}">
+                                        <img src="{{ asset('uploads/' . $producto->img) }}" class="card-img-top">
+                                    </a>
+                                    <a class="nav-link" href="#"><h2 class="card-title">{{ $producto->nombre }}</h2>
+                                    <p class="card-text">{{ $producto->descripcion }}</p>
+                                    <p class="card-text"><strong>Precio:</strong> ${{ $producto->precio }} MXN</p>
+                                    <div class="add-to-cart-button">
+                                        <form action="{{ route('carrito.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="producto_id" value="{{ $producto->id }}">
+                                        <button type="submit" class="btn btn-primary">Agregar al Carrito</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            @endforeach
 
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/fish.jpg" class="img-fluid" width="200" height="200" alt="Producto 2"></a>
-                                <a class="nav-link" href="#"><h2>Fish Oil Nature Made</h2></a>
-                                <p>Suplemento de aceite de pescado rico en ácidos grasos omega-3, que promueve la salud cardiovascular y cerebral.</p>
-                                <p>Precio: $98.50</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/platinium.webp" class="img-fluid" width="200" height="200" alt="Producto 3"></a>
-                                <a class="nav-link" href="#"><h2>Creatina Monohidrato MuscleTech Platinum</h2></a>
-                                <p>Suplemento de creatina monohidrato pura para mejorar la fuerza y el rendimiento durante los entrenamientos de alta intensidad.</p>
-                                <p>Precio: $345.65</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/xtend.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>BCAA Powder Scivation Xtend</h2></a>
-                                <p>Suplemento de aminoácidos de cadena ramificada (BCAA) para apoyar la recuperación muscular y reducir la fatiga durante el ejercicio.</p>
-                                <p>Precio: $12.99</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/spirulina.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Spirulina Powder Nutrex Hawaii</h2></a>
-                                <p>Suplemento en polvo de espirulina, una alga rica en proteínas, vitaminas, minerales y antioxidantes.</p>
-                                <p>Precio: $340.10</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <div class="producto">
-                                <a class="nav-link" href="#"><img src="/img/probiotic.webp" class="img-fluid" width="200" height="200" alt="Producto 4"></a>
-                                <a class="nav-link" href="#"><h2>Probiotic 10 Nature's Bounty</h2></a>
-                                <p>Suplemento probiótico con 10 cepas diferentes para promover la salud digestiva y el equilibrio de la microbiota intestinal.</p>
-                                <p>Precio: $300.00</p>
-                                <button>Agregar al Carrito</button>
-                            </div>
-
-                            <!-- Puedes agregar más productos siguiendo el mismo patrón -->
                         </div>
-
                     </body>
                 </main>
             </div>
         </div>
     </div>
 </div>
-
-
     
 @extends('layouts.footer')
 
