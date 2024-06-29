@@ -11,7 +11,7 @@ class InfantilesController extends Controller
    
     public function index()
     {
-        $tipoInfantiles = Tipos::where('desc_tipos', 'infantiles')->first();
+        $tipoInfantiles = Tipos::where('desc_tipos', 'alimentos infantiles')->first();
 
         if ($tipoInfantiles) {
             

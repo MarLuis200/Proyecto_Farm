@@ -47,10 +47,6 @@ Route::get('/vitaminas/complementos', 'App\Http\Controllers\ComplementosControll
 Route::get('/vitaminas/multivitaminas', 'App\Http\Controllers\MultivitaminasController@index')->name('vitaminas.multivitaminas');
 Route::get('/vitaminas/suplementos', 'App\Http\Controllers\SuplementosController@index')->name('vitaminas.suplementos');
 
-// Departamentos
-Route::get('/departamentos', 'App\Http\Controllers\DepartamentosController@index')->name('departamentos');
-Route::get('/departamentos/alimentos', 'App\Http\Controllers\D_AlimentosController@index')->name('departamentos.alimentos');
-
 // Salud
 Route::get('/salud', 'App\Http\Controllers\SaludController@index')->name('salud');
 Route::get('/salud/antibioticos', 'App\Http\Controllers\AntibioticosController@index')->name('salud.antibioticos');

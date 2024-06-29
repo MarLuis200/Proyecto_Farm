@@ -11,7 +11,7 @@ class HigieneController extends Controller
    
     public function index()
     {
-        $tipoHigiene = Tipos::where('desc_tipos', 'higiene')->first();
+        $tipoHigiene = Tipos::where('desc_tipos', 'higiene y belleza')->first();
 
         if ($tipoHigiene) {
             
