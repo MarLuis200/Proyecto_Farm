@@ -87,7 +87,7 @@
                       <p class="h6 mb-3">{{ $empleados->id }}</p>
 
                       <p class="h5">Persona:</p>
-                      <p class="h6 mb-3">{{ $empleados->persona->nombre }}</p>
+                      <p class="h6 mb-3">{{ $empleados->persona->nombre }} {{ $empleados->persona->apellido_paterno }} {{ $empleados->persona->apellido_materno }}</p>
 
                       <p class="h5">Puesto:</p>
                       <p class="h6 mb-3">{{ $empleados->puesto->descripcion }}</p>

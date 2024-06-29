@@ -129,13 +129,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a class="nav-link" href="3"><img src="/img/ofertas2.png" class="d-block w-100" alt="Ofertas">
+                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertaadvil.png" class="d-block w-100" alt="Ofertas">
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="nav-link" href="3"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
+                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="nav-link" href="3"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
+                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -215,7 +215,7 @@
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
                         <div class="anuncio">
-                            <a class="nav-link" href="#"><img src="/img/anuncio1.png" alt="Anuncio 1"></a>
+                            <a class="nav-link" href="/ofertas"><img src="/img/anuncio1.png" alt="Anuncio 1"></a>
                         </div>
                     </section>
 
