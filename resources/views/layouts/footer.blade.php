@@ -1,7 +1,4 @@
 
-<link rel="stylesheet" href="{{ asset('css/style_menu.css') }}">
-<link rel="stylesheet" href="{{ asset('css/style_home.css') }}">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <footer id="content" class="w-100">
     <div class="footerwrapper bg-primary text-white text-center" style="margin-top: 0px; width: 100%;">
         <div class="container">
@@ -29,11 +26,11 @@
                     <h3>TIENDA EN LÍNEA</h3>
                     <ul class="fg-link-box">
                         <li><a href="/salud" style="color: white;">Salud</a></li>
-                        <li><a href="/departamento/alimentos" style="color: white;">Alimentos</a></li>
+                        <li><a href="/departamentos/alimentos" style="color: white;">Alimentos</a></li>
                         <li><a href="/bebes" style="color: white;">Bebés</a></li>
-                        <li><a href="/departamento/bebidas-es" style="color: white;">Bebidas</a></li>
-                        <li><a href="/bebes/alimentos" style="color: white;">Alimentos Infantiles</a></li>
-                        <li><a href="/departamento/vitaminas" style="color: white;">Vitaminas y Suplementos</a></li>
+                        <li><a href="/departamentos/bebidas" style="color: white;">Bebidas</a></li>
+                        <li><a href="/bebes/infantiles" style="color: white;">Alimentos Infantiles</a></li>
+                        <li><a href="/vitaminas" style="color: white;">Vitaminas y Suplementos</a></li>
                     </ul>
                 </div>
 
@@ -42,12 +39,9 @@
                     <br>
                     <h3>AYUDA</h3>
                     <ul class="fg-link-box">
-                        <li><a href="/ayuda/contáctanos" class="fg-contact-us" style="color: white;">Contacto</a></li>
-                        <li><a href="/ayuda/preguntas-frecuentes--24" style="color: white;">Preguntas Frecuentes</a></li>
-                        <li><a href="/ayuda/localizador-de-superfarmacias" style="color: white;">Encuentra Tu SuperFarmacia</a></li>
-                        <li><a href="/facturación-electrónica" style="color: white;">Factura Electrónica</a></li>
-                        <li><a href="/locker-inteligente" style="color: white;">Smart & Collect</a></li>
-                        <li><a href="/blog-es" style="color: white;">Blog</a></li>
+                        <li><a href="/ayuda" class="fg-contact-us" style="color: white;">Ayuda</a></li>
+                        <li><a href="/ayuda/contacto" class="fg-contact-us" style="color: white;">Contacto</a></li>
+                        <li><a href="/ayuda/preguntas" style="color: white;">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
 
@@ -57,9 +51,6 @@
                     <h3>EMPRESA</h3>
                     <ul class="fg-link-box">
                         <li><a href="/sobre-nosotros/sobre-nosotros" style="color: white;">Conócenos</a></li>
-                        <li><a href="/sobre-nosotros/informacion-corporativa" style="color: white;">Corporativo</a></li>
-                        <li><a href="/sobre-nosotros/relacion-con-inversionistas" style="color: white;">Relación con Inversionistas</a></li>
-                        <li><a target="_blank" href="https://fragua.csod.com/ux/ats/careersite/1/home?c=fragua" style="color: white;">Bolsa de Trabajo</a></li>
                         <li><a href="/sobre-nosotros/politicas-de-privacidad" style="color: white;">Políticas de Privacidad</a></li>
                         <li><a href="/sobre-nosotros/terminos-y-condiciones" style="color: white;">Términos y Condiciones</a></li>
                     </ul>
@@ -78,9 +69,7 @@
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 <style>
 /* Footer Styles */

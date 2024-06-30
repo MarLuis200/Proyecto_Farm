@@ -129,13 +129,13 @@
                                 </ol>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertaadvil.png" class="d-block w-100" alt="Ofertas">
+                                        <a class="nav-link" href="/producto/8/vista"><img src="/img/ofertaadvil.png" class="d-block w-100" alt="Ofertas">
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
+                                        <a class="nav-link" href="/producto/5/vista"><img src="/img/ofertas.png" class="d-block w-100" alt="Ofertas 1">
                                     </div>
                                     <div class="carousel-item">
-                                        <a class="nav-link" href="/ofertas"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
+                                        <a class="nav-link" href="/producto/14/vista"><img src="/img/ofertas3.png" class="d-block w-100" alt="Ofertas 2">
                                     </div>
                                 </div>
                                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -250,16 +250,13 @@
             <div class="col-lg-3 col-sm-6 col-xs-12">
                 <br>
                 <h3>TIENDA EN LÍNEA</h3>
+                <br>
                 <ul class="fg-link-box">
                     <li><a href="/salud" style="color: white;">Salud</a></li>
                     <li><a href="/departamento/alimentos" style="color: white;">Alimentos</a></li>
                     <li><a href="/bebes" style="color: white;">Bebés</a></li>
                     <li><a href="/departamento/bebidas-es" style="color: white;">Bebidas</a></li>
                     <li><a href="/departamento/higiene-y-belleza" style="color: white;">Higiene y Belleza</a></li>
-                    <li><a href="/departamento/electronicos" style="color: white;">Electrónico</a></li>
-                    <li><a href="/departamento/hogar" style="color: white;">Hogar</a></li>
-                    <li><a href="/departamento/jugueteria-es" style="color: white;">Juguetería</a></li>
-                    <li style="display: none"><a href="/recarga-tiempo-aire" style="color: white;">Recarga de Tiempo Aire</a></li>
                 </ul>
             </div>
 
@@ -267,13 +264,11 @@
             <div class="col-lg-3 col-sm-6 col-xs-12">
                 <br>
                 <h3>AYUDA</h3>
+                <br>
                 <ul class="fg-link-box">
-                    <li><a href="/ayuda/contáctanos" class="fg-contact-us" style="color: white;">Contacto</a></li>
-                    <li><a href="/ayuda/preguntas-frecuentes--24" style="color: white;">Preguntas Frecuentes</a></li>
-                    <li><a href="/ayuda/localizador-de-superfarmacias" style="color: white;">Encuentra Tu SuperFarmacia</a></li>
-                    <li><a href="/facturación-electrónica" style="color: white;">Factura Electrónica</a></li>
-                    <li><a href="/locker-inteligente" style="color: white;">Smart & Collect</a></li>
-                    <li><a href="/blog-es" style="color: white;">Blog</a></li>
+                    <li><a href="/ayuda" class="fg-contact-us" style="color: white;">Ayuda</a></li>
+                    <li><a href="/ayuda/contacto" class="fg-contact-us" style="color: white;">Contacto</a></li>
+                    <li><a href="/ayuda/preguntas" style="color: white;">Preguntas Frecuentes</a></li>
                 </ul>
             </div>
 
@@ -281,11 +276,9 @@
             <div class="col-lg-3 col-sm-6 col-xs-12">
                 <br>
                 <h3>EMPRESA</h3>
+                <br>
                 <ul class="fg-link-box">
                     <li><a href="/sobre-nosotros/sobre-nosotros" style="color: white;">Conócenos</a></li>
-                    <li><a href="/sobre-nosotros/informacion-corporativa" style="color: white;">Corporativo</a></li>
-                    <li><a href="/sobre-nosotros/relacion-con-inversionistas" style="color: white;">Relación con Inversionistas</a></li>
-                    <li><a target="_blank" href="https://fragua.csod.com/ux/ats/careersite/1/home?c=fragua" style="color: white;">Bolsa de Trabajo</a></li>
                     <li><a href="/sobre-nosotros/politicas-de-privacidad" style="color: white;">Políticas de Privacidad</a></li>
                     <li><a href="/sobre-nosotros/terminos-y-condiciones" style="color: white;">Términos y Condiciones</a></li>
                 </ul>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<main class="main-content">
+<main class="main-content col-md-8">
 
     <head>
         <meta charset="UTF-8">
@@ -82,13 +82,49 @@
         <div id="productFullWidthSlot56" class="pdp-container-detials">
             <div class="col12 acol9 ccol12 left slot5">
                 <h3>Descripción del Producto</h3>
-                <div class="product_text">
-                    <h4>{{ $producto->nombre }}</h4>
-                    <p>{{ $producto->descripcion }}</p>
-                </div>
             </div>
         </div>
-        
+        <br>
+
+        <div id="productFullWidthSlot56" class="pdp-container-detials">
+            <div class="product_text">
+                <h4>{{ $producto->nombre }}</h4>
+                <p>{{ $producto->descripcion }}</p>
+            </div>
+        </div>
+        <br>
+
+        <div id="productFullWidthSlot56" class="pdp-container-detials">
+            <div class="col12 acol9 ccol12 left slot5">
+                <h3>Cambios y Devoluciones</h3>
+            </div>
+        </div>
+        <br>
+
+        <div id="productFullWidthSlot56" class="pdp-container-detials">
+            <div class="product_text">
+                <ul>
+                    <li>Para cualquier situacion relacionada con modificaciones,cancelaciones o reprogramaciones puedes comunicarte a linea MultiFarma al 8009296363</li>
+                    <li>En antibioticos y medicamentos de alta especialidad no hay cambios ni devoluciones</li>
+                </ul>
+            </div>
+        </div>
+        <br>
+
+        <div id="productFullWidthSlot56" class="pdp-container-detials">
+            <div class="product_text">
+                <p style="font-size: 14px; line-height: 1.5; margin-bottom: 10px;">
+                Legal: Precio exclusivo para compras realizadas en tienda en línea. El precio no incluye costo de envío. 
+                Descuento, oferta, promoción u beneficio no acumulable con otras promociones. Todos los productos marcados con
+                promoción aplican sobre precio regular. Descuentos, ofertas, programas y/o convenios; es válido solo para personas naturales
+                y consumidores finales por el periodo de vigencia indicada caso a caso. Las promociones, ofertas y/o descuentos exhibidos
+                en las farmacias no son válidas en el Sitio Web, a excepción de aquellas que se reconozcan expresamente. Dispensación de
+                medicamentos sujeta a restricciones legales. NO SE AUTOMEDIQUE. Consulte a su médico en caso de dudas o solicite orientación
+                a su químico farmacéutico. Despacho de productos y/o medicamentos sujetos a stock de cada local y disponibilidad técnica de 
+                medios de transporte y/o despacho.</p>
+            </div>
+        </div>
+
 
         <script>
             function changeThumbNail(id, url) {
@@ -115,3 +151,4 @@
     </body>
 
 </main>
+@include('layouts.footer')
