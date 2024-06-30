@@ -121,11 +121,34 @@
                                                         <div class="text-center">
                                                             <a href="{{ route('admin.clientes.detalles', $cli->id) }}" class="btn btn-dark">Detalles</a>
                                                             
-                                                            <form action="{{ route('admin.clientes.eliminar', $cli->id) }}" method="POST" style="display: inline-block;">
-                                                                @csrf
-                                                                @method('PUT')
-                                                                <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
-                                                            </form>
+                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete{{$cli->id}}">
+                                                                Eliminar
+                                                            </button>
+
+                                                            <!-- Modal de Confirmación de Eliminación -->
+                                                            <div class="modal fade" id="confirmDelete{{$cli->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$cli->id}}" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="confirmDeleteLabel{{$cli->id}}">Confirmar Eliminación</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            ¿Estás seguro de que deseas eliminar este cliente?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                            <form action="{{ route('admin.clientes.eliminar', $cli->id) }}" method="POST" style="display: inline-block;">
+                                                                                @csrf
+                                                                                @method('PUT')
+                                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -151,13 +174,6 @@
     </footer>
 
     <script type="text/javascript">
-    function confirmarEliminar() {
-        var x = confirm("¿Estás seguro de Eliminar?");
-        if (x)
-            return true;
-        else
-            return false;
-    }
     $(document).ready(function() {
         $('#searchInput').on('keyup', function() {
             var value = $(this).val().toLowerCase();

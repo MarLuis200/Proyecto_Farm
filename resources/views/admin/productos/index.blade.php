@@ -134,13 +134,35 @@
                                                             <img src="{!! asset("uploads/$prod->img") !!}" width="30" class="img-responsive">
                                                         </td>
                                                         <td class="v-align-middle">
-                                                            <form action="{{ route('admin.productos.eliminar',$prod->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
-                                                                <input type="hidden" name="_method" value="PUT">
-                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                                <a href="{{ route('admin.productos.detalles',$prod->id) }}" class="btn btn-dark">Detalles</a>
+                                                            <form action="{{ route('admin.productos.eliminar', $prod->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
+                                                                @method('PUT')
+                                                                @csrf
+                                                                <a href="{{ route('admin.productos.detalles', $prod->id) }}" class="btn btn-dark">Detalles</a>
+                                                                <a href="{{ route('admin.productos.actualizar', $prod->id) }}" class="btn btn-primary">Editar</a>
+                                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete{{$prod->id}}">
+                                                                    Eliminar
+                                                                </button>
 
-                                                                <a href="{{ route('admin.productos.actualizar',$prod->id) }}" class="btn btn-primary">Editar</a>
-                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                <!-- Modal de Confirmación de Eliminación -->
+                                                                <div class="modal fade" id="confirmDelete{{$prod->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$prod->id}}" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="confirmDeleteLabel{{$prod->id}}">Confirmar Eliminación</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                ¿Estás seguro de que deseas eliminar este producto?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </form>
                                                         </td>
                                                     </tr>
@@ -167,13 +189,6 @@
 </footer>
 
 <script type="text/javascript">
-    function confirmarEliminar() {
-        var x = confirm("¿Estás seguro de Eliminar?");
-        if (x)
-            return true;
-        else
-            return false;
-    }
 
     $(document).ready(function() {
         $('#searchInput').on('keyup', function() {

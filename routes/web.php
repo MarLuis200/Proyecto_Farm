@@ -57,6 +57,11 @@ Route::get('/salud/saludsexual', 'App\Http\Controllers\SexualController@index')-
 // Ofertas
 Route::get('/fin-de-semana', 'App\Http\Controllers\OfertasFinDeController@index')->name('fin-de-semana');
 
+// Empresa
+Route::get('/conocenos', 'App\Http\Controllers\EmpresaController@index')->name('conocenos');
+Route::get('/politicas-de-privacidad', 'App\Http\Controllers\PoliticasController@index')->name('politicas-de-privacidad');
+Route::get('/terminos-y-condiciones', 'App\Http\Controllers\TerminosController@index')->name('terminos-y-condiciones');
+
 // Carrito de Compras
 Route::get('/carrito', 'App\Http\Controllers\CarritoController@index')->name('carrito');
 Route::post('/carrito/add', [CarritoController::class, 'addToCart'])->name('carrito.add');

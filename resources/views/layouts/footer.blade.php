@@ -50,9 +50,9 @@
                     <br>
                     <h3>EMPRESA</h3>
                     <ul class="fg-link-box">
-                        <li><a href="/sobre-nosotros/sobre-nosotros" style="color: white;">Conócenos</a></li>
-                        <li><a href="/sobre-nosotros/politicas-de-privacidad" style="color: white;">Políticas de Privacidad</a></li>
-                        <li><a href="/sobre-nosotros/terminos-y-condiciones" style="color: white;">Términos y Condiciones</a></li>
+                        <li><a href="/conocenos" style="color: white;">Conócenos</a></li>
+                        <li><a href="/politicas-de-privacidad" style="color: white;">Políticas de Privacidad</a></li>
+                        <li><a href="/terminos-y-condiciones" style="color: white;">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>

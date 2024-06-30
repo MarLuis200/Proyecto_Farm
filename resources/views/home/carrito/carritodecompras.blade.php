@@ -1,7 +1,8 @@
 @extends('layouts.header')
 
 @section('content')
-
+<title>Carrito de Compras</title>
+<link rel="stylesheet" href="{{ asset('css/style_carrito.css') }}">
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -44,12 +45,37 @@
                                             </td>
                                             <td class="align-middle">${{ number_format($item['precio'] * $item['cantidad'], 2) }}</td>
                                             <td class="align-middle">
-                                                <form action="{{ route('carrito.remove', $id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?')"><i class="fas fa-trash-alt"></i> Eliminar</button>
-                                                </form>
-                                            </td>
+                                            <!-- Botón de eliminación con modal -->
+                                            <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDelete{{$id}}">
+                                                <i class="fas fa-trash-alt"></i> Eliminar
+                                            </button>
+
+                                            <!-- Modal de Confirmación de Eliminación -->
+                                            <div class="modal fade" id="confirmDelete{{$id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$id}}" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="confirmDeleteLabel{{$id}}">Confirmar Eliminación</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ¿Estás seguro de que deseas eliminar este producto del carrito?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <form action="{{ route('carrito.remove', $id) }}" method="POST" class="d-inline">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -94,60 +120,13 @@
     </div>
 </div>
 
-<style>
-    .card {
-        border: none;
-        border-radius: 0.5rem;
-    }
-
-    .thead-dark th {
-        background-color: #343a40;
-        color: #fff;
-    }
-
-    .table-hover tbody tr:hover {
-        background-color: #f5f5f5;
-    }
-
-    .img-thumbnail {
-        border: none;
-        border-radius: 0.25rem;
-    }
-
-    .btn-primary, .btn-danger, .btn-success {
-        border-radius: 1.25rem;
-    }
-
-    .btn-primary {
-        background-color: #007bff;
-        border: none;
-    }
-
-    .btn-danger {
-        background-color: #dc3545;
-        border: none;
-    }
-
-    .btn-success {
-        background-color: #28a745;
-        border: none;
-    }
-
-    .form-control {
-        display: inline-block;
-        width: auto;
-        margin: 0;
-    }
-
-    .form-control:focus {
-        box-shadow: none;
-    }
-</style>
 
 <!-- Font Awesome CDN -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     
 @extends('layouts.footer')
 
 @section('footer')
-                            

@@ -120,14 +120,37 @@
                                                     <p class="card-text">Teléfono: {{$prov->telefono}}</p>
                                                     <p class="card-text">Correo: {{$prov->correo}}</p>
                                                     <div class="text-center">
-                                                        <a href="{{ route('admin.proveedores.detalles', $prov->id) }}" class="btn btn-dark">Detalles</a>
-                                                        
-                                                        <form action="{{ route('admin.proveedores.eliminar', $prov->id) }}" method="POST" style="display: inline-block;">
-                                                            @csrf
-                                                            @method('DELETE') <!-- Corregido a DELETE -->
-                                                            <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
-                                                        </form>
-                                                    </div>
+                                                            <a href="{{ route('admin.proveedores.detalles', $prov->id) }}" class="btn btn-dark">Detalles</a>
+                                                            
+                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete{{$prov->id}}">
+                                                                Eliminar
+                                                            </button>
+
+                                                            <!-- Modal de Confirmación de Eliminación -->
+                                                            <div class="modal fade" id="confirmDelete{{$prov->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$prov->id}}" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="confirmDeleteLabel{{$prov->id}}">Confirmar Eliminación</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            ¿Estás seguro de que deseas eliminar este proveedor?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                            <form action="{{ route('admin.proveedores.eliminar', $prov->id) }}" method="POST" style="display: inline-block;">
+                                                                                @csrf
+                                                                                @method('PUT')
+                                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                 </div>
                                             </div>
                                         </div>

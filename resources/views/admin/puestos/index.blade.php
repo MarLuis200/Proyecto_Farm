@@ -115,14 +115,37 @@
                                                     <td class="v-align-middle">{{ $pues->descripcion }}</td>
                                                     
                                                     <td class="v-align-middle">
-                                                        <form action="{{ route('admin.puestos.eliminar',$pues->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
-                                                            <input type="hidden" name="_method" value="PUT">
-                                                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                            <a href="{{ route('admin.puestos.detalles',$pues->id) }}" class="btn btn-dark">Detalles</a>
-                                                            <a href="{{ route('admin.puestos.actualizar',$pues->id) }}" class="btn btn-primary">Editar</a>
-                                                            <button type="submit" class="btn btn-danger">Eliminar</button>
-                                                        </form>
-                                                    </td>
+                                                            <form action="{{ route('admin.puestos.eliminar', $pues->id) }}" method="POST" class="form-horizontal" role="form" onsubmit="return confirmarEliminar()">
+                                                                @method('PUT')
+                                                                @csrf
+                                                                <a href="{{ route('admin.puestos.detalles', $pues->id) }}" class="btn btn-dark">Detalles</a>
+                                                                <a href="{{ route('admin.puestos.actualizar', $pues->id) }}" class="btn btn-primary">Editar</a>
+                                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete{{$pues->id}}">
+                                                                    Eliminar
+                                                                </button>
+
+                                                                <!-- Modal de Confirmación de Eliminación -->
+                                                                <div class="modal fade" id="confirmDelete{{$pues->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$pues->id}}" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h5 class="modal-title" id="confirmDeleteLabel{{$pues->id}}">Confirmar Eliminación</h5>
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                    <span aria-hidden="true">&times;</span>
+                                                                                </button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                ¿Estás seguro de que deseas eliminar este puesto?
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </td>
                                                 </tr>
                                                 @endforeach
                                             </tbody>
@@ -143,9 +166,6 @@
         </div>
     </footer>
     <script type="text/javascript">
-        function confirmarEliminar() {
-            return confirm("¿Estás seguro de eliminar?");
-        }
         $(document).ready(function() {
         $('#searchInput').on('keyup', function() {
             var value = $(this).val().toLowerCase();

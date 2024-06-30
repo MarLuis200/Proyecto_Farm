@@ -1,6 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
+<title>Salud Sexual</title>
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-12">

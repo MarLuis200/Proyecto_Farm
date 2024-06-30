@@ -1,6 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
+<title>Alimentos Infantiles</title>
 <div class="container col-md-9">
     <div class="row justify-content-center">
         <div class="col-md-12">

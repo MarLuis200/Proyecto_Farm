@@ -122,12 +122,35 @@
                                                         <p class="card-text">Correo: {{$person->correo}}</p>
                                                         <div class="text-center">
                                                             <a href="{{ route('admin.personas.detalles', $person->id) }}" class="btn btn-dark">Detalles</a>
-                                                            <a href="{{ route('admin.personas.actualizar', $person->id) }}" class="btn btn-primary">Editar</a>
-                                                            <form action="{{ route('admin.personas.eliminar', $person->id) }}" method="POST" style="display: inline-block;">
-                                                                @csrf
-                                                                @method('PUT')
-                                                                <button type="submit" class="btn btn-danger" onclick="return confirmarEliminar()">Eliminar</button>
-                                                            </form>
+                                                            
+                                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDelete{{$person->id}}">
+                                                                Eliminar
+                                                            </button>
+
+                                                            <!-- Modal de Confirmación de Eliminación -->
+                                                            <div class="modal fade" id="confirmDelete{{$person->id}}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteLabel{{$person->id}}" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="confirmDeleteLabel{{$person->id}}">Confirmar Eliminación</h5>
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                <span aria-hidden="true">&times;</span>
+                                                                            </button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            ¿Estás seguro de que deseas eliminar esta persona?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                                            <form action="{{ route('admin.personas.eliminar', $person->id) }}" method="POST" style="display: inline-block;">
+                                                                                @csrf
+                                                                                @method('PUT')
+                                                                                <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -1,6 +1,7 @@
 @extends('layouts.header')
 
 @section('content')
+<title>Bebes</title>
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-10">
@@ -37,15 +38,15 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <a href="/bebes/cuidado-del-bebe"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C1/D4C1.png" class="d-block mx-3" alt="Imagen 2">
+                                            <a href="/bebes/formulas"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C1/D4C1.png" class="d-block mx-3" alt="Imagen 2">
                                             <div class="container">
                                                 <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Formulas Infantiles</a>
                                             </div>
                                         </div>
                                         <div>
-                                            <a href="/bebes/alimentos"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C5/D4C5.png" class="d-block mx-3" alt="Imagen 3">
+                                            <a href="/bebes/infantiles"><img src="https://www.movil.farmaciasguadalajara.com/wcsstore/FGCAS//wcs/images/content/site/banners_circulares/D4C5/D4C5.png" class="d-block mx-3" alt="Imagen 3">
                                             <div class="container">
-                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos para Bebe</a>
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos Infantiles</a>
                                             </div>
                                         </div>
                                     </div>
