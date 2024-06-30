@@ -15,7 +15,11 @@ class CarritoController extends Controller
             return $carry + ($item['precio'] * $item['cantidad']);
         }, 0);
 
-        return view('/home/carrito/carritodecompras', compact('cartItems', 'totalNeto'));
+        // Obtener productos recomendados (por ejemplo, 3 productos aleatorios)
+        $recommendedProducts = Productos::inRandomOrder()->take(3)->get();
+        
+
+        return view('/home/carrito/carritodecompras', compact('cartItems', 'totalNeto', 'recommendedProducts'));
     }
 
     public function remove($id)
@@ -100,4 +104,3 @@ class CarritoController extends Controller
         return redirect()->route('carrito')->with('success', 'Compra realizada con éxito.');
     }
 }
-
