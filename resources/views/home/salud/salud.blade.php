@@ -20,7 +20,7 @@
                     <section id="anuncios">
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
                         <div class="productos-container">
-                            <a class="nav-link" href="#"><img src="/img/publicidadsalud.png" alt="Anuncio 1"></a>
+                            <a class="nav-link" href="/producto/41/vista"><img src="/img/ofertasalud.jpg" alt="Anuncio 1"></a>
                         </div>
                     </section>
 

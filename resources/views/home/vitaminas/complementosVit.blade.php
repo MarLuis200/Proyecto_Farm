@@ -32,7 +32,7 @@
                                     <div class="d-flex justify-content-center">
 
                                         <div>
-                                            <a href="/vitaminas/complementos"><img src="uploads/complementos1.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
+                                            <a href="/vitaminas/complementos"><img src="/img//comple.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
                                             <div class="container">
                                                     <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/vitaminas/complementos">Complementos Alimenticios</a>
                                             </div>

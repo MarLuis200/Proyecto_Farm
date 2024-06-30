@@ -21,7 +21,7 @@
                         <section id="anuncios">
                             <!-- Aquí puedes incluir tus anuncios publicitarios -->
                             <div class="productos-container">
-                                <a class="nav-link" href="#"><img src="/img/bebes.png" alt="Anuncio 1"></a>
+                                <a class="nav-link" href="/producto/32/vista"><img src="/img/ofertasuave.jpg" alt="Anuncio 1"></a>
                             </div>
                         </section>
 

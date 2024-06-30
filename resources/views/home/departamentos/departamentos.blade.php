@@ -1,86 +1,111 @@
 @extends('layouts.header')
 
 @section('content')
+
+<title>Departamentos</title>
+
 <div class="container col-md-10">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
                 <main class="main-content">
-
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/">Inicio</a></li>
-                        <li class="breadcrumb-item"><a>Departamentos</a></li>
-                            <li class="breadcrumb-item"><a>departamentos</a></li>
+                            <li class="breadcrumb-item"><a>Departamentos</a></li>
                         </ol>
                     </nav>
 
-                        
-                    <body>
-                        <h1>Departamentos</h1>
+                    <h1>Departamentos</h1>
 
-                        <section id="anuncios">
-                            <!-- Aquí puedes incluir tus anuncios publicitarios -->
-                            <div class="productos-container">
-                                <a class="nav-link" href="/departamentos/depalimentos">
-                                    <img src="/img/departamentos.jpeg" alt="Anuncio 1" style="width: 100%; max-width: 600x; height: auto;">
-                                </a>
-                            </div>
-                        </section>
+                    <section id="anuncios">
+                        <!-- Aquí puedes incluir tus anuncios publicitarios -->
+                        <div class="productos-container">
+                            <a class="nav-link" href="/salud/saludsexual"><img src="/img/des.jpg" alt="Anuncio 1" width="1000"></a>
+                        </div>
+                    </section>
 
-                        <h2>Encuentra las categorias de Departamentos</h2>
-                                <a class="nav-link" href="#"><img src="/img/des.jpg" alt="Anuncio 1"width="1000" height="300"></a>
-                            </div>
-                        </section>
+                    <h2>Encuentra las categorías de Departamentos</h2>
 
-                        <h2>Encuentra las categorias de departamentos</h2>              
-                        <div class="container mt-5">
-                            
+                    <div class="container mt-5">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <!-- Primera tanda de imágenes -->
+                                <div class="carousel-item active">
                                     <div class="d-flex justify-content-center">
-
                                         <div>
-                                            <a href="/departamentos/depalimentos"><img src="img/alimentos.jpeg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
+                                            <a href="/departamentos/alimentos"><img src="/img/ali.jpeg" class="d-block mx-3" alt="Imagen 3"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/departamentos/depalimentos">Alimentos</a>
-                                            <a href="/departamentos/alimentos"><img src="uploads/alimentos.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
-                                            <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Alimentos</a>
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/salud/dermatologia">Alimentos</a>
                                             </div>
                                         </div>
-
                                         <div>
-                                            <a href="/departamentos/bebidas"><img src="/img/bebidass.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 2"></a>
+                                            <a href="/departamentos/bebidas"><img src="/img/bebidas.jpg" class="d-block mx-3" alt="Imagen 4"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/departamentos/bebidas">Bebidas</a>
-
-                                            <a href="/departamentos/bebidas"><img src="uploads/bebidas.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
-                                            <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Bebidas</a>
-
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/salud/saludsexual">Bebidas</a>
                                             </div>
                                         </div>
-
                                         <div>
-                                            <a href="/departamentos/higiene"><img src="/img/belleza.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 3"></a>
+                                            <a href="/departamentos/higiene"><img src="/img/higiene.jpg" class="d-block mx-3" alt="Imagen 5"></a>
                                             <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/departamentos/higiene">Higiene y Belleza</a>
-                                            <a href="/departamentos/higiene"><img src="uploads/higiene.jpg" width="140" height="140" class="d-block mx-3" style="border-radius: 50%;" alt="Imagen 1"></a>
-                                            <div class="container">
-                                                    <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="">Higiene</a>
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="/bebes/formulas">Higiene y Belleza</a>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
+                                <!-- Segunda tanda de imágenes -->
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-center">
+                                        <div>
+                                            <a href="/vitaminas/multivitaminas"><img src="/img/multivitaminas.jpg" class="d-block mx-3" alt="Imagen 1">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Multivitaminas</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/departamentos/alimentos"><img src="/img/alimentos.jpg" class="d-block mx-3" alt="Imagen 2">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Alimentos</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/departamentos/bebidas"><img src="/img/bebidas.jpg" class="d-block mx-3" alt="Imagen 3">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Bebidas</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/departamentos/higiene"><img src="/img/higiene.jpg" class="d-block mx-3" alt="Imagen 4">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Higiene y Belleza</a>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <a href="/bebes/pañales"><img src="/img/pañales.jpg" class="d-block mx-3" alt="Imagen 5">
+                                            <div class="container">
+                                                <a tabindex="-1" aria-hidden="true" class="product_group_name product_info" href="#">Pañales</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
                         </div>
+                    </div>
                 </main>
             </div>
         </div>
     </div>
 </div>
 
-
-    
+           
 @extends('layouts.footer')
 
 @section('footer')

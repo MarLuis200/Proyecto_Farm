@@ -117,10 +117,10 @@
                         <a class="nav-link" href="/ayuda/preguntas">Da click aqui para conocer detalles y poblaciones donde tenemos servicio</a>
                     </header>
 
-                    <section id="ofertas">
+                    <section>
                         <!-- Aquí puedes mostrar tus ofertas -->
                         <br><h2>Aprovecha estas ofertas</h2>
-                        <div class="oferta">
+                        <div>
                             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                 <ol class="carousel-indicators">
                                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -212,10 +212,10 @@
                         </div>
                     </section>
 
-                    <section id="anuncios">
+                    <section>
                         <!-- Aquí puedes incluir tus anuncios publicitarios -->
-                        <div class="anuncio">
-                            <a class="nav-link" href="/ofertas"><img src="/img/anuncio1.png" alt="Anuncio 1"></a>
+                        <div>
+                            <center><a class="nav-link" href="/fin-de-semana"><img src="/img/anuncio1.png" alt="Anuncio 1"></a></center>
                         </div>
                     </section>
 

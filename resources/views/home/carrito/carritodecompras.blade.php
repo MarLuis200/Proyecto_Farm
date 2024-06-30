@@ -146,3 +146,8 @@
 
 <!-- Font Awesome CDN -->
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+@extends('layouts.footer')
+
+@section('footer')
+                            
