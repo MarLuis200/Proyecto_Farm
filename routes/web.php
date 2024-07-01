@@ -121,7 +121,7 @@ Route::get('admin/puestos/show/{id}', [PuestosController::class, 'show'])->name(
 Route::get('admin/puestos/actualizar/{id}', [PuestosController::class, 'actualizar'])->name('admin.puestos.actualizar');
 Route::put('admin/puestos/update/{id}', [PuestosController::class, 'update'])->name('admin.puestos.update');
 Route::put('admin/puestos/eliminar/{id}', [PuestosController::class, 'eliminar'])->name('admin.puestos.eliminar');
-Route::put('admin/puestos/store', [PuestosController::class, 'store'])->name('admin.puestos.store');
+Route::put('admin/puestos/store', [PuestosController::class, 'store'])->name('admin.puestos.store'); 
 
 // Rutas CRUD de Empleados
 Route::get('admin/empleados', [EmpleadosController::class, 'index'])->name('admin.empleados');
